@@ -33,6 +33,14 @@
     <!-- Page content -->
     <section id="play" class="page">
         <h1 class="page__title">Play</h1>
+        <div id="page--welcome"> 
+            <div class="section__link" onclick="initialisePlay()">
+                Play game
+            </div>
+            <div class="section__link" data-toggle="modal" data-target="#play--options" data-backdrop="static" data-keyboard="false">
+                Change settings
+            </div>
+        </div>
         <div id="play--display">
         <div id="play--display__btn">
             <span id="expand--fullscreen__button">
@@ -51,6 +59,71 @@
             <div class="text__spaced">
                 is for...
             </div>
+			<audio id="play--letter__audio">
+				<source src="#" type="audio/mpeg">
+			</audio>
+            <div id="play--answer" class="text__spaced">
+                apple
+            </div>
+            <div class="container-fluid">
+                <audio id="play--correct__audio">
+					<source src="#" type="audio/mpeg">
+				</audio>
+                <audio id="play--confirmation__audio">
+					<source src="#" type="audio/mpeg">
+				</audio>
+				<audio id="play--incorrect__audio">
+					<source src="#" type="audio/mpeg">
+				</audio>
+                <div class="row justify-content-center"> 
+                    <div class="col">      
+                        <div id="play--image1__display" class="play--image__select float-right">
+                            
+                        </div>
+                    </div>
+                    <div class="col"> 
+                        <div id="play--image2__display" class="play--image__select float-left">
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center"> 
+                    <div class="col"> 
+                        <div id="play--word1__display" class="play--word float-right">
+                            WORD
+                        </div>
+                    </div>
+                    <div class="col"> 
+                        <div id="play--word2__display" class="play--word float-left">
+                            WORD
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center"> 
+                    <div class="col">      
+                        <div id="play--image3__display" class="play--image__select float-right">
+                        </div>
+                    </div>
+                    <div class="col">      
+                        <div id="play--image4__display" class="play--image__select float-left">
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center"> 
+                    <div class="col"> 
+                        <div id="play--word3__display" class="play--word float-right">
+                            WORD
+                        </div>
+                    </div>
+                    <div class="col"> 
+                        <div id="play--word4__display" class="play--word float-left">
+                            WORD
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <strong>Letters still to play:</strong>
+            <div id="play--letters__remaining">
+            </div>
     </div>
     </section>
     
@@ -62,5 +135,8 @@
     <script src="assets/js/nav.js"></script>
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/372df47477.js" crossorigin="anonymous"></script>
+    <!-- Game JS -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/play.js"></script>
 </body>
 </html>

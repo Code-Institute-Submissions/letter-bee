@@ -95,3 +95,12 @@ Audio files were recorded by my very patient mum and dad.
 Files were edited to a consistent volume and white noise reduced using Audacity.
 
 ### Wireframes
+
+The site was designed with a mobile-first approach. 
+
+I decided to use the same layout for both mobile, tablet and desktop as the main 'game display' should be the focal
+point for all devices. 
+
+Therefore, the only real difference in design is the menu which is a horizontal nav bar for larger devices, and a collapsed menu icon with modal for smaller devices.
+
+[Wireframe document can be seen here](/wireframes/letter-bee-wireframes.pdf)

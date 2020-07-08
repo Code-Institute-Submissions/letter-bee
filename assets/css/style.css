@@ -6,7 +6,7 @@ body {
     color: #333;
 }
 
-/*----------------------------------- Navbar */
+/* Navbar */
 /* https://getbootstrap.com/docs/4.0/components/navbar/ */
 .navbar {
     background-color: #0374b8;
@@ -176,7 +176,7 @@ left: 50%;
     text-decoration: none;
 }
 
-/*----------------------------------- About */
+/* About */
 
 .section--center {
     text-align: center;
@@ -209,7 +209,7 @@ left: 50%;
 
 .btn--smaller {
     display: inline-block;
-    max-width: 49%;
+    width: 49%;
     font-size: 1.5rem;
 }
 
@@ -218,7 +218,7 @@ left: 50%;
     border-color: #f5f5f5;
 }
 
-/*----------------------------------- Modals */
+/* Modals */
 
 .modal-content {
     background-color: #c8b9d8;
@@ -237,4 +237,21 @@ left: 50%;
 
 .close:not(:disabled):not(.disabled):focus, .close:not(:disabled):not(.disabled):hover {
     color: #f5f5f5;
+}
+
+/* Play */
+
+#play--display {
+    width: 992px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 0 auto;
+    font-family: "ABeeZee", sans-serif;
+}
+
+@media screen and (max-width: 992px) {
+  #play--display {
+    width: 90vw;
+    }
 }

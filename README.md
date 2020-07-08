@@ -104,3 +104,47 @@ point for all devices.
 Therefore, the only real difference in design is the menu which is a horizontal nav bar for larger devices, and a collapsed menu icon with modal for smaller devices.
 
 [Wireframe document can be seen here](/wireframes/letter-bee-wireframes.pdf)
+
+## Development process
+---
+### External sources used
+
+* Navbar
+    * The navbar is taken Bootstrap and styled in keeping with the website
+    * Additional functionality (to have the burger icon transition to a cross) was taken from this site:\
+    https://mdbootstrap.com/docs/jquery/navigation/hamburger-menu/
+
+* Audio
+    * Adding the audio and the delay before it begins playing was carried out with guidance from these sources:\
+    https://medium.com/@ericschwartz7/adding-audio-to-your-app-with-jquery-fa96b99dfa97\
+    https://www.codespeedy.com/play-audio-with-time-delay-javascript
+
+* Passing array between pages
+    * Using the following site, I considered using local/session storage but felt the url suffix was a preferable solution as I only wanted the data held temporarily\
+    https://lage.us/Javascript-Pass-Variables-to-Another-Page.html
+
+
+### Bugs
+
+The first major bug encountered caused an 'on click' build up. When the function was called to display the next letter, it would first be called once, and then on the next click it would be called twice and then three times...
+
+This took quite a while to find a solution but in the end it was a relatively simple case of turning the click handler off:
+
+**Original code**
+```
+$('audio#play--confirmation__audio').on('ended', function() {
+  resetDisplay();
+  playLetterBee.checkGameProgress();
+});
+```
+
+**Modified code**
+```
+$('audio#play--confirmation__audio').on('ended', function() {
+  $('audio#play--confirmation__audio').off('ended');
+  resetDisplay();
+  playLetterBee.checkGameProgress();
+});
+```
+
+    

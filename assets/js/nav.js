@@ -1,7 +1,6 @@
-/* https://mdbootstrap.com/docs/jquery/navigation/hamburger-menu/ */
-$(document).ready(function () {
+$(document).ready(function() {
 
-  $('.second-button').on('click', function () {
+  $('.second-button').on('click', function() {
 
     $('.animated-icon2').toggleClass('open');
   });

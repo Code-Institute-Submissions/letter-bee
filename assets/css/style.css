@@ -2,7 +2,6 @@
 
 body {
     background-color: #f3c100;
-    padding-top: 70px;
     font-family: 'Montserrat Alternates', sans-serif;
     color: #333;
 }
@@ -31,8 +30,8 @@ body {
 }
 
 .page__img {
-    width: 50vh;
-    height: 50vh;
+    width: 60%;
+    height: 60%;
     border: solid 2px #333;
     border-radius: 50%;
     margin-bottom: 30px;
@@ -41,13 +40,15 @@ body {
 .page__btn {
     background-color: #c8b9d8;
     color: inherit;
+    font-size: 1.5rem;
     font-weight: 600;
-    border-radius: 5px;
+    border-radius: 10px;
     border: solid 2px #333;
     display: block;
     margin: 0 auto;
-    padding: 2rem;
-    width: 50vh; 
+    padding: 1rem;
+    width: 60%; 
+    text-decoration: none;
 }
 
 .page__btn:hover {

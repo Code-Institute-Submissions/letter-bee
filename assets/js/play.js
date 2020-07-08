@@ -274,8 +274,8 @@ Note that we must include prefixes for different browsers, as they don't support
 function openFullscreen() {
     var elem = document.getElementById("play--display");
     $("#play--options__button").css("visibility", "hidden");
-    $("#expand--fullscreen").children("i").removeClass("fas fa-expand-alt").addClass("fas fa-compress-alt");
-    $("#expand--fullscreen").attr("onclick", "closeFullscreen()");
+    $("#expand--fullscreen__button").children("i").removeClass("fas fa-expand-alt").addClass("fas fa-compress-alt");
+    $("#expand--fullscreen__button").attr("onclick", "closeFullscreen()");
     if (elem.requestFullscreen) {
         elem.requestFullscreen();
     } else if (elem.mozRequestFullScreen) { /* Firefox */
@@ -289,8 +289,8 @@ function openFullscreen() {
 
 function closeFullscreen() {
     $("#play--options__button").css("visibility", "visible");
-    $("#expand--fullscreen").children("i").removeClass("fas fa-compress-alt").addClass("fas fa-expand-alt");
-    $("#expand--fullscreen").attr("onclick", "openFullscreen()");
+    $("#expand--fullscreen__button").children("i").removeClass("fas fa-compress-alt").addClass("fas fa-expand-alt");
+    $("#expand--fullscreen__button").attr("onclick", "openFullscreen()");
     if (document.exitFullscreen) {
         document.exitFullscreen();
     } else if (document.mozCancelFullScreen) { /* Firefox */

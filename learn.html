@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- JS for loader gif -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <!-- Bootstrap JS cont -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>  
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- My CSS  -->
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+    <title>Letter Bee | Learn</title>
+</head>
+<body>
+    <!-- Loader gif -->
+    <!-- https://smallenvelop.com/display-loading-icon-page-loads-completely/ -->  
+    <div class="se-pre-con"></div>
+    <!-- Navbar -->
+	<nav class="navbar navbar-expand-lg navbar-dark red lighten-1 mb-4 fixed-top">
+		<a class="navbar-brand" href="about.html">
+			<img src="assets/images/letter-bee.png" width="40" height="40" class="d-inline-block align-top" alt="Letter Bee logo">
+		    Letter Bee
+        </a>
+		<button class="navbar-toggler second-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent23"
+		    aria-controls="navbarSupportedContent23" aria-expanded="false" aria-label="Toggle navigation">
+		    <div class="animated-icon2"><span></span><span></span><span></span><span></span></div>
+		  </button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent23">
+			<div class="navbar-nav ml-auto">
+				<a class="nav-item nav-link" href="about.html">About</a>
+				<a class="nav-item nav-link" href="play.html">Play</a>
+				<a class="nav-item nav-link active" href="learn.html">Learn <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="discover.html">Discover</a>
+                <a class="nav-item nav-link" href="explore.html">Explore</a>
+			</div>
+		</div>
+	</nav>
+    <!-- Page content -->
+    <section id="learn" class="page">
+        <h1 class="page__title">Learn!</h1>
+        <div id="page--welcome"> 
+            <div class="section__link" onclick="initialiseLearn()">
+                Learn some letters
+            </div>
+            <div class="section__link" data-toggle="modal" data-target="#learn--options" data-backdrop="static" data-keyboard="false">
+                Change settings
+            </div>
+        </div>
+        <div id="learn--display">
+            <div id="learn--display__btn">
+                <span id="expand--fullscreen" onclick="openFullscreen()">
+                    <i class="fas fa-expand-alt" title="Expand screen"></i>
+                </span>
+                <span id="learn--options__button" data-toggle="modal" data-target="#learn--options" data-backdrop="static" data-keyboard="false">
+                    <i class="fas fa-cogs" title="Learn options"></i>
+                </span>
+            </div>
+            <div id="learn--letter__upper">
+                A
+            </div>
+            <div id="learn--letter__lower">
+                a
+            </div>
+            <div class="text__spaced">
+                is for...
+            </div>
+			<audio id="learn--letter__audio">
+				<source src="#" type="audio/mpeg">
+			</audio>
+            <div id="learn--answer" class="text__spaced learn--image__selected">
+                apple
+            </div>
+            <div class="container-fluid">
+                <audio id="learn--word__audio">
+					<source src="#" type="audio/mpeg">
+				</audio>
+                <div class="row justify-content-center"> 
+                    <div class="col">      
+                        <div id="learn--image1__display" class="learn--image__select float-right">
+                        </div>
+                    </div>
+                    <div class="col"> 
+                        <div id="learn--image2__display" class="learn--image__select float-left">
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center"> 
+                    <div class="col"> 
+                        <div id="learn--word1__display" class="learn--word float-right">
+                            WORD
+                        </div>
+                    </div>
+                    <div class="col"> 
+                        <div id="learn--word2__display" class="learn--word float-left">
+                            WORD
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center"> 
+                    <div class="col">      
+                        <div id="learn--image3__display" class="learn--image__select float-right">
+                        </div>
+                    </div>
+                    <div class="col">      
+                        <div id="learn--image4__display" class="learn--image__select float-left">
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center"> 
+                    <div class="col"> 
+                        <div id="learn--word3__display" class="learn--word float-right">
+                            WORD
+                        </div>
+                    </div>
+                    <div class="col"> 
+                        <div id="learn--word4__display" class="learn--word float-left">
+                            WORD
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="learn--next__button" onclick="learnLetterBee.checkLearnProgress()">
+                Next
+                <i class="far fa-arrow-alt-circle-right" title="Next"></i>
+                letter
+            </div>
+            <strong>Letters still to learn:</strong>
+            <div id="learn--letters__remaining">
+            </div>
+        </div>     
+    </section>
+
+    <!-- Modals -->
+    <div class="modal fade" id="learn--finished__modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">The End!</h4>
+        </div>
+        <div class="modal-body">
+            <div>
+                <div id="message--learnt">
+                    <p>
+                        Great learning!
+                    </p>
+                    <p>
+                        You learnt all these letters:
+                    </p>
+                    <p>
+                        <strong id="array--learnt">A</strong>
+                    </p>
+                </div>
+                <p>
+                    Would you like to play the Letter Bee game now?
+                </p>
+            </div>
+            <div class="section__link--adjacent">
+                <div class="section__link btn--smaller" onclick="goToPlayMode()">
+                    Yes - go to 'Play' mode
+                </div>
+                <div class="section__link btn--smaller">
+                   <a href="about.html" onclick="$('#learn--finished__modal').modal('hide')">No - exit 'Learn' mode</a>
+                </div>
+            </div>
+            <div class="section__link" onclick="learnAgain()" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#learn--options" data-backdrop="static" data-keyboard="false">
+                I want to learn again!
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    <div class="modal fade" id="learn--options" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Options</h4>
+        </div>
+        <div class="modal-body">
+            <div id="learn--options__letters">
+                <h6>Letters to learn:</h6>
+                <label for="learn--all"><strong>All </strong>
+                <input type="checkbox" id="learn--all" name="learn--letter"></label>
+                <label for="learn--A"> A 
+                <input type="checkbox" id="learn--A" name="learn--letter" value="A" class="learn--letter__select"></label>
+                <label for="learn--B">B 
+                <input type="checkbox" id="learn--B" name="learn--letter" value="B" class="learn--letter__select"></label>
+                <label for="learn--C">C 
+                <input type="checkbox" id="learn--C" name="learn--letter" value="C" class="learn--letter__select"></label>
+                <label for="learn--D">D 
+                <input type="checkbox" id="learn--D" name="learn--letter" value="D" class="learn--letter__select"></label>
+                <label for="learn--E">E 
+                <input type="checkbox" id="learn--E" name="learn--letter" value="E" class="learn--letter__select"></label>
+                <label for="learn--F">F 
+                <input type="checkbox" id="learn--F" name="learn--letter" value="F" class="learn--letter__select"></label>
+                <label for="learn--G">G 
+                <input type="checkbox" id="learn--G" name="learn--letter" value="G" class="learn--letter__select"></label>
+                <label for="learn--H">H 
+                <input type="checkbox" id="learn--H" name="learn--letter" value="H" class="learn--letter__select"></label>
+                <label for="learn--I">I 
+                <input type="checkbox" id="learn--I" name="learn--letter" value="I" class="learn--letter__select"></label>
+                <label for="learn--J">J 
+                <input type="checkbox" id="learn--J" name="learn--letter" value="J" class="learn--letter__select"></label>
+                <label for="learn--K">K 
+                <input type="checkbox" id="learn--K" name="learn--letter" value="K" class="learn--letter__select"></label>
+                <label for="learn--L">L 
+                <input type="checkbox" id="learn--L" name="learn--letter" value="L" class="learn--letter__select"></label>
+                <label for="learn--M">M 
+                <input type="checkbox" id="learn--M" name="learn--letter" value="M" class="learn--letter__select"></label>
+                <label for="learn--N">N 
+                <input type="checkbox" id="learn--N" name="learn--letter" value="N" class="learn--letter__select"></label>
+                <label for="learn--O">O 
+                <input type="checkbox" id="learn--O" name="learn--letter" value="O" class="learn--letter__select"></label>
+                <label for="learn--P">P 
+                <input type="checkbox" id="learn--P" name="learn--letter" value="P" class="learn--letter__select"></label>
+                <label for="learn--Q">Q 
+                <input type="checkbox" id="learn--Q" name="learn--letter" value="Q" class="learn--letter__select"></label>
+                <label for="learn--R">R 
+                <input type="checkbox" id="learn--R" name="learn--letter" value="R" class="learn--letter__select"></label>
+                <label for="learn--S">S 
+                <input type="checkbox" id="learn--S" name="learn--letter" value="S" class="learn--letter__select"></label>
+                <label for="learn--T">T 
+                <input type="checkbox" id="learn--T" name="learn--letter" value="T" class="learn--letter__select"></label>
+                <label for="learn--U">U 
+                <input type="checkbox" id="learn--U" name="learn--letter" value="U" class="learn--letter__select"></label>
+                <label for="learn--V">V 
+                <input type="checkbox" id="learn--V" name="learn--letter" value="V" class="learn--letter__select"></label>
+                <label for="learn--W">W 
+                <input type="checkbox" id="learn--W" name="learn--letter" value="W" class="learn--letter__select"></label>
+                <label for="learn--X">X 
+                <input type="checkbox" id="learn--X" name="learn--letter" value="X" class="learn--letter__select"></label>
+                <label for="learn--Y">Y 
+                <input type="checkbox" id="learn--Y" name="learn--letter" value="Y" class="learn--letter__select"></label>
+                <label for="learn--Z">Z 
+                <input type="checkbox" id="learn--Z" name="learn--letter" value="Z" class="learn--letter__select"></label>
+            </div>
+            <div id="learn--options__number">
+                <h6>Number of matching words:</h6>
+                <label for="learn--options__two">2</label>
+                <input type="radio" id="learn--options__two" name="learn--options" value="2" class="learn--options__select">
+                <label for="learn--options__three">3</label>
+                <input type="radio" id="learn--options__three" name="learn--options" value="3" class="learn--options__select">
+                <label for="learn--options__four">4</label>
+                <input type="radio" id="learn--options__four" name="learn--options" value="4" class="learn--options__select">
+            </div>
+            <div>
+                <h6>Audio on/off:</h6>
+                <div id="learn--options__audio">
+                    <i class="fas fa-volume-mute learn--audio learn--audio__off" title="Audio off"></i>
+                    <i class="fas fa-volume-up learn--audio learn--audio__on" title="Audio on"></i>
+                </div>
+            </div>
+            <div id="learn--continue" class="section__link" data-dismiss="modal" aria-label="Close">
+                Continue learning
+            </div>
+            <div id="learn--restart" class="section__link" onclick="initialiseLearn()">
+                Learn letters
+            </div>
+            <div id="learn--options__alert" class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Wait a second!</strong> You must select at least one letter.
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    
+    <!-- Navbar JS -->
+    <script src="assets/js/nav.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/372df47477.js" crossorigin="anonymous"></script>
+    <!-- Game JS -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/learn.js"></script>
+</body>
+</html>

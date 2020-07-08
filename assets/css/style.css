@@ -285,12 +285,12 @@ left: 50%;
 
 #play--display, #learn--display, #discover--display, #page--welcome {
     width: 992px;
-    /* max-height: 100vh; */
     border: 2px solid #333;
     border-radius: 10px;
     padding: 1rem;
     margin: 0 auto;
     font-family: "ABeeZee", sans-serif;
+    box-shadow: -1px 0 #c8b9d8, 0 1px #c8b9d8, 1px 0 #c8b9d8, 0 -1px #c8b9d8;
 }
 
 #play--display, #learn--display {
@@ -306,7 +306,7 @@ left: 50%;
     margin-bottom: 1.5rem;
 }
 
-#expand--fullscreen, #play--options__button, #learn--options__button, #discover--options__button {
+#expand--fullscreen__button, #play--options__button, #learn--options__button, #discover--options__button {
     text-align: left;
     line-height: 0;
     color: #0374b8;
@@ -316,7 +316,7 @@ left: 50%;
     
 }
 
-#expand--fullscreen {
+#expand--fullscreen__button {
     left: 0.5rem;
 }
 
@@ -331,7 +331,7 @@ left: 50%;
     font-size: 2rem;
 }
 
-#play--options__button i:hover, #learn--next__button:hover, #learn--options__button i:hover, #discover--options__button i:hover, #expand--fullscreen i:hover {
+#play--options__button i:hover, #learn--next__button:hover, #learn--options__button i:hover, #discover--options__button i:hover, #expand--fullscreen__button i:hover {
     color: #f5f5f5;
     cursor: pointer;
 }
@@ -354,7 +354,7 @@ left: 50%;
     width: 90vw;
     }
 
-   #play--options__button, #learn--options__button, #discover--options__button, #expand--fullscreen {
+   #play--options__button, #learn--options__button, #discover--options__button, #expand--fullscreen__button {
        font-size: 1.2rem;
    } 
 
@@ -432,4 +432,27 @@ left: 50%;
 
 #play--options h6, #learn--options h6 {
     margin: 1rem 0 0.5rem;
+}
+
+/* Fullscreen */
+/* https://www.w3schools.com/howto/howto_js_fullscreen.asp */
+
+/* Chrome, Safari and Opera syntax */
+:-webkit-full-screen {
+  background-color: #f3c100;
+}
+
+/* Firefox syntax */
+:-moz-full-screen {
+  background-color: #f3c100;
+}
+
+/* IE/Edge syntax */
+:-ms-fullscreen {
+  background-color: #f3c100;
+}
+
+/* Standard syntax */
+:fullscreen {
+  background-color: #f3c100;
 }

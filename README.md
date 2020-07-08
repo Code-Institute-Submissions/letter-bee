@@ -9,7 +9,7 @@ I wanted the site to have a learning aspect as well as a playing aspect and have
 
 ### User Stories
 
-* As a parent, I want an educational game that my child can play to learn and practise the letters of the alphabet. It should be quick and easy for me to set up, and needs to be customisable for my child. I would also like the option to turn any sound off! I would like different modes to allow me to play with my child or allow them to play independently. 
+* As a parent, I want an educational game that my child can play to learn and practise the letters of the alphabet. It should be quick and easy for me to set up, and needs to be customisable for my child. I would also like the option to turn any sound off! I would like different modes to allow me to play with my child or allow them to play independently. 
 
 * As an educational professional, I want the game to give constructive feedback, but not focus too heavily on ‘right or wrong’. I.e. an incorrect answer given should be an opportunity to learn, rather than give a sense of having failed. 
 

@@ -1,39 +1,97 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# Letter Bee
+The inspiration behind this project is my 2-year-old son (Eddie) who loves to be tested on the letters of the alphabet.
 
-Welcome jess-bennett,
+## UX
+---
+Alphabet products for small children tend to be quite traditional: 'A is for apple, B is for ball...'. I wanted to create something that extends this concept using objects that children will be familiar with and enthusiastic about. In particular, vehicles ('A is for ambulance, F is for fire engine, P is for police car') and cartoon characters ('B is for Bing, X is for Xuli') feature quite heavily!
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+I wanted the site to have a learning aspect as well as a playing aspect and have chosen to use a dictionary API to further extend potential learning for older children.
 
-## Gitpod Reminders
+### User Stories
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+* As a parent, I want an educational game that my child can play to learn and practise the letters of the alphabet. It should be quick and easy for me to set up, and needs to be customisable for my child. I would also like the option to turn any sound off! I would like different modes to allow me to play with my child or allow them to play independently. 
 
-`python3 -m http.server`
+* As an educational professional, I want the game to give constructive feedback, but not focus too heavily on ‘right or wrong’. I.e. an incorrect answer given should be an opportunity to learn, rather than give a sense of having failed. 
 
-A blue button should appear to click: *Make Public*,
+* As a small child, I want something fun and interactive that shows me images that I will easily recognise. My attention span is quite short, so the game needs to be limited in some way so that I don’t get bored and start exploring the internet by myself(!).
 
-Another blue button should appear to click: *Open Browser*.
+### Strategy Plane
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+Opportunity/Problem | Importance | Viability/Feasibility
+--------------------|------------|----------------------
+Alphabet game to match image with given letter | 5 | 5
+Learning mode to cycle through different letters and show all matching images | 4 | 3
+Parent-interaction mode | 3 | 3
+Audio: voice files for each image to aid learning | 4 | 5
+Audio: on/off modes | 3 | 4
+Customisation: allow known letters of the alphabet to be selected for game | 3 | 3
+Customisation: allow number of ‘alternative’ images to be selected (between 2-4) | 4 | 4
+Connect to dictionary API – for explore mode | 5 | 5
+Full screen mode to avoid child going onto menu | 3 | 2
 
-A blue button should appear to click: *Make Public*,
+### Scope Plane
 
-Another blue button should appear to click: *Open Browser*.
+* **Play mode** - Alphabet game to match image with given letter
+    * A letter will appear at the top of the screen “A is for…” and a selection of ‘real-life’ images will be show below for the child to select the correct match.
+    * If a correct answer is selected, the image will highlight in green, and confirm “A is for… apple” and next question will appear
+    * If incorrect answer is selected, image will highlight in orange (to show it’s been selected) and ‘Have another go’ will show on screen – repeat until correct answer is selected
+    * Scoring – at end of game, the letters that were right first time will show in one collection with ‘Great, you know these letters really well’. 
+    * Letters that had errors will show in second collection with ‘Would you like to practise these letters?’ and link to learning mode
+    * Default mode (i.e. no options selected) – sound on, voice on, 26 letters (random order), 4 picture options
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
+* **Learning mode** - Cycle through different letters and show all matching images
+    * In this mode, the site will cycle through the alphabet with matching images for each letter
+    * If directed to this page directly from the game, only the letters that need practice will be shown
+    * Otherwise, parent will be given the option to limit which letters are shown
 
-## Updates Since The Instructional Video
+* **Discover mode** (Parent-interaction)
+    * ‘I spy’ type mode where child is directed to find things that begin with the given letter. For each letter ‘How many things did you find that begin with the letter…’ – 0, 1, 2, 3 or more – with link to explore mode for each letter
 
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
+* **Explore mode**
+    * This will display data from the dictionary API for each letter selected
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### Surface Plane
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+**Font families**
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+Fonts have been selected based on how well they align to the handwriting style that is taught to children in England. In particular, this means a loopy-style ‘k’ and a single-story ‘a’.
+For general website content (i.e. headings, navigation etc):
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+[Montserrat Alternates](https://fonts.google.com/specimen/Montserrat+Alternates?category=Sans+Serif&preview.text_type=custom&query=montserr)
+![Montserrat Alternates Font](/wireframes/montserrat-alternates.JPG)
 
---------
+For text directed at children (i.e. ‘A is for…’):
 
-Happy coding!
+[ABeeZee (Regular Italic – as this features the loopy ‘k’)](https://fonts.google.com/specimen/ABeeZee?category=Sans+Serif&preview.text_type=custom&query=abeezee)
+![ABeeZee Font](/wireframes/abeezee.JPG)
+
+
+**Colour choices**
+
+I wanted to use bright colours that would be engaging to young children, and in particular wanted a vibrant yellow as the main colour for the site.
+After searching for shades of yellow used in children's products I came across the image below on this site:
+https://www.trendbible.com/colour-direction-2020-baby-kids-spring-preview/
+![Colour palette](/wireframes/colour-choices.jpg)
+
+This was then used as my main colour palette.
+
+Font colours were decided using http://juicystudio.com/services/luminositycontrastratio.php#specify
+![Font colours](/wireframes/font-colours.JPG)
+
+**Image sources**
+
+All images have been taken from the free site https://www.needpix.com/, with the exception of the known cartoon images, which have been taken from https://www.stickpng.com/
+
+Needpix images “can be freely used by anyone for any purpose, whether commercial or non-commercial”. (https://www.needpix.com/about)
+
+Stickpng allows use of its images for “non commercial personal projects”. (https://www.stickpng.com/tos)
+
+Images were uniformly resized using Gimp.
+
+**Audio**
+
+Audio files were recorded by my very patient mum and dad. 
+
+Files were edited to a consistent volume and white noise reduced using Audacity.
+
+### Wireframes

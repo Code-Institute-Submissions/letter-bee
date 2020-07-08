@@ -121,9 +121,15 @@ left: 50%;
 
 /* Main Layout */
 .page {
+    padding-top: 4rem;
     align-items: center;
     text-align: center;
 }
+
+#home {
+    padding-top: 1rem;
+}
+
 .page__title {
     text-align: center;
     padding: 1rem;
@@ -143,8 +149,8 @@ left: 50%;
 }
 
 .page__img {
-    width: 60%;
-    height: 60%;
+    width: 50vh;
+    height: 50vh;
     border: solid 2px #333;
     border-radius: 50%;
     margin-bottom: 30px;
@@ -168,4 +174,46 @@ left: 50%;
     color: #f5f5f5;
     border-color: #f5f5f5;
     text-decoration: none;
+}
+
+/*----------------------------------- About */
+
+.section--center {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0 auto;
+}
+
+.section__link {
+    font-size: 2rem;
+    text-align: center;
+    margin: 1rem auto;
+    max-width: 80%;
+    padding: 0.4rem;
+    line-height: 1;
+    background-color: #c8b9d8;
+    border: 2px solid #333;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.section__link > a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.section__link--adjacent {
+    text-align: center;
+}
+
+.btn--smaller {
+    display: inline-block;
+    max-width: 49%;
+    font-size: 1.5rem;
+}
+
+.section__link:hover {
+    color: #f5f5f5;
+    border-color: #f5f5f5;
 }

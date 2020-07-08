@@ -280,6 +280,19 @@ left: 50%;
     cursor: pointer;
 }
 
+
+#play--letter__upper, #play--letter__lower {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.2;
+    display: inline-block;
+}
+
+.text__spaced {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
 @media screen and (max-width: 992px) {
   #play--display {
     width: 90vw;
@@ -288,4 +301,12 @@ left: 50%;
    #expand--fullscreen__button, #play--options__button {
        font-size: 1.2rem;
    } 
+
+  #play--letter__upper, #play--letter__lower {
+      font-size: 2rem;
+      line-height: 1;
+  }
+  .text__spaced {
+      font-size: 1rem;
+  }
 }

@@ -248,6 +248,7 @@ left: 50%;
     padding: 1rem;
     margin: 0 auto;
     font-family: "ABeeZee", sans-serif;
+    box-shadow: -1px 0 #c8b9d8, 0 1px #c8b9d8, 1px 0 #c8b9d8, 0 -1px #c8b9d8;
 }
 
 #play--display__btn {

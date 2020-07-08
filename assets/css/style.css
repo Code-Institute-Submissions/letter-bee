@@ -250,8 +250,41 @@ left: 50%;
     font-family: "ABeeZee", sans-serif;
 }
 
+#play--display__btn {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+#expand--fullscreen__button, #play--options__button {
+    text-align: left;
+    line-height: 0;
+    color: #0374b8;
+    font-size: 2rem;
+    width: 30%;
+    position: absolute;
+    
+}
+
+#expand--fullscreen__button {
+    left: 0.5rem;
+}
+
+#play--options__button {
+    text-align: right;
+    right: 0.5rem;
+}
+
+#expand--fullscreen__button i:hover, #play--options__button i:hover {
+    color: #f5f5f5;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 992px) {
   #play--display {
     width: 90vw;
     }
+
+   #expand--fullscreen__button, #play--options__button {
+       font-size: 1.2rem;
+   } 
 }

@@ -253,6 +253,34 @@ left: 50%;
     color: #f5f5f5;
 }
 
+/* Audio toggle switch */
+#play--options__audio, #learn--options__audio {
+    display: inline-block;
+    background-color: #007bff;
+    border-radius: 10px;
+    padding: 0.1rem 0.4rem;
+    letter-spacing: 0.5rem;
+    font-size: 1.5rem;
+}
+
+#play--options__audio:hover, #learn--options__audio:hover {
+    background-color: #005dc8;
+}
+
+.play--audio__on, .learn--audio__on {
+    color: white;
+}
+
+.play--audio__off, .learn--audio__off {
+    color: #007bff;
+}
+
+.alert-warning {
+    color: white;
+    background-color: #007bff;
+    border-radius: 10px;
+}
+
 /* Play */
 
 #play--display, #learn--display, #discover--display, #page--welcome {

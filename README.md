@@ -105,6 +105,11 @@ Therefore, the only real difference in design is the menu which is a horizontal 
 
 [Wireframe document can be seen here](/wireframes/letter-bee-wireframes.pdf)
 
+
+**Deviation from wireframe**
+* Footer
+    * This wasn't originally included in the design, but during development I realised that I would want to have a way for users to contact me
+
 ## Development process
 ---
 ### External sources used

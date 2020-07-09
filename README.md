@@ -110,6 +110,9 @@ Therefore, the only real difference in design is the menu which is a horizontal 
 * Footer
     * This wasn't originally included in the design, but during development I realised that I would want to have a way for users to contact me
 
+* Honeycomb background
+    * The background effect wasn't included in the orginal scope. I felt that the page looked too 'bare' with the large expanse of colour surrounding the game display div, and wanted to add some relevant detail.
+
 ## Development process
 ---
 ### External sources used
@@ -128,6 +131,9 @@ Therefore, the only real difference in design is the menu which is a horizontal 
     * Using the following site, I considered using local/session storage but felt the url suffix was a preferable solution as I only wanted the data held temporarily\
     https://lage.us/Javascript-Pass-Variables-to-Another-Page.html
 
+* Honeycomb background
+    * The CSS for the background effect was taken from:
+    https://leaverou.github.io/css3patterns/#honeycomb
 
 ### Bugs
 

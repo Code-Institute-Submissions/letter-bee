@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+  <!-- JS for loader gif -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js">
+  </script>
+  <!-- Bootstrap JS cont -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+    crossorigin="anonymous">
+  <!-- My CSS  -->
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+  <title>Letter Bee | Discover</title>
+</head>
+
+<body>
+  <!-- Loader gif -->
+  <!-- https://smallenvelop.com/display-loading-icon-page-loads-completely/ -->
+  <!-- <div class="se-pre-con"></div> -->
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark red lighten-1 mb-4 fixed-top">
+    <a class="navbar-brand" href="about.html">
+      <img src="assets/images/letter-bee.png" width="40" height="40"
+        class="d-inline-block align-top" alt="Letter Bee logo">
+      Letter Bee
+    </a>
+    <button class="navbar-toggler second-button" type="button"
+      data-toggle="collapse" data-target="#navbarSupportedContent23"
+      aria-controls="navbarSupportedContent23" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <div class="animated-icon2">
+        <span></span><span></span><span></span><span></span></div>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent23">
+      <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link" href="about.html">About</a>
+        <a class="nav-item nav-link" href="play.html">Play</a>
+        <a class="nav-item nav-link" href="learn.html">Learn</a>
+        <a class="nav-item nav-link active" href="discover.html">Discover <span
+            class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="explore.html">Explore</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Page content -->
+  <section id="discover" class="page">
+    <h1 class="page__title">Discover!</h1>
+    <div id="discover--display">
+      <div id="discover--display__btn">
+        <span id="expand--fullscreen__button">
+          <i class="fas fa-expand-alt" title="Expand screen"></i>
+        </span>
+        <span id="discover--options__button" data-toggle="modal"
+          data-target="#discover--options" data-backdrop="static"
+          data-keyboard="false">
+          <i class="fas fa-cogs" title="Discover options"></i>
+        </span>
+      </div>
+      <div class="text__spaced">
+        Pick a letter...
+      </div>
+    </div>
+  </section>
+  <footer>
+   <div class="container-fluid">
+       <div class="row justify-content-center">
+        <div class="col align-middle"><a
+            href="https://jess-bennett.github.io/personal-portfolio/"
+            target="_blank"><i class="fas fa-laptop" title="Website"></i></a>
+        </div>
+        <div class="col"><a href="https://github.com/jess-bennett/"
+            target="_blank"><i class="fab fa-github-square"
+                title="GitHub profile"></i></a></div>
+        <div class="col"><a
+            href="https://www.linkedin.com/in/jess-bennett-33750368/"
+            target="_blank"><i class="fab fa-linkedin"
+                title="LinkedIn profile"></i></a></div>
+        </div>
+        <p class="footer--text">&#169; | 2020 | Jess Bennett</p>
+    </div>
+  </footer>
+
+  <!-- Modals -->
+
+  <!-- Navbar JS -->
+  <script src="assets/js/nav.js"></script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/372df47477.js"
+    crossorigin="anonymous"></script>
+  <!-- Game JS -->
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/discover.js"></script>
+</body>
+
+</html>

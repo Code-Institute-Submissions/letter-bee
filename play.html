@@ -65,7 +65,7 @@
   <section id="play" class="page">
     <h1 class="page__title">Play</h1>
     <div id="page--welcome">
-      <div class="section__link" onclick="initialisePlay()">
+      <div id="initialise--play" class="section__link">
         Play game
       </div>
       <div class="section__link" data-toggle="modal"
@@ -76,7 +76,7 @@
     </div>
     <div id="play--display">
       <div id="play--display__btn">
-        <span id="expand--fullscreen__button" onclick="openFullscreen()">
+        <span id="expand--fullscreen__button">
           <i class="fas fa-expand-alt" title="Expand screen"></i>
         </span>
         <span id="play--options__button" data-toggle="modal"
@@ -215,8 +215,7 @@
             </p>
           </div>
           <div class="section__link--adjacent">
-            <div id="nav--learn" class="section__link btn--smaller"
-              onclick="goToLearnMode()">
+            <div id="nav--learn" class="section__link btn--smaller">
               Yes - go to 'Learn' mode
             </div>
             <div class="section__link btn--smaller">
@@ -225,7 +224,7 @@
                 'Play' mode</a>
             </div>
           </div>
-          <div class="section__link" onclick="playAgain()" data-dismiss="modal"
+          <div id="play--again" class="section__link" data-dismiss="modal"
             aria-label="Close" data-toggle="modal" data-target="#play--options"
             data-backdrop="static" data-keyboard="false">
             I want to play again!
@@ -350,8 +349,7 @@
             aria-label="Close">
             Continue game
           </div>
-          <div id="play--restart" class="section__link"
-            onclick="initialisePlay()">
+          <div id="play--restart" class="section__link">
             Play game
           </div>
           <div id="play--options__alert"

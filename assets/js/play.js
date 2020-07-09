@@ -510,3 +510,24 @@ function correctSelected(selectedImage) {
 function goToLearnMode() {
   window.location.href = `learn.html?${playLetterBee.playIncorrectArray}`;
 }
+
+/* Calling functions */
+$("#initialise--play").click(function() {
+    initialisePlay();
+})
+
+$("#expand--fullscreen__button").click(function() {
+    openFullscreen();
+})
+
+$("#nav--learn").click(function() {
+    goToLearnMode();
+})
+
+$("#play--again").click(function() {
+    playAgain();
+})
+
+$("#play--restart").click(function() {
+    initialisePlay();
+})

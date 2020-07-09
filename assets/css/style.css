@@ -12,6 +12,7 @@ body {
     linear-gradient(30deg, #f3c100 24%, #E5CCA5 0, #E5CCA5 26%, rgba(240, 166, 17, 0) 0, rgba(240, 166, 17, 0) 74%, #E5CCA5 0, #E5CCA5 76%, #f3c100 0)0 0,
     linear-gradient(90deg, #E5CCA5 2%, #f3c100 0, #f3c100 98%, #E5CCA5 0%)0 0 #f3c100;
   background-size: 40px 60px;
+  margin-bottom: 5rem;
 }
 
 /* Loader gif */
@@ -535,9 +536,10 @@ footer {
     font-weight: 800;
     text-align: center;
     width: 100%;
-    position:fixed;
+    position: fixed;
     bottom: 0;
     left: 0;
+    margin-top: 3rem
 }
 
 footer a {

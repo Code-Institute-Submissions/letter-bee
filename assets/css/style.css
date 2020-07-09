@@ -401,11 +401,22 @@ button:focus {
   border: 2px solid #333;
   box-shadow: -1px 0 #c8b9d8, 0 1px #c8b9d8, 1px 0 #c8b9d8, 0 -1px #c8b9d8;
   margin: 0 auto;
+  cursor: pointer;
 }
 
-.text__spaced {
+.discover--letter__circle:hover {
+    color: #f5f5f5;
+    border-color: #f5f5f5;
+}
+
+.text--spaced {
   margin-bottom: 1rem;
   font-size: 1.5rem;
+}
+
+.text--spaced__large {
+    font-size: 2rem;
+    font-weight: 600;
 }
 
 @media screen and (max-width: 992px) {
@@ -437,8 +448,12 @@ button:focus {
     width: 3rem;
   }
 
-  .text__spaced {
+  .text--spaced {
     font-size: 1rem;
+  }
+
+  .text--spaced__large {
+      font-size: 1.5rem;
   }
 }
 

@@ -383,11 +383,24 @@ button:focus {
 #play--letter__lower,
 #learn--letter__upper,
 #learn--letter__lower,
-.discover--letter {
+#discover--letters {
   font-size: 3rem;
   font-weight: 600;
   line-height: 1.2;
   display: inline-block;
+}
+
+#discover--letters .col {
+  margin: 0.5rem 0;
+}
+
+.discover--letter__circle {
+  background-color: #c8b9d8;
+  width: 4rem;
+  border-radius: 10px;
+  border: 2px solid #333;
+  box-shadow: -1px 0 #c8b9d8, 0 1px #c8b9d8, 1px 0 #c8b9d8, 0 -1px #c8b9d8;
+  margin: 0 auto;
 }
 
 .text__spaced {
@@ -415,9 +428,13 @@ button:focus {
   #play--letter__lower,
   #learn--letter__upper,
   #learn--letter__lower,
-  .discover--letter {
+  #discover--letters {
     font-size: 2rem;
     line-height: 1;
+  }
+
+  .discover--letter__circle {
+    width: 3rem;
   }
 
   .text__spaced {
@@ -532,29 +549,28 @@ button:focus {
 /* Footer */
 
 footer {
-    background-color: #c8b9d8;
-    font-size: 1.8rem;
-    font-weight: 800;
-    text-align: center;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    margin-top: 3rem;
-    border-top: 0.5rem solid #E5CCA5
-    
+  background-color: #c8b9d8;
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin-top: 3rem;
+  border-top: 0.5rem solid #E5CCA5
 }
 
 footer a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 footer a:hover {
-    color: #f5f5f5;
+  color: #f5f5f5;
 }
 
 .footer--text {
-    font-size: 1rem;
-    margin: 0;
+  font-size: 1rem;
+  margin: 0;
 }

@@ -4,6 +4,14 @@ body {
   background-color: #f3c100;
   font-family: 'Montserrat Alternates', sans-serif;
   color: #333;
+  background:
+    radial-gradient(circle farthest-side at 0% 50%, #f3c100 23.5%, rgba(240, 166, 17, 0) 0)21px 30px,
+    radial-gradient(circle farthest-side at 0% 50%, #E5CCA5 24%, rgba(240, 166, 17, 0) 0)19px 30px,
+    linear-gradient(#f3c100 14%, rgba(240, 166, 17, 0) 0, rgba(240, 166, 17, 0) 85%, #f3c100 0)0 0,
+    linear-gradient(150deg, #f3c100 24%, #E5CCA5 0, #E5CCA5 26%, rgba(240, 166, 17, 0) 0, rgba(240, 166, 17, 0) 74%, #E5CCA5 0, #E5CCA5 76%, #f3c100 0)0 0,
+    linear-gradient(30deg, #f3c100 24%, #E5CCA5 0, #E5CCA5 26%, rgba(240, 166, 17, 0) 0, rgba(240, 166, 17, 0) 74%, #E5CCA5 0, #E5CCA5 76%, #f3c100 0)0 0,
+    linear-gradient(90deg, #E5CCA5 2%, #f3c100 0, #f3c100 98%, #E5CCA5 0%)0 0 #f3c100;
+  background-size: 40px 60px;
 }
 
 /* Loader gif */
@@ -303,6 +311,7 @@ button:focus {
 #learn--display,
 #discover--display,
 #page--welcome {
+  background-color: #f3c100;
   width: 992px;
   border: 2px solid #333;
   border-radius: 10px;

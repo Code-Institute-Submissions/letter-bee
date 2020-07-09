@@ -65,7 +65,7 @@
   <section id="learn" class="page">
     <h1 class="page__title">Learn!</h1>
     <div id="page--welcome">
-      <div class="section__link" onclick="initialiseLearn()">
+      <div id="initialise--learn" class="section__link">
         Learn some letters
       </div>
       <div class="section__link" data-toggle="modal"
@@ -76,7 +76,7 @@
     </div>
     <div id="learn--display">
       <div id="learn--display__btn">
-        <span id="expand--fullscreen__button" onclick="openFullscreen()">
+        <span id="expand--fullscreen__button">
           <i class="fas fa-expand-alt" title="Expand screen"></i>
         </span>
         <span id="learn--options__button" data-toggle="modal"
@@ -153,8 +153,7 @@
           </div>
         </div>
       </div>
-      <div id="learn--next__button"
-        onclick="learnLetterBee.checkLearnProgress()">
+      <div id="learn--next__button">
         Next
         <i class="far fa-arrow-alt-circle-right" title="Next"></i>
         letter
@@ -209,7 +208,7 @@
             </p>
           </div>
           <div class="section__link--adjacent">
-            <div class="section__link btn--smaller" onclick="goToPlayMode()">
+            <div id="nav--play" class="section__link btn--smaller">
               Yes - go to 'Play' mode
             </div>
             <div class="section__link btn--smaller">
@@ -218,7 +217,7 @@
                 'Learn' mode</a>
             </div>
           </div>
-          <div class="section__link" onclick="learnAgain()" data-dismiss="modal"
+          <div id="learn--again" class="section__link" data-dismiss="modal"
             aria-label="Close" data-toggle="modal" data-target="#learn--options"
             data-backdrop="static" data-keyboard="false">
             I want to learn again!
@@ -344,8 +343,7 @@
             aria-label="Close">
             Continue learning
           </div>
-          <div id="learn--restart" class="section__link"
-            onclick="initialiseLearn()">
+          <div id="learn--restart" class="section__link">
             Learn letters
           </div>
           <div id="learn--options__alert"

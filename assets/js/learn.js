@@ -401,3 +401,28 @@ function imageSelected(selectedImage) {
 function goToPlayMode() {
   window.location.href = `play.html?${learnLetterBee.learntArray}`;
 }
+
+/* Calling functions */
+$("#expand--fullscreen__button").click(function() {
+    openFullscreen();
+})
+
+$("#learn--next__button").click(function() {
+    learnLetterBee.checkLearnProgress();
+})
+
+$("#nav--play").click(function() {
+    goToPlayMode();
+})
+
+$("#learn--again").click(function() {
+    learnAgain();
+})
+
+$("#learn--restart").click(function() {
+    initialiseLearn();
+})
+
+$("#initialise--learn").click(function() {
+    initialiseLearn();
+})

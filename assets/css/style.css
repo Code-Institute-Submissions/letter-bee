@@ -42,6 +42,7 @@ body {
 /* https://getbootstrap.com/docs/4.0/components/navbar/ */
 .navbar {
   background-color: #0374b8;
+  border-bottom: 0.5rem solid #E5CCA5
 }
 
 .navbar-dark .navbar-brand {
@@ -539,7 +540,9 @@ footer {
     position: fixed;
     bottom: 0;
     left: 0;
-    margin-top: 3rem
+    margin-top: 3rem;
+    border-top: 0.5rem solid #E5CCA5
+    
 }
 
 footer a {

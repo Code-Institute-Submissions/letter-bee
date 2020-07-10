@@ -3,11 +3,11 @@
 // Wait for window load
 $(window).on('load', function() {
   $(".se-pre-con").fadeOut("slow");
-  var queryString = location.search.substring(1);
+  let queryString = location.search.substring(1);
 
   if (queryString.length >=
     1) { //Checks whether url has substring assigned by learn page
-    var lettersToPlay = queryString.split(",");
+    let lettersToPlay = queryString.split(",");
     initialisePlay(lettersToPlay);
   };
 });
@@ -23,7 +23,7 @@ $(document).ready(function() {
 });
 
 /* Main game object */
-var playLetterBee = {
+let playLetterBee = {
 
   playAlphabetSet: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
     "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y",
@@ -313,7 +313,7 @@ $("#play--options--audio").click(function() {
 /* When the openFullscreen() function is executed, open the video in fullscreen.
 Note that we must include prefixes for different browsers, as they don't support the requestFullscreen method yet */
 function openFullscreen() {
-  var elem = document.getElementById("play--display");
+  let elem = document.getElementById("play--display");
   $("#play--options--button").css("visibility", "hidden");
   $("#expand--fullscreen--button").children("i").removeClass(
     "fas fa-expand-alt").addClass("fas fa-compress-alt");

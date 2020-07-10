@@ -58,12 +58,12 @@ Fonts have been selected based on how well they align to the handwriting style t
 For general website content (i.e. headings, navigation etc):
 
 [Montserrat Alternates](https://fonts.google.com/specimen/Montserrat+Alternates?category=Sans+Serif&preview.text_type=custom&query=montserr)
-![Montserrat Alternates Font](/wireframes/montserrat-alternates.JPG)
+![Montserrat Alternates Font](/wireframes/montserrat-alternates.jpg)
 
 For text directed at children (i.e. ‘A is for…’):
 
 [ABeeZee (Regular Italic – as this features the loopy ‘k’)](https://fonts.google.com/specimen/ABeeZee?category=Sans+Serif&preview.text_type=custom&query=abeezee)
-![ABeeZee Font](/wireframes/abeezee.JPG)
+![ABeeZee Font](/wireframes/abeezee.jpg)
 
 
 **Colour choices**
@@ -76,7 +76,7 @@ https://www.trendbible.com/colour-direction-2020-baby-kids-spring-preview/
 This was then used as my main colour palette.
 
 Font colours were decided using http://juicystudio.com/services/luminositycontrastratio.php#specify
-![Font colours](/wireframes/font-colours.JPG)
+![Font colours](/wireframes/font-colours.jpg)
 
 **Image sources**
 
@@ -142,7 +142,7 @@ The first major bug encountered caused an 'on click' build up. When the function
 This took quite a while to find a solution but in the end it was a relatively simple case of turning the click handler off:
 
 **Original code**
-```
+```javascript
 $('audio#play--confirmation__audio').on('ended', function() {
   resetDisplay();
   playLetterBee.checkGameProgress();
@@ -150,7 +150,7 @@ $('audio#play--confirmation__audio').on('ended', function() {
 ```
 
 **Modified code**
-```
+```javascript
 $('audio#play--confirmation__audio').on('ended', function() {
   $('audio#play--confirmation__audio').off('ended');
   resetDisplay();

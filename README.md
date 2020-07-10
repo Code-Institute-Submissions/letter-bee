@@ -1,19 +1,32 @@
 # Letter Bee
-The inspiration behind this project is my 2-year-old son (Eddie) who loves to be tested on the letters of the alphabet.
+
 
 ## UX
 ---
+I was inspired to create this site by my 2-year-old son (Eddie) who loves to be tested on the letters of the alphabet.
+
 Alphabet products for small children tend to be quite traditional: 'A is for apple, B is for ball...'. I wanted to create something that extends this concept using objects that children will be familiar with and enthusiastic about. In particular, vehicles ('A is for ambulance, F is for fire engine, P is for police car') and cartoon characters ('B is for Bing, X is for Xuli') feature quite heavily!
+
+It's also intended as a shameless attempt to lessen the guilt that most parents feel about using/relying on screen time. We all have the best of intentions, but sometimes a five-minute break is needed and if you're going to hand the parenting over to an electronic device, at least you can tell yourself you're giving them an educational opportunity!
+
 
 I wanted the site to have a learning aspect as well as a playing aspect and have chosen to use a dictionary API to further extend potential learning for older children.
 
 ### User Stories
 
-* As a parent, I want an educational game that my child can play to learn and practise the letters of the alphabet. It should be quick and easy for me to set up, and needs to be customisable for my child. I would also like the option to turn any sound off! I would like different modes to allow me to play with my child or allow them to play independently. 
+* As a parent, I want: 
+    * an educational game that my child can play to learn and practise the letters of the alphabet. 
+    * it to be quick and easy for me to set up. 
+    * the level of difficulty to be customisable for my child. 
+    * the option to turn any sound off! 
+    * different modes to allow me to play with my child or allow them to play independently. 
 
-* As an educational professional, I want the game to give constructive feedback, but not focus too heavily on ‘right or wrong’. I.e. an incorrect answer given should be an opportunity to learn, rather than give a sense of having failed. 
+* As an educational professional, I want:
+    * a game that gives constructive feedback, but doesn't focus too heavily on ‘right or wrong’. I.e. an incorrect answer given should be an opportunity to learn, rather than give a sense of having failed. 
 
-* As a small child, I want something fun and interactive that shows me images that I will easily recognise. My attention span is quite short, so the game needs to be limited in some way so that I don’t get bored and start exploring the internet by myself(!).
+* As a small child, I want: 
+    * something fun and interactive that shows me images that I will easily recognise. 
+    * the game-length to be limited in some way so that I don’t get bored and start exploring the internet by myself(!).
 
 ### Strategy Plane
 

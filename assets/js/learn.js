@@ -17,10 +17,10 @@ $(document).ready(function() {
 
   $("#learn--display").css("display", "none");
   $("#learn--continue").css("display", "none");
-  $("#learn--options__alert").hide();
+  $("#learn--options--alert").hide();
   $("#learn--all").prop("checked", true);
-  $(".learn--letter__select").prop("checked", true);
-  $("#learn--options__four").prop("checked", true);
+  $(".learn--letter--select").prop("checked", true);
+  $("#learn--options--four").prop("checked", true);
 });
 
 /* Main Game Object */
@@ -56,7 +56,7 @@ var learnLetterBee = {
         $("#message--learnt").css("display", "block");
       };
       $("#array--learnt").text(this.learntArray.join(', '));
-      $("#learn--finished__modal").modal({
+      $("#learn--finished--modal").modal({
         backdrop: 'static',
         keyboard: false
       });
@@ -65,7 +65,7 @@ var learnLetterBee = {
   },
   updateLettersRemaining: function() { //Used to update the learn display with the letters remaining
 
-    let learnLettersRemaining = $("#learn--letters__remaining");
+    let learnLettersRemaining = $("#learn--letters--remaining");
     if (this.learnAlphabetSet.length > 0) {
       learnLettersRemaining.text(this.learnAlphabetSet.join(', '));
     } else {
@@ -76,7 +76,7 @@ var learnLetterBee = {
   },
   selectKeyLetter: function() { //Chooses which letter to be displayed for the game
     this.letterToDisplay = this.learnAlphabetSet[0];
-    let learnLettersDisplay = $("#learn--letter__upper");
+    let learnLettersDisplay = $("#learn--letter--upper");
     learnLettersDisplay.text(this.letterToDisplay);
 
     return this.letterToDisplay;
@@ -128,37 +128,37 @@ var learnLetterBee = {
     image1, image2, image3, image4
     ) { //Displays the images chosen in the previous method in a random div
 
-    $(`#learn--letter__lower`).html(lowerLetter);
-    $(`#learn--word${divArray[0]}__display`).html(word1);
-    $(`#learn--word${divArray[1]}__display`).html(word2);
-    $(`#learn--word${divArray[2]}__display`).html(word3);
-    $(`#learn--word${divArray[3]}__display`).html(word4);
-    $(`#learn--image${divArray[0]}__display`).html(
+    $(`#learn--letter--lower`).html(lowerLetter);
+    $(`#learn--word${divArray[0]}--display`).html(word1);
+    $(`#learn--word${divArray[1]}--display`).html(word2);
+    $(`#learn--word${divArray[2]}--display`).html(word3);
+    $(`#learn--word${divArray[3]}--display`).html(word4);
+    $(`#learn--image${divArray[0]}--display`).html(
       `<img class="learn--image" src="assets/images/letters/${image1}" alt="${word1}" data="${image1}"/>`
       );
-    $(`#learn--image${divArray[1]}__display`).html(
+    $(`#learn--image${divArray[1]}--display`).html(
       `<img class="learn--image" src="assets/images/letters/${image2}" alt="${word2}" data="${image2}"/>`
       );
-    $(`#learn--image${divArray[2]}__display`).html(
+    $(`#learn--image${divArray[2]}--display`).html(
       `<img class="learn--image" src="assets/images/letters/${image3}" alt="${word3}" data="${image3}"/>`
       );
-    $(`#learn--image${divArray[3]}__display`).html(
+    $(`#learn--image${divArray[3]}--display`).html(
       `<img class="learn--image" src="assets/images/letters/${image4}" alt="${word4}" data="${image4}"/>`
       );
 
     if (this.learnNumberOfOptions == 4) {
-      $("#learn--image4__display").show();
-      $("#learn--word4__display").show();
+      $("#learn--image4--display").show();
+      $("#learn--word4--display").show();
     } else {
-      $("#learn--image4__display").hide();
-      $("#learn--word4__display").hide();
+      $("#learn--image4--display").hide();
+      $("#learn--word4--display").hide();
     };
     if (this.learnNumberOfOptions >= 3) {
-      $("#learn--image3__display").show();
-      $("#learn--word3__display").show();
+      $("#learn--image3--display").show();
+      $("#learn--word3--display").show();
     } else {
-      $("#learn--image3__display").hide();
-      $("#learn--word3__display").hide();
+      $("#learn--image3--display").hide();
+      $("#learn--word3--display").hide();
     };
   }
 }
@@ -166,20 +166,20 @@ var learnLetterBee = {
 /* Settings input */
 $("#learn--all").click(function() { //Selects the full 26 letter set
   if ($("#learn--all").prop("checked")) {
-    $(".learn--letter__select").prop("checked", true);
+    $(".learn--letter--select").prop("checked", true);
     learnLetterBee.resetLearnAlphaBetSet();
   } else {
-    $(".learn--letter__select").prop("checked", false)
+    $(".learn--letter--select").prop("checked", false)
     learnLetterBee.learnAlphabetSet = [];
     learnLetterBee.updateLettersRemaining();
   };
 })
 
-$(".learn--letter__select").click(
+$(".learn--letter--select").click(
 function() { //Removes unwanted letters from the learn set
   let checkedLetter = $(this).val();
-  if ($(".learn--letter__select:checked").length == $(
-      ".learn--letter__select").length) {
+  if ($(".learn--letter--select:checked").length == $(
+      ".learn--letter--select").length) {
     $("#learn--all").prop("checked", true);
   } else {
     $("#learn--all").prop("checked", false);
@@ -207,7 +207,7 @@ incorrectArrayFromPlay) { //Amends letter array using values brought over from p
     } else {
       learnLetterBee.learnAlphabetSet = [];
       $("#learn--all").prop("checked", false);
-      $(".learn--letter__select").each(function() {
+      $(".learn--letter--select").each(function() {
         if ($.inArray($(this).val(), incorrectArrayFromPlay) >= 0) {
           $(this).prop("checked", true);
         } else {
@@ -224,7 +224,7 @@ function checkLetterInput() { //Recheck checked letters for 'learn again'
   if ($("#learn--all").checked) {
     learnLetterBee.resetLearnAlphaBetSet();
   } else {
-    $(".learn--letter__select:checked").each(function() {
+    $(".learn--letter--select:checked").each(function() {
       if ($.inArray($(this).val(), learnLetterBee.learnAlphabetSet) == -1) {
         learnLetterBee.learnAlphabetSet.push($(this).val());
         learnLetterBee.learnAlphabetSet.sort();
@@ -232,14 +232,14 @@ function checkLetterInput() { //Recheck checked letters for 'learn again'
       };
     });
   }
-  if ($(".learn--letter__select:checked").length == 0) {
-    $("#learn--options__alert").show();
+  if ($(".learn--letter--select:checked").length == 0) {
+    $("#learn--options--alert").show();
     return "EXIT FUNCTION";
   };
 
 }
 
-$(".learn--options__select").click(
+$(".learn--options--select").click(
 function() { //Updates the number of options to be shown
   learnLetterBee.learnNumberOfOptions = parseInt($(this).val());
   learnLetterBee.learnImagesValues(learnLetterBee.letterToDisplay);
@@ -247,9 +247,9 @@ function() { //Updates the number of options to be shown
 
 $('audio').prop("muted", false)
 
-$("#learn--options__audio").click(function() {
-  $(".learn--audio").toggleClass("learn--audio__on");
-  $(".learn--audio").toggleClass("learn--audio__off");
+$("#learn--options--audio").click(function() {
+  $(".learn--audio").toggleClass("learn--audio--on");
+  $(".learn--audio").toggleClass("learn--audio--off");
   if ($('audio').prop("muted")) {
     $('audio').prop("muted", false);
   } else {
@@ -264,10 +264,10 @@ $("#learn--options__audio").click(function() {
 Note that we must include prefixes for different browsers, as they don't support the requestFullscreen method yet */
 function openFullscreen() {
   var elem = document.getElementById("learn--display");
-  $("#learn--options__button").css("visibility", "hidden");
-  $("#expand--fullscreen__button").children("i").removeClass(
+  $("#learn--options--button").css("visibility", "hidden");
+  $("#expand--fullscreen--button").children("i").removeClass(
     "fas fa-expand-alt").addClass("fas fa-compress-alt");
-  $("#expand--fullscreen__button").attr("onclick", "closeFullscreen()");
+  $("#expand--fullscreen--button").attr("onclick", "closeFullscreen()");
   if (elem.requestFullscreen) {
     elem.requestFullscreen();
   } else if (elem.mozRequestFullScreen) {
@@ -283,10 +283,10 @@ function openFullscreen() {
 }
 
 function closeFullscreen() {
-  $("#learn--options__button").css("visibility", "visible");
-  $("#expand--fullscreen__button").children("i").removeClass(
+  $("#learn--options--button").css("visibility", "visible");
+  $("#expand--fullscreen--button").children("i").removeClass(
     "fas fa-compress-alt").addClass("fas fa-expand-alt");
-  $("#expand--fullscreen__button").attr("onclick", "openFullscreen()");
+  $("#expand--fullscreen--button").attr("onclick", "openFullscreen()");
   if (document.exitFullscreen) {
     document.exitFullscreen();
   } else if (document.mozCancelFullScreen) {
@@ -307,10 +307,10 @@ function learnLettersAudio() {
   let audioFile = masterPlayData.lettersMaster[
     `letter${learnLetterBee.letterToDisplay}`].audioFile;
   let audioSource = `assets/audio/${audioFile}`;
-  $("#learn--letter__audio").attr("src", audioSource);
+  $("#learn--letter--audio").attr("src", audioSource);
 
   setTimeout(function() {
-    $('audio#learn--letter__audio')[0].play();
+    $('audio#learn--letter--audio')[0].play();
 
   }, 1500)
 
@@ -324,17 +324,17 @@ function learnWordAudio(selectedWord) {
   let audioSourceWord =
     `assets/audio/${amendedWordSyntax}-short-${audioVoice}.mp3`;
 
-  $("#learn--word__audio").attr("src", audioSourceWord);
+  $("#learn--word--audio").attr("src", audioSourceWord);
 
-  $('audio#learn--word__audio')[0].play();
+  $('audio#learn--word--audio')[0].play();
 }
 
 /* Misc functions */
 function resetDisplay() {
-  $(".learn--image__select").removeClass("learn--image__selected");
-  $(".learn--image__select").removeClass("learn--image__current");
+  $(".learn--image--select").removeClass("learn--image--selected");
+  $(".learn--image--select").removeClass("learn--image--current");
   $("#learn--answer").css("visibility", "hidden").removeClass(
-    "learn--image__select");
+    "learn--image--select");
   $(".learn--word").css("visibility", "hidden");
 }
 
@@ -346,7 +346,7 @@ function initialiseLearn(incorrectArrayFromPlay) {
   if (checkLetterInput() == "EXIT FUNCTION") {
     return;
   } else {
-    $("#learn--options__alert").hide();
+    $("#learn--options--alert").hide();
     $("#learn--options").modal("hide");
     learnLetterBee.resetLearntArray();
     resetDisplay();
@@ -374,12 +374,12 @@ function nextLearn() {
 }
 
 /* Select correct/incorrect answer */
-$(".learn--image__select").click(function() {
+$(".learn--image--select").click(function() {
   let imageID = this.id.match(/\d+/)[0];
-  $(this).addClass("learn--image__selected");
-  $(".learn--image__select").removeClass("learn--image__current");
-  $(this).addClass("learn--image__current");
-  $(`#learn--word${imageID}__display`).css("visibility", "visible");
+  $(this).addClass("learn--image--selected");
+  $(".learn--image--select").removeClass("learn--image--current");
+  $(this).addClass("learn--image--current");
+  $(`#learn--word${imageID}--display`).css("visibility", "visible");
   $(`#learn--answer`).css("visibility", "visible");
   let imageValue = $(this).children("img").attr("alt").toUpperCase();
   imageSelected(this);
@@ -403,11 +403,11 @@ function goToPlayMode() {
 }
 
 /* Calling functions */
-$("#expand--fullscreen__button").click(function() {
+$("#expand--fullscreen--button").click(function() {
     openFullscreen();
 })
 
-$("#learn--next__button").click(function() {
+$("#learn--next--button").click(function() {
     learnLetterBee.checkLearnProgress();
 })
 

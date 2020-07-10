@@ -164,7 +164,7 @@ button:focus {
   padding-top: 1rem;
 }
 
-.page__title {
+.page--title {
   text-align: center;
   padding: 1rem;
   font-size: 3rem;
@@ -178,12 +178,12 @@ button:focus {
     display: block;
   }
 
-  .page__title {
+  .page--title {
     font-size: 2rem;
   }
 }
 
-.page__img {
+.page--img {
   width: 50vh;
   height: 50vh;
   border: solid 2px #333;
@@ -191,7 +191,7 @@ button:focus {
   margin-bottom: 30px;
 }
 
-.page__btn {
+.page--btn {
   background-color: #c8b9d8;
   color: inherit;
   font-size: 1.5rem;
@@ -205,7 +205,7 @@ button:focus {
   text-decoration: none;
 }
 
-.page__btn:hover {
+.page--btn:hover {
   color: #f5f5f5;
   border-color: #f5f5f5;
   text-decoration: none;
@@ -220,7 +220,7 @@ button:focus {
   margin: 0 auto;
 }
 
-.section__link {
+.section--link {
   font-size: 2rem;
   text-align: center;
   margin: 1rem auto;
@@ -233,12 +233,12 @@ button:focus {
   cursor: pointer;
 }
 
-.section__link>a {
+.section--link>a {
   text-decoration: none;
   color: inherit;
 }
 
-.section__link--adjacent {
+.section--link--adjacent {
   text-align: center;
 }
 
@@ -248,7 +248,7 @@ button:focus {
   font-size: 1.5rem;
 }
 
-.section__link:hover {
+.section--link:hover {
   color: #f5f5f5;
   border-color: #f5f5f5;
 }
@@ -276,8 +276,8 @@ button:focus {
 }
 
 /* Audio toggle switch */
-#play--options__audio,
-#learn--options__audio {
+#play--options--audio,
+#learn--options--audio {
   display: inline-block;
   background-color: #007bff;
   border-radius: 10px;
@@ -286,18 +286,18 @@ button:focus {
   font-size: 1.5rem;
 }
 
-#play--options__audio:hover,
-#learn--options__audio:hover {
+#play--options--audio:hover,
+#learn--options--audio:hover {
   background-color: #005dc8;
 }
 
-.play--audio__on,
-.learn--audio__on {
+.play--audio--on,
+.learn--audio--on {
   color: white;
 }
 
-.play--audio__off,
-.learn--audio__off {
+.play--audio--off,
+.learn--audio--off {
   color: #007bff;
 }
 
@@ -332,17 +332,17 @@ button:focus {
   font-family: inherit;
 }
 
-#play--display__btn,
-#learn--display__btn,
-#discover--display__btn {
+#play--display--btn,
+#learn--display--btn,
+#discover--display--btn {
   position: relative;
   margin-bottom: 1.5rem;
 }
 
-#expand--fullscreen__button,
-#play--options__button,
-#learn--options__button,
-#discover--options__button {
+#expand--fullscreen--button,
+#play--options--button,
+#learn--options--button,
+#discover--options--button {
   text-align: left;
   line-height: 0;
   color: #0374b8;
@@ -352,37 +352,37 @@ button:focus {
 
 }
 
-#expand--fullscreen__button {
+#expand--fullscreen--button {
   left: 0.5rem;
 }
 
-#play--options__button,
-#learn--options__button,
-#discover--options__button {
+#play--options--button,
+#learn--options--button,
+#discover--options--button {
   text-align: right;
   right: 0.5rem;
 }
 
-#learn--next__button {
+#learn--next--button {
   text-align: center;
   color: #0374b8;
   font-size: 2rem;
 }
 
-#play--options__button i:hover,
-#learn--next__button:hover,
-#learn--options__button i:hover,
-#discover--options__button i:hover,
-#expand--fullscreen__button i:hover {
+#play--options--button i:hover,
+#learn--next--button:hover,
+#learn--options--button i:hover,
+#discover--options--button i:hover,
+#expand--fullscreen--button i:hover {
   color: #f5f5f5;
   cursor: pointer;
 }
 
 
-#play--letter__upper,
-#play--letter__lower,
-#learn--letter__upper,
-#learn--letter__lower,
+#play--letter--upper,
+#play--letter--lower,
+#learn--letter--upper,
+#learn--letter--lower,
 #discover--letters {
   font-size: 3rem;
   font-weight: 600;
@@ -394,7 +394,7 @@ button:focus {
   margin: 0.5rem 0;
 }
 
-.discover--letter__circle {
+.discover--letter--circle {
   background-color: #c8b9d8;
   width: 4rem;
   border-radius: 10px;
@@ -404,7 +404,7 @@ button:focus {
   cursor: pointer;
 }
 
-.discover--letter__circle:hover {
+.discover--letter--circle:hover {
     color: #f5f5f5;
     border-color: #f5f5f5;
 }
@@ -414,7 +414,7 @@ button:focus {
   font-size: 1.5rem;
 }
 
-.text--spaced__large {
+.text--spaced--large {
     font-size: 2rem;
     font-weight: 600;
 }
@@ -428,23 +428,23 @@ button:focus {
     width: 90vw;
   }
 
-  #play--options__button,
-  #learn--options__button,
-  #discover--options__button,
-  #expand--fullscreen__button {
+  #play--options--button,
+  #learn--options--button,
+  #discover--options--button,
+  #expand--fullscreen--button {
     font-size: 1.2rem;
   }
 
-  #play--letter__upper,
-  #play--letter__lower,
-  #learn--letter__upper,
-  #learn--letter__lower,
+  #play--letter--upper,
+  #play--letter--lower,
+  #learn--letter--upper,
+  #learn--letter--lower,
   #discover--letters {
     font-size: 2rem;
     line-height: 1;
   }
 
-  .discover--letter__circle {
+  .discover--letter--circle {
     width: 3rem;
   }
 
@@ -452,13 +452,13 @@ button:focus {
     font-size: 1rem;
   }
 
-  .text--spaced__large {
+  .text--spaced--large {
       font-size: 1.5rem;
   }
 }
 
-.play--image__select,
-.learn--image__select {
+.play--image--select,
+.learn--image--select {
   border: 2px solid #c8b9d8;
   border-radius: 10px;
   background-color: #c8b9d8;
@@ -471,27 +471,27 @@ button:focus {
   width: 14rem;
 }
 
-.play--image__select:hover,
-.learn--image__select:hover {
+.play--image--select:hover,
+.learn--image--select:hover {
   cursor: pointer;
   border-color: #f5f5f5;
 }
 
-.learn--image__select.learn--image__selected {
+.learn--image--select.learn--image--selected {
   border: 0.5rem solid #c8b9d8;
 }
 
-.play--image__select.play--image__correct,
-#play--answer.play--image__correct,
-.learn--image__select.learn--image__current,
+.play--image--select.play--image--correct,
+#play--answer.play--image--correct,
+.learn--image--select.learn--image--current,
 #learn--answer {
   border: 0.5rem solid #BEBF13;
   background-color: #BEBF13;
   border-radius: 10px;
 }
 
-.play--image__select.play--image__incorrect,
-#play--answer.play--image__incorrect {
+.play--image--select.play--image--incorrect,
+#play--answer.play--image--incorrect {
   border: 0.5rem solid #F99A0C;
   background-color: #F99A0C;
   border-radius: 10px;
@@ -507,8 +507,8 @@ button:focus {
 
 @media screen and (max-width: 574px) {
 
-  .play--image__select,
-  .learn--image__select {
+  .play--image--select,
+  .learn--image--select {
     width: 6.8rem;
     height: 6.8rem;
   }

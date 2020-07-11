@@ -2,7 +2,7 @@
 
 ![Letter Bee](/wireframes/multi-device-mockup.jpg)
 
-<p align="center"> :honeybee: Welcome to Letter Bee! :honeybee: <br>
+<p align="center"> :honeybee: <strong>Welcome to Letter Bee!</strong> :honeybee: <br>
 Thanks for coming to take a look.
 Letter Bee is a children's game that aims to teach and test children on the letters of the alphabet.</p>
 
@@ -10,7 +10,7 @@ Letter Bee is a children's game that aims to teach and test children on the lett
 ---
 I was inspired to create this site by my 2-year-old son (Eddie) who loves to be tested on the letters of the alphabet.
 
-Alphabet products for small children tend to be quite traditional: 'A is for apple, B is for ball...'. I wanted to create something that extends this concept using objects that children will be familiar with and enthusiastic about. In particular, vehicles ('A is for ambulance, F is for fire engine, P is for police car') and cartoon characters ('B is for Bing, X is for Xuli') feature quite heavily!
+Alphabet products for small children tend to be quite traditional: 'A is for apple :apple:, B is for ball :soccer:...'. I wanted to create something that extends this concept using objects that children will be familiar with and enthusiastic about. In particular, vehicles ('A is for ambulance :ambulance:, F is for fire engine :fire_engine:, P is for police car :police_car:') and cartoon characters ('B is for Bing, X is for Xuli') feature quite heavily (although, disclaimer: apple and ball do also make an appearance)!
 
 It's also intended as a shameless attempt to lessen the guilt that most parents feel about using/relying on screen time. We all have the best of intentions, but sometimes a five-minute break is needed and if you're going to hand the parenting over to an electronic device, at least you can tell yourself you're giving them an educational opportunity!
 
@@ -18,7 +18,7 @@ It's also intended as a shameless attempt to lessen the guilt that most parents 
 I wanted the site to have a learning aspect as well as a playing aspect and have chosen to use a dictionary API to further extend potential learning for older children.
 
 ### :books: User Stories
-
+---
 * :woman: As a parent, I want: 
     * an educational game that my child can play to learn and practise the letters of the alphabet. 
     * it to be quick and easy for me to set up. 
@@ -26,7 +26,7 @@ I wanted the site to have a learning aspect as well as a playing aspect and have
     * the option to turn any sound off! 
     * different modes to allow me to play with my child or allow them to play independently. 
 
-* :female-teacher::skin-tone-4: As an educational professional, I want:
+* :female-teacher: As an educational professional, I want:
     * a game that gives constructive feedback, but doesn't focus too heavily on ‘right or wrong’. I.e. an incorrect answer given should be an opportunity to learn, rather than give a sense of having failed. 
 
 * :child: As a small child, I want: 
@@ -34,7 +34,7 @@ I wanted the site to have a learning aspect as well as a playing aspect and have
     * the game-length to be limited in some way so that I don’t get bored and start exploring the internet by myself(!).
 
 ### :game_die: Strategy Plane
-
+---
 Opportunity/Problem | Importance | Viability/Feasibility
 --------------------|------------|----------------------
 Alphabet game to match image with given letter | 5 | 5
@@ -48,7 +48,7 @@ Connect to dictionary API – for explore mode | 5 | 5
 Full screen mode to avoid child going onto menu | 3 | 2
 
 ### :earth_africa: Scope Plane
-
+---
 * :video_game: **Play mode** - Alphabet game to match image with given letter
     * A letter will appear at the top of the screen “A is for…” and a selection of ‘real-life’ images will be show below for the child to select the correct match.
     * If a correct answer is selected, the image will highlight in green, and confirm “A is for… apple” and next question will appear
@@ -69,7 +69,7 @@ Full screen mode to avoid child going onto menu | 3 | 2
     * This will display data from the dictionary API for each letter selected
 
 ### :rainbow: Surface Plane
-
+---
 :pencil2: **Font families**
 
 Fonts have been selected based on how well they align to the handwriting style that is taught to children in England. In particular, this means a loopy-style ‘k’ and a single-story ‘a’.
@@ -113,7 +113,7 @@ Audio files were recorded by my very patient mum and dad.
 Files were edited to a consistent volume and white noise reduced using Audacity.
 
 ### :clipboard: Wireframes
-
+---
 The site was designed with a mobile-first approach. 
 
 I decided to use the same layout for both mobile, tablet and desktop as the main 'game display' should be the focal
@@ -134,7 +134,7 @@ Therefore, the only real difference in design is the menu which is a horizontal 
 ## :construction: Development process
 ---
 ### :computer: External sources used
-
+---
 * Navbar
     * The navbar is taken Bootstrap and styled in keeping with the website
     * Additional functionality (to have the burger icon transition to a cross) was taken from this [site.](https://mdbootstrap.com/docs/jquery/navigation/hamburger-menu/)
@@ -152,7 +152,7 @@ Therefore, the only real difference in design is the menu which is a horizontal 
     * The CSS for the background effect was taken from [here.](https://leaverou.github.io/css3patterns/#honeycomb)
 
 ### :bug: Bugs
-
+---
 The first major bug encountered caused an 'on click' build up. When the function was called to display the next letter, it would first be called once, and then on the next click it would be called twice and then three times...
 
 This took quite a while to find a solution but in the end it was a relatively simple case of turning the click handler off:

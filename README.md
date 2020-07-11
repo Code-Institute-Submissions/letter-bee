@@ -6,8 +6,12 @@
 Thanks for coming to take a look.
 Letter Bee is a children's game that aims to teach and test children on the letters of the alphabet.</p>
 
+## Contents
+
+* []:sparkles: UX](## :sparkles: UX)
+
 ## :sparkles: UX
----
+
 I was inspired to create this site by my 2-year-old son (Eddie) who loves to be tested on the letters of the alphabet.
 
 Alphabet products for small children tend to be quite traditional: 'A is for apple :apple:, B is for ball :soccer:...'. I wanted to create something that extends this concept using objects that children will be familiar with and enthusiastic about. In particular, vehicles ('A is for ambulance :ambulance:, F is for fire engine :fire_engine:, P is for police car :police_car:') and cartoon characters ('B is for Bing, X is for Xuli') feature quite heavily (although, disclaimer: apple and ball do also make an appearance)!
@@ -26,7 +30,7 @@ I wanted the site to have a learning aspect as well as a playing aspect and have
     * the option to turn any sound off! 
     * different modes to allow me to play with my child or allow them to play independently. 
 
-* :female-teacher: As an educational professional, I want:
+* :woman_teacher: As an educational professional, I want:
     * a game that gives constructive feedback, but doesn't focus too heavily on ‘right or wrong’. I.e. an incorrect answer given should be an opportunity to learn, rather than give a sense of having failed. 
 
 * :child: As a small child, I want: 
@@ -132,7 +136,7 @@ Therefore, the only real difference in design is the menu which is a horizontal 
     * The background effect wasn't included in the orginal scope. I felt that the page looked too 'bare' with the large expanse of colour surrounding the game display div, and wanted to add some relevant detail.
 
 ## :construction: Development process
----
+
 ### :computer: External sources used
 ---
 * Navbar

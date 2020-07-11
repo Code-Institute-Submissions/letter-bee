@@ -8,7 +8,7 @@ Letter Bee is a children's game that aims to teach and test children on the lett
 
 ## Contents
 
-* []:sparkles: UX](## :sparkles: UX)
+* [:sparkles: UX](##-:sparkles:-UX)
 
 ## :sparkles: UX
 

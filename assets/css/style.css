@@ -160,6 +160,10 @@ button:focus {
   text-align: center;
 }
 
+.full--page {
+    max-height: 100vh;
+}
+
 #home {
   padding-top: 1rem;
 }
@@ -184,11 +188,12 @@ button:focus {
 }
 
 .page--img {
-  width: 50vh;
-  height: 50vh;
-  border: solid 2px #333;
-  border-radius: 50%;
-  margin-bottom: 30px;
+  max-width: 50%;
+    max-height: 50%;
+    border: solid 2px #333;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    width: 50vh;
 }
 
 .page--btn {

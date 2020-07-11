@@ -8,15 +8,15 @@ Letter Bee is a children's game that aims to teach and test children on the lett
 
 ## Contents
 
-* [:sparkles: UX](##:sparkles:-ux)
-    * [:books: User Stories](###:books:-user-stories)
-    * [:game_die: Strategy Plane](###:game_die:-strategy-plane)
-    * [:earth_africa: Scope Plane](###:earth_africa:-scope-plane)
-    * [:rainbow: Surface Plane](###:rainbow:-surface-plane)
-    * [:clipboard: Wireframes](###:clipboard:-wireframes)
-* [:construction: Development process](##:construction:-development-process)
-    * [:computer: External sources used](###:computer:-external-sources-used)
-    * [:bug: Bugs](###:bug:-bugs)
+[:sparkles: UX](##-sparkles-ux)
+    [:books: User Stories](###:books:-user-stories)
+    [:game_die: Strategy Plane](###:game_die:-strategy-plane)
+    [:earth_africa: Scope Plane](###:earth_africa:-scope-plane)
+    [:rainbow: Surface Plane](###:rainbow:-surface-plane)
+    [:clipboard: Wireframes](###:clipboard:-wireframes)
+[:construction: Development process](##:construction:-development-process)
+    [:computer: External sources used](###:computer:-external-sources-used)
+    [:bug: Bugs](###:bug:-bugs)
 
 ## :sparkles: UX
 

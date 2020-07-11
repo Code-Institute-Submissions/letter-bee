@@ -2,6 +2,9 @@
 
 ![Letter Bee](/wireframes/multi-device-mockup.jpg)
 
+Welcome to Letter Bee! Thanks for coming to take a look.
+Letter Bee is a children's game that aims to teach and test children on the letters of the alphabet.
+
 ## UX
 ---
 I was inspired to create this site by my 2-year-old son (Eddie) who loves to be tested on the letters of the alphabet.

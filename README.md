@@ -1,5 +1,6 @@
 # Letter Bee
 
+![Letter Bee](/wireframes/multi-device-mockup.jpg)
 
 ## UX
 ---

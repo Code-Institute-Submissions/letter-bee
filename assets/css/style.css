@@ -160,10 +160,6 @@ button:focus {
   text-align: center;
 }
 
-.full--page {
-    max-height: 100vh;
-}
-
 #home {
   padding-top: 1rem;
 }

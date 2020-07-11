@@ -82,22 +82,22 @@ For text directed at children (i.e. ‘A is for…’):
 **Colour choices**
 
 I wanted to use bright colours that would be engaging to young children, and in particular wanted a vibrant yellow as the main colour for the site.
-After searching for shades of yellow used in children's products I came across the image below on this site:
-https://www.trendbible.com/colour-direction-2020-baby-kids-spring-preview/
+After searching for shades of yellow used in children's products I came across the image below on the children's sectio of a [lifestyle site](https://www.trendbible.com/colour-direction-2020-baby-kids-spring-preview/):
+
 ![Colour palette](/wireframes/colour-choices.jpg)
 
 This was then used as my main colour palette.
 
-Font colours were decided using http://juicystudio.com/services/luminositycontrastratio.php#specify
+Font colours were decided using [Juicy Studio](http://juicystudio.com/services/luminositycontrastratio.php#specify)
 ![Font colours](/wireframes/font-colours.jpg)
 
 **Image sources**
 
-All images have been taken from the free site https://www.needpix.com/, with the exception of the known cartoon images, which have been taken from https://www.stickpng.com/
+All images have been taken from the free site [Needpix](https://www.needpix.com/), with the exception of the known cartoon images, which have been taken from [Stick PNG](https://www.stickpng.com/)
 
-Needpix images “can be freely used by anyone for any purpose, whether commercial or non-commercial”. (https://www.needpix.com/about)
+Needpix images “can be freely used by anyone for any purpose, whether commercial or non-commercial”. [T&Cs](https://www.needpix.com/about)
 
-Stickpng allows use of its images for “non commercial personal projects”. (https://www.stickpng.com/tos)
+Stickpng allows use of its images for “non commercial personal projects”. [T&Cs](https://www.stickpng.com/tos)
 
 Images were uniformly resized using Gimp.
 
@@ -132,21 +132,19 @@ Therefore, the only real difference in design is the menu which is a horizontal 
 
 * Navbar
     * The navbar is taken Bootstrap and styled in keeping with the website
-    * Additional functionality (to have the burger icon transition to a cross) was taken from this site:\
-    https://mdbootstrap.com/docs/jquery/navigation/hamburger-menu/
+    * Additional functionality (to have the burger icon transition to a cross) was taken from this [site.](https://mdbootstrap.com/docs/jquery/navigation/hamburger-menu/)
 
 * Audio
     * Adding the audio and the delay before it begins playing was carried out with guidance from these sources:\
-    https://medium.com/@ericschwartz7/adding-audio-to-your-app-with-jquery-fa96b99dfa97\
-    https://www.codespeedy.com/play-audio-with-time-delay-javascript
+        * [Adding audio](https://medium.com/@ericschwartz7/adding-audio-to-your-app-with-jquery-fa96b99dfa97)
+        * [Delaying start of audio](https://www.codespeedy.com/play-audio-with-time-delay-javascript)
 
 * Passing array between pages
-    * Using the following site, I considered using local/session storage but felt the url suffix was a preferable solution as I only wanted the data held temporarily\
-    https://lage.us/Javascript-Pass-Variables-to-Another-Page.html
+    * Using [this](https://lage.us/Javascript-Pass-Variables-to-Another-Page.html) site, I considered using local/session storage but felt the url suffix was a preferable solution as I only wanted the data held temporarily\
+    
 
 * Honeycomb background
-    * The CSS for the background effect was taken from:
-    https://leaverou.github.io/css3patterns/#honeycomb
+    * The CSS for the background effect was taken from [here.](https://leaverou.github.io/css3patterns/#honeycomb)
 
 ### Bugs
 

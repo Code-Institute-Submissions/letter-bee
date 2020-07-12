@@ -12,6 +12,7 @@ $(document).ready(function() {
 /* Select a letter */
 $(".discover--letter--circle").click(function() {
     let selectedLetter = $(this).text();
+    $("#discover--answer--letter").text(selectedLetter);
     $("#discover--answer").css("display", "block");
     $("#discover--letters").css("display", "none");
     $("#discover--question").html(`How many things can you find that begin with the letter ${selectedLetter}?`);
@@ -19,7 +20,8 @@ $(".discover--letter--circle").click(function() {
 
 /* Select an answer */
 $(".discover--answer--select").click(function() {
-    let selectedAnswer = $(this).text();
+    let selectedNumber = $(this).text();
+    $("#discover--answer--number").text(selectedNumber);
     $(this).addClass("discover--answer--selected");
     $(".discover--answer--select").off("click");
     $("#discover--finished--modal").modal({

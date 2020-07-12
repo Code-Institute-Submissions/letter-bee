@@ -178,6 +178,9 @@ Therefore, the only real difference in design is the menu which is a horizontal 
 * Honeycomb background
     * The CSS for the background effect was taken from [here.](https://leaverou.github.io/css3patterns/#honeycomb)
 
+* Loading gif
+    * The loading gif design and code was found on [this site](https://smallenvelop.com/display-loading-icon-page-loads-completely)
+
 ### :bug: Bugs
 ---
 The first major bug encountered caused an 'on click' build up. When the function was called to display the next letter, it would first be called once, and then on the next click it would be called twice and then three times...

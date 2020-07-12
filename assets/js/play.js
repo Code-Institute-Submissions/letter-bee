@@ -1,6 +1,4 @@
 /* Loading div */
-/* https://smallenvelop.com/display-loading-icon-page-loads-completely/ */
-// Wait for window load
 $(window).on('load', function() {
   $(".se-pre-con").fadeOut("slow");
   let queryString = location.search.substring(1);

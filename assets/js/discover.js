@@ -30,6 +30,23 @@ $(".discover--answer--select").click(function() {
       });
 })
 
+function discoverReset() {
+    $("#discover--question").html(`Pick a letter...`);
+    $(".discover--answer--select").removeClass("discover--answer--selected");
+    $("#discover--answer").css("display", "none");
+    $("#discover--letters").css("display", "block");
+    $(".discover--answer--select").click(function() {
+    let selectedNumber = $(this).text(); //turn click event back on
+    $("#discover--answer--number").text(selectedNumber);
+    $(this).addClass("discover--answer--selected");
+    $(".discover--answer--select").off("click");
+    $("#discover--finished--modal").modal({
+        backdrop: 'static',
+        keyboard: false
+      });
+})
+}
+
 /* Full screen mode */
 function openFullscreen() {
   let elem = document.getElementById("discover--display");

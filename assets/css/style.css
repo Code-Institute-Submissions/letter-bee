@@ -460,7 +460,7 @@ button:focus {
 
 .play--image--select,
 .learn--image--select,
-.discover--question--select {
+.discover--answer--select {
   border: 2px solid #c8b9d8;
   border-radius: 10px;
   background-color: #c8b9d8;
@@ -468,11 +468,11 @@ button:focus {
   height: 14rem;
 }
 
-.discover--question--select {
+.discover--answer--select {
     margin-top: 0.8rem;
 }
 
-.discover--question--select p {
+.discover--answer--select p {
     font-size: 6rem;
     line-height: 14rem;
 }
@@ -484,7 +484,7 @@ button:focus {
 
 .play--image--select:hover,
 .learn--image--select:hover,
-.discover--question--select:hover {
+.discover--answer--select:hover {
   cursor: pointer;
   border-color: #f5f5f5;
   color: #f5f5f5;
@@ -497,7 +497,7 @@ button:focus {
 .play--image--select.play--image--correct,
 #play--answer.play--image--correct,
 .learn--image--select.learn--image--current,
-.discover--question--select.discover--question--selected
+.discover--answer--select.discover--answer--selected
 #learn--answer {
   border: 0.5rem solid #BEBF13;
   background-color: #BEBF13;
@@ -523,11 +523,11 @@ button:focus {
 
   .play--image--select,
   .learn--image--select,
-  .discover--question--select {
+  .discover--answer--select {
     width: 6.8rem;
     height: 6.8rem;
   }
-  .discover--question--select p {
+  .discover--answer--select p {
     font-size: 3rem;
     line-height: 6.8rem;
 }

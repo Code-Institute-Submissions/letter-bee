@@ -308,11 +308,12 @@ button:focus {
   border-radius: 10px;
 }
 
-/* Play */
+/* Play/Learn/Discover/Explore displays */
 
 #play--display,
 #learn--display,
 #discover--display,
+#explore--display,
 #page--welcome {
   background-color: #f3c100;
   width: 992px;
@@ -335,15 +336,15 @@ button:focus {
 
 #play--display--btn,
 #learn--display--btn,
-#discover--display--btn {
+#discover--display--btn,
+#explore--display--btn {
   position: relative;
   margin-bottom: 1.5rem;
 }
 
 #expand--fullscreen--button,
 #play--options--button,
-#learn--options--button,
-#discover--options--button {
+#learn--options--button {
   text-align: left;
   line-height: 0;
   color: #0374b8;
@@ -358,8 +359,7 @@ button:focus {
 }
 
 #play--options--button,
-#learn--options--button,
-#discover--options--button {
+#learn--options--button {
   text-align: right;
   right: 0.5rem;
 }
@@ -372,8 +372,7 @@ button:focus {
 
 #play--options--button i:hover,
 #learn--next--button:hover,
-#learn--options--button i:hover,
-#discover--options--button i:hover,
+#learn--options--button i:hover
 #expand--fullscreen--button i:hover {
   color: #f5f5f5;
   cursor: pointer;
@@ -384,18 +383,21 @@ button:focus {
 #play--letter--lower,
 #learn--letter--upper,
 #learn--letter--lower,
-#discover--letters {
+#discover--letters,
+#explore--letters {
   font-size: 3rem;
   font-weight: 600;
   line-height: 1.2;
   display: inline-block;
 }
 
-#discover--letters .col {
+#discover--letters .col,
+#explore--letters .col {
   margin: 0.5rem 0;
 }
 
-.discover--letter--circle {
+.discover--letter--circle,
+.explore--letter--circle {
   background-color: #c8b9d8;
   width: 4rem;
   border-radius: 10px;
@@ -405,7 +407,8 @@ button:focus {
   cursor: pointer;
 }
 
-.discover--letter--circle:hover {
+.discover--letter--circle:hover,
+.explore--letter--circle:hover {
     color: #f5f5f5;
     border-color: #f5f5f5;
 }
@@ -425,13 +428,13 @@ button:focus {
   #play--display,
   #learn--display,
   #discover--display,
+  #explore--display,
   #page--welcome {
     width: 90vw;
   }
 
   #play--options--button,
   #learn--options--button,
-  #discover--options--button,
   #expand--fullscreen--button {
     font-size: 1.2rem;
   }
@@ -440,12 +443,14 @@ button:focus {
   #play--letter--lower,
   #learn--letter--upper,
   #learn--letter--lower,
-  #discover--letters {
+  #discover--letters,
+  #explore--letters {
     font-size: 2rem;
     line-height: 1;
   }
 
-  .discover--letter--circle {
+  .discover--letter--circle,
+  .explore--letter--circle {
     width: 3rem;
   }
 
@@ -460,7 +465,8 @@ button:focus {
 
 .play--image--select,
 .learn--image--select,
-.discover--answer--select {
+.discover--answer--select,
+.explore--answer--select {
   border: 2px solid #c8b9d8;
   border-radius: 10px;
   background-color: #c8b9d8;
@@ -468,11 +474,13 @@ button:focus {
   height: 14rem;
 }
 
-.discover--answer--select {
+.discover--answer--select,
+.explore--answer--select {
     margin-top: 0.8rem;
 }
 
-.discover--answer--select p {
+.discover--answer--select p,
+.explore--answer--select p {
     font-size: 6rem;
     line-height: 14rem;
 }
@@ -484,7 +492,8 @@ button:focus {
 
 .play--image--select:hover,
 .learn--image--select:hover,
-.discover--answer--select:hover {
+.discover--answer--select:hover,
+.explore--answer--select:hover {
   cursor: pointer;
   border-color: #f5f5f5;
   color: #f5f5f5;
@@ -498,6 +507,7 @@ button:focus {
 #play--answer.play--image--correct,
 .learn--image--select.learn--image--current,
 .discover--answer--select.discover--answer--selected,
+.explore--answer--select.explore--answer--selected,
 #learn--answer {
   border: 0.5rem solid #BEBF13;
   background-color: #BEBF13;
@@ -523,11 +533,13 @@ button:focus {
 
   .play--image--select,
   .learn--image--select,
-  .discover--answer--select {
+  .discover--answer--select,
+  .explore--answer--select {
     width: 6.8rem;
     height: 6.8rem;
   }
-  .discover--answer--select p {
+  .discover--answer--select p,
+  .explore--answer--select p {
     font-size: 3rem;
     line-height: 6.8rem;
 }

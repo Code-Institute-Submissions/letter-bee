@@ -151,6 +151,13 @@ Therefore, the only real difference in design is the menu which is a horizontal 
 * Honeycomb background
     * The background effect wasn't included in the orginal scope. I felt that the page looked too 'bare' with the large expanse of colour surrounding the game display div, and wanted to add some relevant detail.
 
+* Moving options box from page to modal
+    * I decided to keep all options settings inside a separate modal, rather than having some options displayed on the page (as in the wireframe). I felt this looked a lot cleaner and allowed the majority of the page to be devoted to the game display.
+
+* Removal of options from 'Discover' page
+    * The original wireframe included an options box for each of the html pages. However, with the discover page this isn't actually relevant as there is no audio to switch on/off and no reason to reduce the number of letters/options being displayed.
+
+
 ## :construction: Development process
 
 ### :computer: External sources used

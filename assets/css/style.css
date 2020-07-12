@@ -497,6 +497,7 @@ button:focus {
 .play--image--select.play--image--correct,
 #play--answer.play--image--correct,
 .learn--image--select.learn--image--current,
+.discover--question--select.discover--question--selected
 #learn--answer {
   border: 0.5rem solid #BEBF13;
   background-color: #BEBF13;

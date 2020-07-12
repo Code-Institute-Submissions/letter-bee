@@ -30,7 +30,7 @@ Letter Bee is a children's game that aims to teach and test children on the lett
 
 I was inspired to create this site by my 2-year-old son (Eddie) who loves to be tested on the letters of the alphabet.
 
-Alphabet products for small children tend to be quite traditional: 'A is for apple :apple:, B is for ball :soccer:...'. I wanted to create something that extends this concept using objects that children will be familiar with and enthusiastic about. In particular, vehicles ('A is for ambulance :ambulance:, F is for fire engine :fire_engine:, P is for police car :police_car:') and cartoon characters ('B is for Bing, X is for Xuli') feature quite heavily (although, disclaimer: apple and ball do also make an appearance)!
+Alphabet products for small children tend to be quite traditional: 'A is for apple :apple:, B is for ball :soccer:...'. I wanted to create something that extends this concept using objects that children will be familiar with and enthusiastic about. In particular, vehicles ('A is for ambulance :ambulance:, F is for fire engine :fire_engine:, P is for police car :police_car:') and cartoon characters ('B is for Bing :rabbit:, X is for Xuli :woman_pilot:') feature quite heavily (although, disclaimer: apple and ball do also make an appearance)!
 
 It's also intended as a shameless attempt to lessen the guilt that most parents feel about using/relying on screen time. We all have the best of intentions, but sometimes a five-minute break is needed and if you're going to hand the parenting over to an electronic device, at least you can tell yourself you're giving them an educational opportunity!
 

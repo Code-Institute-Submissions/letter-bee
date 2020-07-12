@@ -1,6 +1,4 @@
 /* Loading div */
-/* https://smallenvelop.com/display-loading-icon-page-loads-completely/ */
-// Wait for window load
 $(window).on('load', function() {
   $(".se-pre-con").fadeOut("slow");
   let queryString = location.search.substring(1);
@@ -257,11 +255,7 @@ $("#learn--options--audio").click(function() {
   };
 })
 
-/* https://www.w3schools.com/howto/howto_js_fullscreen.asp */
-
-
-/* When the openFullscreen() function is executed, open the video in fullscreen.
-Note that we must include prefixes for different browsers, as they don't support the requestFullscreen method yet */
+/* Full screen mode */
 function openFullscreen() {
   let elem = document.getElementById("learn--display");
   $("#learn--options--button").css("visibility", "hidden");

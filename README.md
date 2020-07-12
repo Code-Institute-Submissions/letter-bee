@@ -163,7 +163,7 @@ Therefore, the only real difference in design is the menu which is a horizontal 
 ### :computer: External sources used
 ---
 * Navbar
-    * The navbar is taken Bootstrap and styled in keeping with the website
+    * The navbar is taken from [Bootstrap](https://getbootstrap.com/docs/4.0/components/navbar/) and styled in keeping with the website
     * Additional functionality (to have the burger icon transition to a cross) was taken from this [site.](https://mdbootstrap.com/docs/jquery/navigation/hamburger-menu/)
 
 * Audio

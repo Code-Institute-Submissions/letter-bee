@@ -224,6 +224,41 @@
   </footer>
 
   <!-- Modals -->
+  <div class="modal fade" id="discover--finished--modal" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Great discovering!</h4>
+        </div>
+        <div class="modal-body">
+          <div id="discover--message">
+            <p>
+              You found X things that being with the letter X
+            </p>
+            <p>
+                Woudl you like to find out about some more words that begin with this letter?
+            </p>
+          </div>
+          <div class="section--link--adjacent">
+            <div id="nav--learn" class="section--link btn--smaller">
+              Yes - go to 'Explore' mode
+            </div>
+            <div class="section--link btn--smaller">
+              <a href="about.html"
+                onclick="$('#discover--finished--modal').modal('hide')">No - exit
+                'Discover' mode</a>
+            </div>
+          </div>
+          <div id="discover--again" class="section--link" data-dismiss="modal"
+            aria-label="Close"
+            data-backdrop="static" data-keyboard="false">
+            I want to do some more discovering!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Navbar JS -->
   <script src="assets/js/nav.js"></script>

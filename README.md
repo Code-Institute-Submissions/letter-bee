@@ -22,6 +22,8 @@ Letter Bee is a children's game that aims to teach and test children on the lett
 \
 [:construction: Development process](#construction-development-process)\
 \
+              [:closed_lock_with_key: APIs](#closed_lock_with_key-apis)\
+\
               [:computer: External sources used](#computer-external-sources-used)\
 \
               [:bug: Bugs](#bug-bugs)
@@ -159,6 +161,33 @@ Therefore, the only real difference in design is the menu which is a horizontal 
 
 
 ## :construction: Development process
+
+## :closed_lock_with_key: APIs
+
+In the original specification, I had decided to use a dedicated dictionary API to provide an image, definition, example sentence and audio pronunciation for the selected word on the 'Explore' page.
+The API I initially chose was from [Merriam-Webster](https://dictionaryapi.com/). However, as I started to use it, I realised there were some issues with it which made it less suited to my application. 
+ 1. **As an American site, the word spellings and pronunciations were (unsurprisingly!) American.**\
+    I felt that as my site is a British site, focussing on learning new words, it would be confusing to a small child to have words spelt and pronounced differently, and perhaps (to them) unrecognisably.
+
+1. **The images that are provided as part of the API are not consistently present. Some words have an attached image, many do not.**\
+    As the site is largely about visual learning, this was a big problem.
+
+1. **When images were provided, the quality wasn't great.**\
+    I spent quite some time collating and editing the images for the 'Play/Learn' pages of the site, and didn't want to have the overall look of the site let down by poor quality images.
+
+
+I looked through several other dictionary APIs to try and find one that fit my new criteria:
+* Must have option for British spelling/pronunciation.
+* Must have associated images for majority of words.
+
+As it turns out, this doesn't exist!
+
+So, I decided to use two separate APIs to fullfil my requirements:
+
+1. xxx for the words/definition/pronunciation
+2. [Unsplash](https://unsplash.com/developers) for the associated images
+
+
 
 ### :computer: External sources used
 ---

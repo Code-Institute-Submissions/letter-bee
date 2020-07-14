@@ -58,3 +58,17 @@ function writeToDocument(searchTerm) {
         $("#explore--image").html(`<img src="${dataImage}" alt=""/>`);
     });
 }
+
+$(".explore--answer--select").click(function() {
+    $("#explore--word--modal").modal({
+        backdrop: 'static',
+        keyboard: false
+      });
+})
+
+function exploreReset() {
+    $("#explore--answer").css("display", "none");
+    $("#explore--words").css("display", "none");
+    $("#explore--letters").css("display", "block");
+    $("#explore--prompt").text(`Pick a letter...`)
+}

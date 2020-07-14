@@ -253,6 +253,51 @@
   </footer>
 
   <!-- Modals -->
+  <div class="modal fade" id="explore--word--modal" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div id="explore--message">
+            <h4 id="explore--selected--word">
+                Apple
+            </h4>
+            <img>
+            <div>
+                Definition:
+                <div id="explore--definition"></div>
+            </div>
+            <div>
+                Example:
+                <div id="explore--example"></div>
+            </div>
+            <div>
+                Pronunciation:
+                <div id="explore--pronunciation"></div>
+            </div>
+            <p>
+                Would you like to find out about some more words that begin with this letter?
+            </p>
+          </div>
+          <div class="section--link--adjacent">
+            <div id="nav--learn" class="section--link btn--smaller" data-dismiss="modal"
+            aria-label="Close">
+              Yes - go back to words
+            </div>
+            <div class="section--link btn--smaller">
+              <a href="about.html"
+                onclick="$('#explore--word--modal').modal('hide')">No - exit
+                'Explore' mode</a>
+            </div>
+          </div>
+          <div id="discover--again" class="section--link" data-dismiss="modal"
+            aria-label="Close" onclick="exploreReset()">
+            I want to explore some more letters!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Navbar JS -->
   <script src="assets/js/nav.js"></script>

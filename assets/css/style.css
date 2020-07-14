@@ -485,6 +485,10 @@ button:focus {
   }
 }
 
+#explore--answer > p {
+    font-size: 1.5rem;
+}
+
 .play--image--select,
 .learn--image--select,
 .discover--answer--select,

@@ -6,7 +6,17 @@ $(window).on('load', function() {
 /* On page load */
 $(document).ready(function() {
   $("#explore--answer").css("display", "none");
+  $("#explore--words").css("display", "none");
 });
+
+/* Show associated words */
+$(".explore--letter--circle").click(function() {
+    let selectedLetter = $(this).text();
+    $("#explore--answer").css("display", "block");
+    $("#explore--words").css("display", "block");
+    $("#explore--letters").css("display", "none");
+    $("#explore--prompt").text(`Here are some words that start with the letter ${selectedLetter}`)
+})
 
 /* Get image for selected word */
 const imageApiKey = "IlStjFvGDrc0UG55OCg_DK7JqauGBhBuX5gbbEns0-s";

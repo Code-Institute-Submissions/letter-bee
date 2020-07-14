@@ -474,15 +474,23 @@ button:focus {
   height: 14rem;
 }
 
+.explore--answer--select {
+    width: 80%;
+    height: 6rem;
+}
+
 .discover--answer--select,
 .explore--answer--select {
     margin-top: 0.8rem;
 }
 
-.discover--answer--select p,
-.explore--answer--select p {
+.discover--answer--select p {
     font-size: 6rem;
     line-height: 14rem;
+}
+
+.explore--answer--select p {
+    line-height: 6rem;
 }
 
 .play--word,
@@ -533,16 +541,23 @@ button:focus {
 
   .play--image--select,
   .learn--image--select,
-  .discover--answer--select,
-  .explore--answer--select {
+  .discover--answer--select {
     width: 6.8rem;
     height: 6.8rem;
   }
-  .discover--answer--select p,
-  .explore--answer--select p {
+
+    .explore--answer--select {
+        height: 3rem;
+    }
+
+  .discover--answer--select p {
     font-size: 3rem;
     line-height: 6.8rem;
 }
+
+  .explore--answer--select p {
+      line-height: 3rem;
+  }
 
   .play--word,
   .learn--word {

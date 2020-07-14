@@ -18,6 +18,21 @@ $(".explore--letter--circle").click(function() {
     $("#explore--prompt").text(`Here are some words that start with the letter ${selectedLetter}`)
 })
 
+const getFontSize = (textLength) => {
+  const baseSize = 9
+  if (textLength >= baseSize) {
+    textLength = baseSize - 2
+  }
+  const fontSize = baseSize - textLength
+  return `${fontSize}vw`
+}
+
+const boxes = document.querySelectorAll('.explore--answer--select p')
+  
+boxes.forEach(box => {
+  box.style.fontSize = getFontSize(box.textContent.length)
+})
+
 /* Get image for selected word */
 const imageApiKey = "IlStjFvGDrc0UG55OCg_DK7JqauGBhBuX5gbbEns0-s";
 const imageBaseURL = `https://api.unsplash.com/search/photos?page=1&per_page=20&client_id=${imageApiKey}`;

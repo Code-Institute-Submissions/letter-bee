@@ -15,7 +15,7 @@ $(".discover--letter--circle").click(function() {
     $("#discover--answer--letter").text(selectedLetter);
     $("#discover--answer").css("display", "block");
     $("#discover--letters").css("display", "none");
-    $("#discover--question").html(`How many things can you find that begin with the letter ${selectedLetter}?`);
+    $("#discover--prompt").html(`How many things can you find that begin with the letter ${selectedLetter}?`);
 })
 
 /* Select an answer */
@@ -31,7 +31,7 @@ $(".discover--answer--select").click(function() {
 })
 
 function discoverReset() {
-    $("#discover--question").html(`Pick a letter...`);
+    $("#discover--prompt").html(`Pick a letter...`);
     $(".discover--answer--select").removeClass("discover--answer--selected");
     $("#discover--answer").css("display", "none");
     $("#discover--letters").css("display", "block");

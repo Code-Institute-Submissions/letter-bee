@@ -64,7 +64,7 @@ const imageBaseURL = `https://api.unsplash.com/search/photos?page=1&per_page=20&
 function getImage(searchTerm, cb) {
     let xhr = new XMLHttpRequest();
 
-    xhr.open("GET", imageBaseURL + "&query=" + searchTerm);
+    xhr.open("GET", imageBaseURL + "&query=" + searchTerm + "&content_filter=high");
     xhr.send();
 
     xhr.onreadystatechange = function() {
@@ -81,6 +81,11 @@ function writeToDocument(searchTerm) {
         console.log(data.results.length);
         let dataImage = data.results[randomResult].urls.small;
         $("#explore--image").html(`<img src="${dataImage}" alt=""/>`);
+        let dataUser = data.results[randomResult].user.name;
+        let dataUserName = data.results[randomResult].user.username;
+        let appName = "Letter Bee"
+        $("#explore--image--credit").html(`Photo by <a href="https://unsplash.com/@${dataUserName}?utm_source=your_app_name&utm_medium=referral" target="_blank">${dataUser}</a> on <a href="https://unsplash.com/?utm_source=${appName}&utm_medium=referral" target="_blank">Unsplash</a>`);
+        $("#explore--image--credit").css("font-size", "0.8rem");
     });
 }
 

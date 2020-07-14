@@ -256,6 +256,28 @@ button:focus {
 
 /* Modals */
 
+#explore--selected--word {
+    text-align: center;
+    font-weight: 600;
+}
+
+#explore--image {
+    text-align: center;
+    margin: 1rem;
+}
+
+#explore--image > img {
+    max-width: 50%;
+    object-fit: contain;
+    border: 2px solid #333;
+  border-radius: 10px;
+}
+
+#explore--image--credit {
+    font-size: 0.8 rem;
+    text-align: center;
+}
+
 .modal-content {
   background-color: #c8b9d8;
   border: 2px solid #333;

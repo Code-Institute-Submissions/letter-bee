@@ -213,6 +213,9 @@ So, I decided to use two separate APIs to fullfil my requirements:
 * Full screen 
     * Code for changing to full screen layout taken from [W3schools](https://www.w3schools.com/howto/howto_js_fullscreen.asp)
 
+* Word resizing
+    * As word length on the 'Explore' page is undetermined, it was necessary to find a way to dynamically resize the font according to word length. Solution was taken from [here.](https://codepen.io/jsstrn/pen/mMMmZB)
+
 ### :bug: Bugs
 ---
 The first major bug encountered caused an 'on click' build up. When the function was called to display the next letter, it would first be called once, and then on the next click it would be called twice and then three times...

@@ -18,6 +18,29 @@ $(".explore--letter--circle").click(function() {
     $("#explore--prompt").text(`Here are some words that start with the letter ${selectedLetter}`)
 })
 
+/* Display word info */
+$(".explore--answer--select").click(function() {
+    let selectedWord = $(this).text();
+    generateWordModal(selectedWord);
+    $("#explore--word--modal").modal({
+        backdrop: 'static',
+        keyboard: false
+      });
+})
+
+function generateWordModal(selectedWord) {
+    $("#explore--selected--word").text(selectedWord);
+    writeToDocument(selectedWord);
+}
+
+/* Return to main display */
+function exploreReset() {
+    $("#explore--answer").css("display", "none");
+    $("#explore--words").css("display", "none");
+    $("#explore--letters").css("display", "block");
+    $("#explore--prompt").text(`Pick a letter...`)
+}
+
 const getFontSize = (textLength) => {
   const baseSize = 9
   if (textLength >= baseSize) {
@@ -54,21 +77,19 @@ function getImage(searchTerm, cb) {
 function writeToDocument(searchTerm) {
     getImage(searchTerm, function(data) {
         console.dir(data);
-        let dataImage = data.results[0].urls.small;
+        let randomResult = randomiseArray(1, data.results.length, 0);
+        console.log(data.results.length);
+        let dataImage = data.results[randomResult].urls.small;
         $("#explore--image").html(`<img src="${dataImage}" alt=""/>`);
     });
 }
 
-$(".explore--answer--select").click(function() {
-    $("#explore--word--modal").modal({
-        backdrop: 'static',
-        keyboard: false
-      });
-})
-
-function exploreReset() {
-    $("#explore--answer").css("display", "none");
-    $("#explore--words").css("display", "none");
-    $("#explore--letters").css("display", "block");
-    $("#explore--prompt").text(`Pick a letter...`)
-}
+function randomiseArray(arrayLength, arrayRange,
+  increaserValue) { //Used in several places to create a randomised array of varying length and range
+    let randomArray = [];
+    while (randomArray.length < arrayLength) {
+      let r = Math.floor(Math.random() * arrayRange) + increaserValue;
+      if (randomArray.indexOf(r) === -1) randomArray.push(r);
+    };
+    return randomArray;
+  }

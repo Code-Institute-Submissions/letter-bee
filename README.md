@@ -187,7 +187,12 @@ So, I decided to use two separate APIs to fullfil my requirements:
 1. xxx for the words/definition/pronunciation
 2. [Unsplash](https://unsplash.com/developers) for the associated images
 
+**Unsplash API**
 
+The Unsplash API requires an API key which I registered for.\
+Requests are currently limited to 50 per hour whilst in the development stage. This can be increased to 5,000 when in production.
+
+[The API guidelines](https://help.unsplash.com/en/articles/2511245-unsplash-api-guidelines) require photo credit to be displayed under all images. This has been placed at the bottom of the modal on the Explore page.
 
 ### :computer: External sources used
 ---

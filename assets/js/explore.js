@@ -79,13 +79,20 @@ function writeToDocument(searchTerm) {
         console.dir(data);
         let randomResult = randomiseArray(1, data.results.length, 0);
         console.log(data.results.length);
+        if(data.results.length == 0) {
+            $("#explore--image").css("display", "none");
+            $("#explore--image--credit").css("display", "none");
+        } else {
         let dataImage = data.results[randomResult].urls.small;
+        $("#explore--image").css("display", "block");
+            $("#explore--image--credit").css("display", "block");
         $("#explore--image").html(`<img src="${dataImage}" alt=""/>`);
         let dataUser = data.results[randomResult].user.name;
         let dataUserName = data.results[randomResult].user.username;
         let appName = "Letter Bee"
         $("#explore--image--credit").html(`Photo by <a href="https://unsplash.com/@${dataUserName}?utm_source=your_app_name&utm_medium=referral" target="_blank">${dataUser}</a> on <a href="https://unsplash.com/?utm_source=${appName}&utm_medium=referral" target="_blank">Unsplash</a>`);
         $("#explore--image--credit").css("font-size", "0.8rem");
+        };
     });
 }
 

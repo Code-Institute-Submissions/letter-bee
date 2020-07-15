@@ -184,8 +184,22 @@ As it turns out, this doesn't exist!
 
 So, I decided to use two separate APIs to fullfil my requirements:
 
-1. xxx for the words/definition/pronunciation
+1. [Wordnik](https://developer.wordnik.com/) for the words/definition/pronunciation
 2. [Unsplash](https://unsplash.com/developers) for the associated images
+
+**Worknik API**
+
+Whilst I managed to find an API that fit my criteria, I found that I had overestimated the capability of any dictionary APIs that exist (with regards to my need to generate random words that match the selected letter).\
+Worknik does have a wildcard search function that allows you to search for 'words beginning with' but it's not possible to randomise them (and to do this myself I would need to return **every** word beginning with the selected letter first, which runs into thousands).
+It also has a random word function, but it is not possible to specify a starting letter.
+
+As an initial solution, I created a function that called the random word, checked if it began with the selected letter and then either pushed to my array, or re-ran the random word function. This approach very quickly used up my API request quota for the day!!
+
+After a great deal of frustration and some more searching online for the 'perfect' dictionary API, I decided upon my second solution...
+
+The main Worknik site has an option for a user to create their own word list. So, I created lists for each letter of the alphabet using words that I am happy are appropriate for the age group that Letter Bee is aimed at.\
+Whilst this solution means that I am not able to offer the full dictionary to the user, I have included a wide variety of words for each letter (ranging from 21 words for low frequency letters, to 300 words for high frequency letters).
+It's not perfect, but I feel that I have found the best available workaround for the problem.
 
 **Unsplash API**
 

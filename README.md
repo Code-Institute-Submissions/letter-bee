@@ -198,6 +198,7 @@ As an initial solution, I created a function that called the random word, checke
 After a great deal of frustration and some more searching online for the 'perfect' dictionary API, I decided upon my second solution...
 
 The main Worknik site has an option for a user to create their own word list. So, I created lists for each letter of the alphabet using words that I am happy are appropriate for the age group that Letter Bee is aimed at.\
+(Lists were created in part using an [online resource for primary children](http://www.primaryresources.co.uk/english/docs/phonics_and_spelling_programme.doc))
 Whilst this solution means that I am not able to offer the full dictionary to the user, I have included a wide variety of words for each letter (ranging from 21 words for low frequency letters, to 300 words for high frequency letters).
 It's not perfect, but I feel that I have found the best available workaround for the problem.
 

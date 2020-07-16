@@ -100,8 +100,21 @@ function exploreReset() {
     $("#explore--answer").css("display", "none");
     $("#explore--words").css("display", "none");
     $("#explore--letters").css("display", "block");
-    $("#explore--prompt").text(`Pick a letter...`)
+    $("#explore--prompt").text(`Pick a letter...`);
+    exploreLetterBee.exploreWordArray = [];
+    exploreLetterBee.exploreWordObject = {};
+    $(".explore--answer--select span").text("");
 }
+
+$("#explore--word--modal").on('hidden.bs.modal', function () {
+    $("#explore--selected--word").text("");
+    $("#explore--image").html("");
+    $("#explore--definition").text("");
+    $("#explore--example").text("");
+    $("#explore--pronunciation").text("");
+
+
+});
 
 /* Get words to match selected letter */
 

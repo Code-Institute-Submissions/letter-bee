@@ -12,14 +12,6 @@ $(document).ready(function() {
 let exploreLetterBee = {
     exploreSelectedLetter: "A",
     exploreWordArray: [],
-    addWordToArray: function(generatedWord) {
-        if ($.inArray(generatedWord, exploreLetterBee.exploreWordArray) == -1) {
-                exploreLetterBee.exploreWordArray.push(generatedWord);
-                console.log(exploreLetterBee.exploreWordArray);
-            }
-            generateMatchingWords(this.exploreSelectedLetter);
-        
-    },
     exploreLetterFrequency: {
         A: 7,
         B: 4,
@@ -49,6 +41,18 @@ let exploreLetterBee = {
         Z: 1.74 
         
 
+    },
+    addWordToArray: function(generatedWord) {
+        if ($.inArray(generatedWord, this.exploreWordArray) == -1) {
+                this.exploreWordArray.push(generatedWord);
+                this.displayWordArray(generatedWord);
+            }
+            generateMatchingWords(this.exploreSelectedLetter);
+        
+    },
+    displayWordArray: function(generatedWord) {
+        let displayDivID = this.exploreWordArray.length;
+        $(`#explore--answer${displayDivID}--display`).text(generatedWord);
     }
 
 }

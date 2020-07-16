@@ -9,16 +9,67 @@ $(document).ready(function() {
   $("#explore--words").css("display", "none");
 });
 
-/* Show associated words */
+let exploreLetterBee = {
+    exploreSelectedLetter: "A",
+    exploreWordArray: [],
+    addWordToArray: function(generatedWord) {
+        if ($.inArray(generatedWord, exploreLetterBee.exploreWordArray) == -1) {
+                exploreLetterBee.exploreWordArray.push(generatedWord);
+                console.log(exploreLetterBee.exploreWordArray);
+            }
+            generateMatchingWords(this.exploreSelectedLetter);
+        
+    },
+    exploreLetterFrequency: {
+        A: 7,
+        B: 4,
+        C: 5,
+        D: 3,
+        E: 2.5,
+        F: 4,
+        G: 1.5,
+        H: 4,
+        I: 7,
+        J: 1.74,
+        K: 1.74,
+        L: 2,
+        M: 3.5,
+        N: 2,
+        O: 7.5,
+        P: 4,
+        Q: 1.74,
+        R: 2.5,
+        S: 6.5,
+        T: 7,
+        U: 1.74,
+        V: 1.74,
+        W: 5,
+        X: 1.74,
+        Y: 1.74,
+        Z: 1.74 
+        
+
+    }
+
+}
+
+
+
+
+/* Show associated words div */
 $(".explore--letter--circle").click(function() {
-    let selectedLetter = $(this).text();
+    let exploreSelectedLetterUpper = $(this).text();
+    exploreLetterBee.exploreSelectedLetter = $(this).text().toLowerCase();
     $("#explore--answer").css("display", "block");
     $("#explore--words").css("display", "block");
     $("#explore--letters").css("display", "none");
-    $("#explore--prompt").text(`Here are some words that start with the letter ${selectedLetter}`)
+    $("#explore--prompt").text(`Here are some words that start with the letter ${exploreSelectedLetterUpper}`);
+    generateMatchingWords(exploreLetterBee.exploreSelectedLetter, exploreLetterBee.exploreLetterFrequency[exploreSelectedLetterUpper]);
 })
 
-/* Display word info */
+
+
+/* Display word info in modal */
 $(".explore--answer--select").click(function() {
     let selectedWord = $(this).text();
     generateWordModal(selectedWord);
@@ -28,9 +79,10 @@ $(".explore--answer--select").click(function() {
       });
 })
 
+/* Generate info for modal */
 function generateWordModal(selectedWord) {
     $("#explore--selected--word").text(selectedWord);
-    writeToDocument(selectedWord);
+    imageToModal(selectedWord);
 }
 
 /* Return to main display */
@@ -56,6 +108,40 @@ boxes.forEach(box => {
   box.style.fontSize = getFontSize(box.textContent.length)
 })
 
+/* Get words to match selected letter */
+
+const wordApiKey = "00cc2aad74msh9a52d2b17888115p125f78jsn7ee17790cb1d";
+const wordBaseURL = `https://wordsapiv1.p.rapidapi.com/words/`;
+
+function getMatchingWords(selectedLetter, selectedLetterFrequency, cb) {
+    let xhr = new XMLHttpRequest();
+
+    xhr.open("GET", wordBaseURL + "?letterPattern=^" + selectedLetter + "&frequencyMin=" + selectedLetterFrequency + "&hasDetails=definitions,examples," + "&random=true");
+    xhr.setRequestHeader("x-rapidapi-host", "wordsapiv1.p.rapidapi.com");
+    xhr.setRequestHeader("x-rapidapi-key", wordApiKey);
+    xhr.send();
+
+    xhr.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        cb(JSON.parse(this.responseText));
+    }
+};
+}
+
+function generateMatchingWords(selectedLetter, selectedLetterFrequency) {
+    if(exploreLetterBee.exploreWordArray.length <= 7){
+    getMatchingWords(selectedLetter, selectedLetterFrequency, function(data) {
+        console.dir(data);
+        let generatedWord = data.word;
+        exploreLetterBee.addWordToArray(generatedWord);
+    });
+    } else {
+        return
+    };
+}
+
+
+
 /* Get image for selected word */
 const imageApiKey = "IlStjFvGDrc0UG55OCg_DK7JqauGBhBuX5gbbEns0-s";
 const imageBaseURL = `https://api.unsplash.com/search/photos?page=1&per_page=20&client_id=${imageApiKey}`;
@@ -74,7 +160,7 @@ function getImage(searchTerm, cb) {
 };
 }
 
-function writeToDocument(searchTerm) {
+function imageToModal(searchTerm) {
     getImage(searchTerm, function(data) {
         console.dir(data);
         let randomResult = randomiseArray(1, data.results.length, 0);
@@ -96,8 +182,10 @@ function writeToDocument(searchTerm) {
     });
 }
 
+
+/* Used in several places to create a randomised array of varying length and range */
 function randomiseArray(arrayLength, arrayRange,
-  increaserValue) { //Used in several places to create a randomised array of varying length and range
+  increaserValue) { 
     let randomArray = [];
     while (randomArray.length < arrayLength) {
       let r = Math.floor(Math.random() * arrayRange) + increaserValue;

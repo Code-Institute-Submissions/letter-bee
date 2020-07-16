@@ -234,7 +234,7 @@ Requests are currently limited to 50 per hour whilst in the development stage. T
     * Code for changing to full screen layout taken from [W3schools](https://www.w3schools.com/howto/howto_js_fullscreen.asp)
 
 * Word resizing
-    * As word length on the 'Explore' page is undetermined, it was necessary to find a way to dynamically resize the font according to word length. Solution was taken from [here.](https://codepen.io/jsstrn/pen/mMMmZB)
+    * As word length on the 'Explore' page is undetermined, it was necessary to find a way to dynamically resize the font according to word length. Solution was taken from [here,](https://jquery-textfill.github.io/) with additional [JS file](assets/js/jquery.textfill.js) used. 
 
 ### :bug: Bugs
 ---

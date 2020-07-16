@@ -43,10 +43,12 @@ let exploreLetterBee = {
 
     },
     addWordToArray: function(generatedWord) {
+        if(generatedWord !== undefined){
         if ($.inArray(generatedWord, this.exploreWordArray) == -1) {
                 this.exploreWordArray.push(generatedWord);
                 this.displayWordArray(generatedWord);
             }
+        }
             generateMatchingWords(this.exploreSelectedLetter);
         
     },
@@ -77,7 +79,7 @@ $(".explore--letter--circle").click(function() {
 
 /* Display word info in modal */
 $(".explore--answer--select").click(function() {
-    let selectedWord = $(this).text();
+    let selectedWord = $(this).text().trim();
     generateWordModal(selectedWord);
     $("#explore--word--modal").modal({
         backdrop: 'static',
@@ -87,8 +89,9 @@ $(".explore--answer--select").click(function() {
 
 /* Generate info for modal */
 function generateWordModal(selectedWord) {
-    $("#explore--selected--word").text(selectedWord);
+    $("#explore--selected--word").text(selectedWord).css("text-transform", "capitalize");
     imageToModal(selectedWord);
+    wordDefinitionToModal(selectedWord);
 }
 
 /* Return to main display */
@@ -122,7 +125,6 @@ function getMatchingWords(selectedLetter, selectedLetterFrequency, cb) {
 function generateMatchingWords(selectedLetter, selectedLetterFrequency) {
     if(exploreLetterBee.exploreWordArray.length <= 7){
     getMatchingWords(selectedLetter, selectedLetterFrequency, function(data) {
-        console.dir(data);
         let generatedWord = data.word;
         exploreLetterBee.addWordToArray(generatedWord);
     });
@@ -131,6 +133,28 @@ function generateMatchingWords(selectedLetter, selectedLetterFrequency) {
     };
 }
 
+/* Get data for selected word */
+function getWordDefinition(searchTerm, cb) {
+    let xhr = new XMLHttpRequest();
+
+    xhr.open("GET", wordBaseURL + searchTerm + "/definitions");
+    xhr.setRequestHeader("x-rapidapi-host", "wordsapiv1.p.rapidapi.com");
+    xhr.setRequestHeader("x-rapidapi-key", wordApiKey);
+    xhr.send();
+
+    xhr.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        cb(JSON.parse(this.responseText));
+    }
+};
+}
+
+function wordDefinitionToModal(searchTerm) {
+    getWordDefinition(searchTerm, function(data) {
+        let wordDefinition = data.definitions[0].definition;
+        $("#explore--definition").text(wordDefinition);        
+    });
+}
 
 
 /* Get image for selected word */
@@ -153,9 +177,7 @@ function getImage(searchTerm, cb) {
 
 function imageToModal(searchTerm) {
     getImage(searchTerm, function(data) {
-        console.dir(data);
         let randomResult = randomiseArray(1, data.results.length, 0);
-        console.log(data.results.length);
         if(data.results.length == 0) {
             $("#explore--image").css("display", "none");
             $("#explore--image--credit").css("display", "none");

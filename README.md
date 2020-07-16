@@ -184,23 +184,23 @@ As it turns out, this doesn't exist!
 
 So, I decided to use two separate APIs to fullfil my requirements:
 
-1. [Wordnik](https://developer.wordnik.com/) for the words/definition/pronunciation
+1. [WordsAPI](https://rapidapi.com/dpventures/api/wordsapi) for the words/definition/pronunciation
 2. [Unsplash](https://unsplash.com/developers) for the associated images
 
-**Worknik API**
+**WordsAPI**
 
-Whilst I managed to find an API that fit my criteria, I found that I had overestimated the capability of any dictionary APIs that exist (with regards to my need to generate random words that match the selected letter).\
-Worknik does have a wildcard search function that allows you to search for 'words beginning with' but it's not possible to randomise them (and to do this myself I would need to return **every** word beginning with the selected letter first, which runs into thousands).
-It also has a random word function, but it is not possible to specify a starting letter.
+Whilst I managed to find an API that fit my criteria, it took a great deal of further trial and error to find one that fit. I spent quite some time creating the functionality needed using the [Wordnik API](https://developer.wordnik.com/). I had almost finalised a working solution when I discovered that many of the endpoints described in the documentation have actually been deprecated. So, it was back to the drawing board and I settled on using WordsAPI.
 
-As an initial solution, I created a function that called the random word, checked if it began with the selected letter and then either pushed to my array, or re-ran the random word function. This approach very quickly used up my API request quota for the day!!
+The key feature in this API is its ability to generate a random word that starts with a given letter. Other parameters that were included in the search function are:
 
-After a great deal of frustration and some more searching online for the 'perfect' dictionary API, I decided upon my second solution...
+* frequencyMin
+    * This optional parameter allows you to specify a value between 1.74 and 8.03 in order to generate words that are seen less or more frequently, respectively.\
+     Initially I set this to a value of '7' (as I wanted easily recognisable words). However, this quickly caused issues as searching for words beginning with 'X' with this minimum frequency created an infinite loop, as there are no letter X words with such a high frequency!\
+    To solve this, I added additional key/value pairs to specify the minimum frequency for each letter. Values were chosen using the [Wikipedia entry on letter frequency](https://en.wikipedia.org/wiki/Letter_frequency).
+    ![Letter Frequency](/wireframes/letter-frequency.jpg)
 
-The main Worknik site has an option for a user to create their own word list. So, I created lists for each letter of the alphabet using words that I am happy are appropriate for the age group that Letter Bee is aimed at.\
-(Lists were created in part using an [online resource for primary children](http://www.primaryresources.co.uk/english/docs/phonics_and_spelling_programme.doc))
-Whilst this solution means that I am not able to offer the full dictionary to the user, I have included a wide variety of words for each letter (ranging from 21 words for low frequency letters, to 300 words for high frequency letters).
-It's not perfect, but I feel that I have found the best available workaround for the problem.
+*  hasDetails
+    * This optional parameter has several possible values. I chose to only generate words that have an associated definition and example of usage.
 
 **Unsplash API**
 

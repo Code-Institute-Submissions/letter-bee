@@ -12,6 +12,7 @@ $(document).ready(function() {
 let exploreLetterBee = {
     exploreSelectedLetter: "A",
     exploreWordArray: [],
+    exploreWordObject: {},
     exploreLetterFrequency: {
         A: 7,
         B: 4,
@@ -44,8 +45,9 @@ let exploreLetterBee = {
     },
     addWordToArray: function(generatedWord) {
         if(generatedWord !== undefined){
-        if ($.inArray(generatedWord, this.exploreWordArray) == -1) {
-                this.exploreWordArray.push(generatedWord);
+        if ($.inArray(generatedWord[0], this.exploreWordArray) == -1) {
+                this.exploreWordArray.push(generatedWord[0]);
+                this.exploreWordObject[generatedWord[0]] = {definition: generatedWord[1], example: generatedWord[2]};
                 this.displayWordArray(generatedWord);
             }
         }
@@ -54,7 +56,7 @@ let exploreLetterBee = {
     },
     displayWordArray: function(generatedWord) {
         let displayDivID = this.exploreWordArray.length;
-        $(`#explore--answer${displayDivID}--display span`).text(generatedWord).css("text-transform", "capitalize");
+        $(`#explore--answer${displayDivID}--display span`).text(generatedWord[0]).css("text-transform", "capitalize");
 
         $(`#explore--answer${displayDivID}--display`).textfill();
     }
@@ -90,8 +92,7 @@ $(".explore--answer--select").click(function() {
 /* Generate info for modal */
 function generateWordModal(selectedWord) {
     $("#explore--selected--word").text(selectedWord).css("text-transform", "capitalize");
-    imageToModal(selectedWord);
-    wordDefinitionToModal(selectedWord);
+    wordDataToModal(selectedWord);
 }
 
 /* Return to main display */
@@ -110,7 +111,7 @@ const wordBaseURL = `https://wordsapiv1.p.rapidapi.com/words/`;
 function getMatchingWords(selectedLetter, selectedLetterFrequency, cb) {
     let xhr = new XMLHttpRequest();
 
-    xhr.open("GET", wordBaseURL + "?letterPattern=^" + selectedLetter + "&frequencyMin=" + selectedLetterFrequency + "&hasDetails=definitions,examples," + "&random=true");
+    xhr.open("GET", wordBaseURL + "?letterPattern=^" + selectedLetter + "&frequencyMin=" + selectedLetterFrequency + "&hasDetails=definitions" + "&random=true");
     xhr.setRequestHeader("x-rapidapi-host", "wordsapiv1.p.rapidapi.com");
     xhr.setRequestHeader("x-rapidapi-key", wordApiKey);
     xhr.send();
@@ -126,7 +127,14 @@ function generateMatchingWords(selectedLetter, selectedLetterFrequency) {
     if(exploreLetterBee.exploreWordArray.length <= 7){
     getMatchingWords(selectedLetter, selectedLetterFrequency, function(data) {
         let generatedWord = data.word;
-        exploreLetterBee.addWordToArray(generatedWord);
+        let generatedDefinition = data.results[0].definition;
+        let generatedExample;
+        if(data.results[0].hasOwnProperty("examples")){
+        generatedExample = data.results[0].examples[0];
+        } else {
+            generatedExample = "null";
+        };
+        exploreLetterBee.addWordToArray([generatedWord, generatedDefinition, generatedExample]);
     });
     } else {
         return
@@ -134,26 +142,19 @@ function generateMatchingWords(selectedLetter, selectedLetterFrequency) {
 }
 
 /* Get data for selected word */
-function getWordDefinition(searchTerm, cb) {
-    let xhr = new XMLHttpRequest();
 
-    xhr.open("GET", wordBaseURL + searchTerm + "/definitions");
-    xhr.setRequestHeader("x-rapidapi-host", "wordsapiv1.p.rapidapi.com");
-    xhr.setRequestHeader("x-rapidapi-key", wordApiKey);
-    xhr.send();
-
-    xhr.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        cb(JSON.parse(this.responseText));
-    }
-};
-}
-
-function wordDefinitionToModal(searchTerm) {
-    getWordDefinition(searchTerm, function(data) {
-        let wordDefinition = data.definitions[0].definition;
-        $("#explore--definition").text(wordDefinition);        
-    });
+function wordDataToModal(searchTerm) {
+        
+        let wordDefinition = exploreLetterBee.exploreWordObject[searchTerm].definition;
+        let wordExample = exploreLetterBee.exploreWordObject[searchTerm].example;
+        $("#explore--definition").text(wordDefinition);
+        if(wordExample == "null"){
+            $("#explore--example").parent().css("display", "none");
+        } else {
+        $("#explore--example").parent().css("display", "block");    
+        $("#explore--example").text(wordExample);
+        };
+        imageToModal(wordDefinition); 
 }
 
 

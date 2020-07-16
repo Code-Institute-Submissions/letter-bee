@@ -52,7 +52,9 @@ let exploreLetterBee = {
     },
     displayWordArray: function(generatedWord) {
         let displayDivID = this.exploreWordArray.length;
-        $(`#explore--answer${displayDivID}--display`).text(generatedWord);
+        $(`#explore--answer${displayDivID}--display span`).text(generatedWord).css("text-transform", "capitalize");
+
+        $(`#explore--answer${displayDivID}--display`).textfill();
     }
 
 }
@@ -96,21 +98,6 @@ function exploreReset() {
     $("#explore--letters").css("display", "block");
     $("#explore--prompt").text(`Pick a letter...`)
 }
-
-const getFontSize = (textLength) => {
-  const baseSize = 9
-  if (textLength >= baseSize) {
-    textLength = baseSize - 2
-  }
-  const fontSize = baseSize - textLength
-  return `${fontSize}vw`
-}
-
-const boxes = document.querySelectorAll('.explore--answer--select p')
-  
-boxes.forEach(box => {
-  box.style.fontSize = getFontSize(box.textContent.length)
-})
 
 /* Get words to match selected letter */
 

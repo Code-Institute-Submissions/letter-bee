@@ -515,7 +515,7 @@ button:focus {
     line-height: 14rem;
 }
 
-.explore--answer--select p {
+.explore--answer--select span {
     line-height: 6rem;
 }
 
@@ -581,7 +581,7 @@ button:focus {
     line-height: 6.8rem;
 }
 
-  .explore--answer--select p {
+  .explore--answer--select span {
       line-height: 3rem;
   }
 

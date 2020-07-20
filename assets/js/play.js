@@ -93,14 +93,16 @@ let playLetterBee = {
     return this.letterToDisplay;
   },
   removeLetterPerm: function(
-  letterDisplayed) { //Removes letter that has been played from the playing set
+    letterDisplayed
+    ) { //Removes letter that has been played from the playing set
     let removeLetterPerm = this.playAlphabetSet.indexOf(letterDisplayed);
     this.playAlphabetSet.splice(removeLetterPerm, 1);
 
     return this;
   },
   randomiseArray: function(arrayLength, arrayRange,
-  increaserValue) { //Used in several places to create a randomised array of varying length and range
+    increaserValue
+    ) { //Used in several places to create a randomised array of varying length and range
     let randomArray = [];
     while (randomArray.length < arrayLength) {
       let r = Math.floor(Math.random() * arrayRange) + increaserValue;
@@ -110,7 +112,8 @@ let playLetterBee = {
   },
 
   createAlphabetDistractors: function(
-  letterDisplayed) { //Randomly chooses the distractor letters for the game
+    letterDisplayed
+    ) { //Randomly chooses the distractor letters for the game
     let tempAlphabetSet = masterPlayData.alphabetMaster.slice();
     let removeLetterTemp = tempAlphabetSet.indexOf(letterDisplayed);
     tempAlphabetSet.splice(removeLetterTemp, 1);
@@ -139,7 +142,7 @@ let playLetterBee = {
     return this;
   },
   playImagesValues: function(keyLetter,
-  distractorLetters) { //Sets the values for each image to be displayed - 
+    distractorLetters) { //Sets the values for each image to be displayed - 
 
     let letterVar1 = `letter${keyLetter}`;
     let lowerLetter = masterPlayData.lettersMaster[letterVar1].lowerLetter;
@@ -174,7 +177,7 @@ let playLetterBee = {
   },
   displayImages: function(lowerLetter, divArray, word2, word3, word4, image1,
     image2, image3, image4
-    ) { //Displays the images chosen in the previous method in a random div
+  ) { //Displays the images chosen in the previous method in a random div
 
     $(`#play--letter--lower`).html(lowerLetter);
     $(`#play--word${divArray[0]}--display`).html(this.correctAnswer);
@@ -183,16 +186,16 @@ let playLetterBee = {
     $(`#play--word${divArray[3]}--display`).html(word4);
     $(`#play--image${divArray[0]}--display`).html(
       `<img class="play--image" src="assets/images/letters/${image1}" alt="${this.correctAnswer}"/>`
-      );
+    );
     $(`#play--image${divArray[1]}--display`).html(
       `<img class="play--image" src="assets/images/letters/${image2}" alt="${word2}"/>`
-      );
+    );
     $(`#play--image${divArray[2]}--display`).html(
       `<img class="play--image" src="assets/images/letters/${image3}" alt="${word3}"/>`
-      );
+    );
     $(`#play--image${divArray[3]}--display`).html(
       `<img class="play--image" src="assets/images/letters/${image4}" alt="${word4}"/>`
-      );
+    );
 
     if (this.playNumberOfOptions == 4) {
       $("#play--image4--display").show();
@@ -224,30 +227,31 @@ $("#play--all").click(function() { //Selects the full 26 letter set
 })
 
 $(".play--letter--select").click(
-function() { //Removes unwanted letters from the play set
-  let checkedLetter = $(this).val();
-  if ($(".play--letter--select:checked").length == $(
-      ".play--letter--select").length) {
-    $("#play--all").prop("checked", true);
-  } else {
-    $("#play--all").prop("checked", false);
-  };
-  if ($.inArray(checkedLetter, playLetterBee.playAlphabetSet) > -1) {
-    let removeLetterPerm = playLetterBee.playAlphabetSet.indexOf(
-      checkedLetter);
-    playLetterBee.playAlphabetSet.splice(removeLetterPerm, 1);
-    playLetterBee.updateLettersRemaining();
-    $(this).prop("checked", false);
-  } else {
-    playLetterBee.playAlphabetSet.push(checkedLetter);
-    playLetterBee.playAlphabetSet.sort();
-    playLetterBee.updateLettersRemaining();
-    $(this).prop("checked", true);
-  };
-})
+  function() { //Removes unwanted letters from the play set
+    let checkedLetter = $(this).val();
+    if ($(".play--letter--select:checked").length == $(
+        ".play--letter--select").length) {
+      $("#play--all").prop("checked", true);
+    } else {
+      $("#play--all").prop("checked", false);
+    };
+    if ($.inArray(checkedLetter, playLetterBee.playAlphabetSet) > -1) {
+      let removeLetterPerm = playLetterBee.playAlphabetSet.indexOf(
+        checkedLetter);
+      playLetterBee.playAlphabetSet.splice(removeLetterPerm, 1);
+      playLetterBee.updateLettersRemaining();
+      $(this).prop("checked", false);
+    } else {
+      playLetterBee.playAlphabetSet.push(checkedLetter);
+      playLetterBee.playAlphabetSet.sort();
+      playLetterBee.updateLettersRemaining();
+      $(this).prop("checked", true);
+    };
+  })
 
 function amendLetterInput(
-learntArrayFromLearn) { //Amends letter array using values brought over from play page
+  learntArrayFromLearn
+  ) { //Amends letter array using values brought over from play page
   if (learntArrayFromLearn.length >= 1) {
     if (learntArrayFromLearn.length == 26) {
       $("#play--all").prop("checked", true);
@@ -264,7 +268,7 @@ learntArrayFromLearn) { //Amends letter array using values brought over from pla
     };
   };
   window.history.replaceState({}, document.title, "/" +
-  "play.html"); //Removes substring from URL
+    "play.html"); //Removes substring from URL
 }
 
 function checkLetterInput() { //Recheck checked letters for 'play again'
@@ -287,11 +291,11 @@ function checkLetterInput() { //Recheck checked letters for 'play again'
 }
 
 $(".play--options--select").click(
-function() { //Updates the number of options to be shown
-  playLetterBee.playNumberOfOptions = parseInt($(this).val());
-  playLetterBee.playImagesValues(playLetterBee.letterToDisplay,
-    playLetterBee.playAlphabetDistractors);
-})
+  function() { //Updates the number of options to be shown
+    playLetterBee.playNumberOfOptions = parseInt($(this).val());
+    playLetterBee.playImagesValues(playLetterBee.letterToDisplay,
+      playLetterBee.playAlphabetDistractors);
+  })
 
 $('audio').prop("muted", false)
 
@@ -394,18 +398,18 @@ function playCorrectAudio() {
     resetDisplay();
     playLetterBee.checkPlayProgress();
     $(".play--image--select").click(
-  function() { // To turn click event back on
-      let imageID = this.id.match(/\d+/)[0];
-      $(`#play--word${imageID}--display`).css("visibility", "visible");
-      $(`#play--answer`).css("visibility", "visible");
-      let imageValue = $(this).children("img").attr("alt")
-    .toUpperCase();
-      if (imageValue.startsWith(playLetterBee.letterToDisplay)) {
-        correctSelected(this);
-      } else {
-        incorrectSelected(this);
-      };
-    })
+      function() { // To turn click event back on
+        let imageID = this.id.match(/\d+/)[0];
+        $(`#play--word${imageID}--display`).css("visibility", "visible");
+        $(`#play--answer`).css("visibility", "visible");
+        let imageValue = $(this).children("img").attr("alt")
+          .toUpperCase();
+        if (imageValue.startsWith(playLetterBee.letterToDisplay)) {
+          correctSelected(this);
+        } else {
+          incorrectSelected(this);
+        };
+      })
   });
 }
 
@@ -476,7 +480,7 @@ function incorrectSelected(selectedImage) {
   $("#play--answer").addClass("play--image--incorrect");
   playIncorrectAudio();
   if ($.inArray(playLetterBee.letterToDisplay, playLetterBee
-    .playIncorrectArray) == -1) {
+      .playIncorrectArray) == -1) {
     playLetterBee.playIncorrectArray.push(playLetterBee.letterToDisplay);
     playLetterBee.playIncorrectArray.sort();
   };
@@ -486,13 +490,13 @@ function correctSelected(selectedImage) {
   $(selectedImage).addClass("play--image--correct");
   $("#play--answer").text(
     `That's right! ${playLetterBee.letterToDisplay} is for ${playLetterBee.correctAnswer}`
-    );
+  );
   $("#play--answer").removeClass("play--image--incorrect");
   $("#play--answer").addClass("play--image--correct");
   $(".play--image--select").off("click");
   playCorrectAudio();
   if ($.inArray(playLetterBee.letterToDisplay, playLetterBee
-    .playIncorrectArray) == -1) {
+      .playIncorrectArray) == -1) {
     playLetterBee.playCorrectArray.push(playLetterBee.letterToDisplay);
     playLetterBee.playCorrectArray.sort();
   };
@@ -505,25 +509,25 @@ function goToLearnMode() {
 
 /* Calling functions */
 $("#initialise--play").click(function() {
-    initialisePlay();
+  initialisePlay();
 })
 
 $("#expand--fullscreen--button").click(function() {
-    openFullscreen();
+  openFullscreen();
 })
 
 $("#close--fullscreen--button").click(function() {
-    closeFullscreen();
+  closeFullscreen();
 })
 
 $("#nav--learn").click(function() {
-    goToLearnMode();
+  goToLearnMode();
 })
 
 $("#play--again").click(function() {
-    playAgain();
+  playAgain();
 })
 
 $("#play--restart").click(function() {
-    initialisePlay();
+  initialisePlay();
 })

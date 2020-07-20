@@ -9,53 +9,56 @@ $(document).ready(function() {
 });
 
 let discoverLetterBee = {
-    discoverSelectedLetter: "A",
+  discoverSelectedLetter: "A",
 }
 
 /* Select a letter */
 $(".discover--letter--circle").click(function() {
-    discoverLetterBee.discoverSelectedLetter = $(this).text();
-    $("#discover--answer--letter").text(discoverLetterBee.discoverSelectedLetter);
-    $("#discover--answer").css("display", "block");
-    $("#discover--letters").css("display", "none");
-    $("#discover--prompt").html(`How many things can you find that begin with the letter ${discoverLetterBee.discoverSelectedLetter}?`);
+  discoverLetterBee.discoverSelectedLetter = $(this).text();
+  $("#discover--answer--letter").text(discoverLetterBee
+    .discoverSelectedLetter);
+  $("#discover--answer").css("display", "block");
+  $("#discover--letters").css("display", "none");
+  $("#discover--prompt").html(
+    `How many things can you find that begin with the letter ${discoverLetterBee.discoverSelectedLetter}?`
+    );
 })
 
 /* Select an answer */
 $(".discover--answer--select").click(function() {
-    let selectedNumber = $(this).text();
-    $("#discover--answer--number").text(selectedNumber);
-    $(this).addClass("discover--answer--selected");
-    $(".discover--answer--select").off("click");
-    if (document.fullscreenElement || document.webkitFullscreenElement ||
-        document.mozFullScreenElement) {
-        closeFullscreen();
-      };
-    $("#discover--finished--modal").modal({
-        backdrop: 'static',
-        keyboard: false
-      });
+  let selectedNumber = $(this).text();
+  $("#discover--answer--number").text(selectedNumber);
+  $(this).addClass("discover--answer--selected");
+  $(".discover--answer--select").off("click");
+  if (document.fullscreenElement || document.webkitFullscreenElement ||
+    document.mozFullScreenElement) {
+    closeFullscreen();
+  };
+  $("#discover--finished--modal").modal({
+    backdrop: 'static',
+    keyboard: false
+  });
 })
 
 function discoverReset() {
-    $("#discover--prompt").html(`Pick a letter...`);
-    $(".discover--answer--select").removeClass("discover--answer--selected");
-    $("#discover--answer").css("display", "none");
-    $("#discover--letters").css("display", "block");
-    $(".discover--answer--select").click(function() {
+  $("#discover--prompt").html(`Pick a letter...`);
+  $(".discover--answer--select").removeClass("discover--answer--selected");
+  $("#discover--answer").css("display", "none");
+  $("#discover--letters").css("display", "block");
+  $(".discover--answer--select").click(function() {
     let selectedNumber = $(this).text(); //turn click event back on
     $("#discover--answer--number").text(selectedNumber);
     $(this).addClass("discover--answer--selected");
     $(".discover--answer--select").off("click");
     if (document.fullscreenElement || document.webkitFullscreenElement ||
-        document.mozFullScreenElement) {
-        closeFullscreen();
-      };
+      document.mozFullScreenElement) {
+      closeFullscreen();
+    };
     $("#discover--finished--modal").modal({
-        backdrop: 'static',
-        keyboard: false
-      });
-})
+      backdrop: 'static',
+      keyboard: false
+    });
+  })
 }
 
 /* Full screen mode */
@@ -95,19 +98,20 @@ function closeFullscreen() {
 }
 
 function goToExploreMode() {
-  window.location.href = `explore.html?${discoverLetterBee.discoverSelectedLetter}`;
+  window.location.href =
+    `explore.html?${discoverLetterBee.discoverSelectedLetter}`;
 }
 
 /* Calling functions */
 
 $("#expand--fullscreen--button").click(function() {
-    openFullscreen();
+  openFullscreen();
 })
 
 $("#close--fullscreen--button").click(function() {
-    closeFullscreen();
+  closeFullscreen();
 })
 
 $("#nav--explore").click(function() {
-    goToExploreMode();
+  goToExploreMode();
 })

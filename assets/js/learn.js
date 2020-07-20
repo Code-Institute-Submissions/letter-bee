@@ -80,14 +80,16 @@ let learnLetterBee = {
     return this.letterToDisplay;
   },
   removeLetterPerm: function(
-  letterDisplayed) { //Removes letter that has been learnt from the learning set
+    letterDisplayed
+    ) { //Removes letter that has been learnt from the learning set
     let removeLetterPerm = this.learnAlphabetSet.indexOf(letterDisplayed);
     this.learnAlphabetSet.splice(removeLetterPerm, 1);
 
     return this;
   },
   randomiseArray: function(arrayLength, arrayRange,
-  increaserValue) { //Used in several places to create a randomised array of varying length and range
+    increaserValue
+    ) { //Used in several places to create a randomised array of varying length and range
     let randomArray = [];
     while (randomArray.length < arrayLength) {
       let r = Math.floor(Math.random() * arrayRange) + increaserValue;
@@ -96,7 +98,7 @@ let learnLetterBee = {
     return randomArray;
   },
   learnImagesValues: function(
-  keyLetter) { //Sets the values for each image to be displayed - 
+    keyLetter) { //Sets the values for each image to be displayed - 
 
     let letterVar1 = `letter${keyLetter}`;
     let lowerLetter = masterPlayData.lettersMaster[letterVar1].lowerLetter;
@@ -124,7 +126,7 @@ let learnLetterBee = {
   },
   displayImages: function(lowerLetter, divArray, word1, word2, word3, word4,
     image1, image2, image3, image4
-    ) { //Displays the images chosen in the previous method in a random div
+  ) { //Displays the images chosen in the previous method in a random div
 
     $(`#learn--letter--lower`).html(lowerLetter);
     $(`#learn--word${divArray[0]}--display`).html(word1);
@@ -133,16 +135,16 @@ let learnLetterBee = {
     $(`#learn--word${divArray[3]}--display`).html(word4);
     $(`#learn--image${divArray[0]}--display`).html(
       `<img class="learn--image" src="assets/images/letters/${image1}" alt="${word1}" data="${image1}"/>`
-      );
+    );
     $(`#learn--image${divArray[1]}--display`).html(
       `<img class="learn--image" src="assets/images/letters/${image2}" alt="${word2}" data="${image2}"/>`
-      );
+    );
     $(`#learn--image${divArray[2]}--display`).html(
       `<img class="learn--image" src="assets/images/letters/${image3}" alt="${word3}" data="${image3}"/>`
-      );
+    );
     $(`#learn--image${divArray[3]}--display`).html(
       `<img class="learn--image" src="assets/images/letters/${image4}" alt="${word4}" data="${image4}"/>`
-      );
+    );
 
     if (this.learnNumberOfOptions == 4) {
       $("#learn--image4--display").show();
@@ -174,31 +176,32 @@ $("#learn--all").click(function() { //Selects the full 26 letter set
 })
 
 $(".learn--letter--select").click(
-function() { //Removes unwanted letters from the learn set
-  let checkedLetter = $(this).val();
-  if ($(".learn--letter--select:checked").length == $(
-      ".learn--letter--select").length) {
-    $("#learn--all").prop("checked", true);
-  } else {
-    $("#learn--all").prop("checked", false);
-  };
-  if ($.inArray(checkedLetter, learnLetterBee.learnAlphabetSet) > -1) {
-    let removeLetterPerm = learnLetterBee.learnAlphabetSet.indexOf(
-      checkedLetter);
-    learnLetterBee.learnAlphabetSet.splice(removeLetterPerm, 1);
-    learnLetterBee.updateLettersRemaining();
-    $(this).prop("checked", false);
-  } else {
-    learnLetterBee.learnAlphabetSet.push(checkedLetter);
-    learnLetterBee.learnAlphabetSet.sort();
-    learnLetterBee.updateLettersRemaining();
-    $(this).prop("checked", true);
-  };
-})
+  function() { //Removes unwanted letters from the learn set
+    let checkedLetter = $(this).val();
+    if ($(".learn--letter--select:checked").length == $(
+        ".learn--letter--select").length) {
+      $("#learn--all").prop("checked", true);
+    } else {
+      $("#learn--all").prop("checked", false);
+    };
+    if ($.inArray(checkedLetter, learnLetterBee.learnAlphabetSet) > -1) {
+      let removeLetterPerm = learnLetterBee.learnAlphabetSet.indexOf(
+        checkedLetter);
+      learnLetterBee.learnAlphabetSet.splice(removeLetterPerm, 1);
+      learnLetterBee.updateLettersRemaining();
+      $(this).prop("checked", false);
+    } else {
+      learnLetterBee.learnAlphabetSet.push(checkedLetter);
+      learnLetterBee.learnAlphabetSet.sort();
+      learnLetterBee.updateLettersRemaining();
+      $(this).prop("checked", true);
+    };
+  })
 
 
 function amendLetterInput(
-incorrectArrayFromPlay) { //Amends letter array using values brought over from play page
+  incorrectArrayFromPlay
+  ) { //Amends letter array using values brought over from play page
   if (incorrectArrayFromPlay.length >= 1) {
     if (incorrectArrayFromPlay.length == 26) {
       $("#learn--all").prop("checked", true);
@@ -215,7 +218,7 @@ incorrectArrayFromPlay) { //Amends letter array using values brought over from p
     };
   };
   window.history.replaceState({}, document.title, "/" +
-  "learn.html"); //Removes substring from URL
+    "learn.html"); //Removes substring from URL
 }
 
 function checkLetterInput() { //Recheck checked letters for 'learn again'
@@ -238,10 +241,10 @@ function checkLetterInput() { //Recheck checked letters for 'learn again'
 }
 
 $(".learn--options--select").click(
-function() { //Updates the number of options to be shown
-  learnLetterBee.learnNumberOfOptions = parseInt($(this).val());
-  learnLetterBee.learnImagesValues(learnLetterBee.letterToDisplay);
-})
+  function() { //Updates the number of options to be shown
+    learnLetterBee.learnNumberOfOptions = parseInt($(this).val());
+    learnLetterBee.learnImagesValues(learnLetterBee.letterToDisplay);
+  })
 
 $('audio').prop("muted", false)
 
@@ -396,29 +399,29 @@ function goToPlayMode() {
 
 /* Calling functions */
 $("#expand--fullscreen--button").click(function() {
-    openFullscreen();
+  openFullscreen();
 })
 
 $("#close--fullscreen--button").click(function() {
-    closeFullscreen();
+  closeFullscreen();
 })
 
 $("#learn--next--button").click(function() {
-    learnLetterBee.checkLearnProgress();
+  learnLetterBee.checkLearnProgress();
 })
 
 $("#nav--play").click(function() {
-    goToPlayMode();
+  goToPlayMode();
 })
 
 $("#learn--again").click(function() {
-    learnAgain();
+  learnAgain();
 })
 
 $("#learn--restart").click(function() {
-    initialiseLearn();
+  initialiseLearn();
 })
 
 $("#initialise--learn").click(function() {
-    initialiseLearn();
+  initialiseLearn();
 })

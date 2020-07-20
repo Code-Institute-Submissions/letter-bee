@@ -16,7 +16,6 @@ body {
 }
 
 /* Loader gif */
-/* https://smallenvelop.com/display-loading-icon-page-loads-completely/ */
 .no-js #loader {
   display: none;
 }
@@ -185,11 +184,11 @@ button:focus {
 
 .page--img {
   max-width: 50%;
-    max-height: 50%;
-    border: solid 2px #333;
-    border-radius: 50%;
-    margin-bottom: 30px;
-    width: 50vh;
+  max-height: 50%;
+  border: solid 2px #333;
+  border-radius: 50%;
+  margin-bottom: 30px;
+  width: 50vh;
 }
 
 .page--btn {
@@ -257,25 +256,25 @@ button:focus {
 /* Modals */
 
 #explore--selected--word {
-    text-align: center;
-    font-weight: 600;
+  text-align: center;
+  font-weight: 600;
 }
 
 #explore--image {
-    text-align: center;
-    margin: 1rem;
+  text-align: center;
+  margin: 1rem;
 }
 
-#explore--image > img {
-    max-width: 50%;
-    object-fit: contain;
-    border: 2px solid #333;
+#explore--image>img {
+  max-width: 50%;
+  object-fit: contain;
+  border: 2px solid #333;
   border-radius: 10px;
 }
 
 #explore--image--credit {
-    font-size: 0.8 rem;
-    text-align: center;
+  font-size: 0.8 rem;
+  text-align: center;
 }
 
 .modal-content {
@@ -383,7 +382,7 @@ button:focus {
 }
 
 #close--fullscreen--button {
-    display: none;
+  display: none;
 }
 
 #play--options--button,
@@ -438,8 +437,8 @@ button:focus {
 
 .discover--letter--circle:hover,
 .explore--letter--circle:hover {
-    color: #f5f5f5;
-    border-color: #f5f5f5;
+  color: #f5f5f5;
+  border-color: #f5f5f5;
 }
 
 .text--spaced {
@@ -448,12 +447,12 @@ button:focus {
 }
 
 .text--spaced--small {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .text--spaced--large {
-    font-size: 2rem;
-    font-weight: 600;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 @media screen and (max-width: 992px) {
@@ -493,12 +492,12 @@ button:focus {
   }
 
   .text--spaced--large {
-      font-size: 1.5rem;
+    font-size: 1.5rem;
   }
 }
 
-#explore--answer > p {
-    font-size: 1.5rem;
+#explore--answer>p {
+  font-size: 1.5rem;
 }
 
 .play--image--select,
@@ -513,22 +512,22 @@ button:focus {
 }
 
 .explore--answer--select {
-    width: 80%;
-    height: 6rem;
+  width: 80%;
+  height: 6rem;
 }
 
 .discover--answer--select,
 .explore--answer--select {
-    margin-top: 0.8rem;
+  margin-top: 0.8rem;
 }
 
 .discover--answer--select p {
-    font-size: 6rem;
-    line-height: 14rem;
+  font-size: 6rem;
+  line-height: 14rem;
 }
 
 .explore--answer--select span {
-    line-height: 6rem;
+  line-height: 6rem;
 }
 
 .play--word,
@@ -584,17 +583,17 @@ button:focus {
     height: 6.8rem;
   }
 
-    .explore--answer--select {
-        height: 3rem;
-    }
+  .explore--answer--select {
+    height: 3rem;
+  }
 
   .discover--answer--select p {
     font-size: 3rem;
     line-height: 6.8rem;
-}
+  }
 
   .explore--answer--select span {
-      line-height: 3rem;
+    line-height: 3rem;
   }
 
   .play--word,

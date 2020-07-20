@@ -124,7 +124,7 @@ const wordBaseURL = `https://wordsapiv1.p.rapidapi.com/words/`;
 function getMatchingWords(selectedLetter, selectedLetterFrequency, cb) {
     let xhr = new XMLHttpRequest();
 
-    xhr.open("GET", wordBaseURL + "?letterPattern=^" + selectedLetter + "&frequencyMin=" + selectedLetterFrequency + "&hasDetails=definitions" + "&random=true");
+    xhr.open("GET", wordBaseURL + "?letterPattern=^" + selectedLetter + "&frequencyMin=" + selectedLetterFrequency + "&hasDetails=examples" + "&random=true");
     xhr.setRequestHeader("x-rapidapi-host", "wordsapiv1.p.rapidapi.com");
     xhr.setRequestHeader("x-rapidapi-key", wordApiKey);
     xhr.send();
@@ -139,11 +139,13 @@ function getMatchingWords(selectedLetter, selectedLetterFrequency, cb) {
 function generateMatchingWords(selectedLetter, selectedLetterFrequency) {
     if(exploreLetterBee.exploreWordArray.length <= 7){
     getMatchingWords(selectedLetter, selectedLetterFrequency, function(data) {
+        console.log(data);
         let generatedWord = data.word;
-        let generatedDefinition = data.results[0].definition;
+        let wordDefinitionIndex = randomiseArray(1, data.results.length, 0);
+        let generatedDefinition = data.results[wordDefinitionIndex].definition;
         let generatedExample;
-        if(data.results[0].hasOwnProperty("examples")){
-        generatedExample = data.results[0].examples[0];
+        if(data.results[wordDefinitionIndex].hasOwnProperty("examples")){
+        generatedExample = data.results[wordDefinitionIndex].examples[0];
         } else {
             generatedExample = "null";
         };
@@ -160,6 +162,7 @@ function wordDataToModal(searchTerm) {
         
         let wordDefinition = exploreLetterBee.exploreWordObject[searchTerm].definition;
         let wordExample = exploreLetterBee.exploreWordObject[searchTerm].example;
+        let newSearchTerm = `${searchTerm} + ${wordDefinition}`;
         $("#explore--definition").text(wordDefinition);
         if(wordExample == "null"){
             $("#explore--example").parent().css("display", "none");
@@ -167,7 +170,7 @@ function wordDataToModal(searchTerm) {
         $("#explore--example").parent().css("display", "block");    
         $("#explore--example").text(wordExample);
         };
-        imageToModal(wordDefinition); 
+        imageToModal(newSearchTerm); 
 }
 
 
@@ -220,3 +223,49 @@ function randomiseArray(arrayLength, arrayRange,
     };
     return randomArray;
   }
+
+  /* Full screen mode */
+function openFullscreen() {
+  let elem = document.getElementById("explore--display");
+  $("#expand--fullscreen--button").css("display", "none");
+  $("#close--fullscreen--button").css("display", "block");
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) {
+    /* Firefox */
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) {
+    /* Chrome, Safari and Opera */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) {
+    /* IE/Edge */
+    elem.msRequestFullscreen();
+  }
+}
+
+function closeFullscreen() {
+  $("#expand--fullscreen--button").css("display", "block");
+  $("#close--fullscreen--button").css("display", "none");
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.mozCancelFullScreen) {
+    /* Firefox */
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) {
+    /* Chrome, Safari and Opera */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) {
+    /* IE/Edge */
+    document.msExitFullscreen();
+  }
+}
+
+/* Calling functions */
+
+$("#expand--fullscreen--button").click(function() {
+    openFullscreen();
+})
+
+$("#close--fullscreen--button").click(function() {
+    closeFullscreen();
+})

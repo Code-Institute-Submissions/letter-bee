@@ -259,9 +259,8 @@ $("#learn--options--audio").click(function() {
 function openFullscreen() {
   let elem = document.getElementById("learn--display");
   $("#learn--options--button").css("visibility", "hidden");
-  $("#expand--fullscreen--button").children("i").removeClass(
-    "fas fa-expand-alt").addClass("fas fa-compress-alt");
-  $("#expand--fullscreen--button").attr("onclick", "closeFullscreen()");
+  $("#expand--fullscreen--button").css("display", "none");
+  $("#close--fullscreen--button").css("display", "block");
   if (elem.requestFullscreen) {
     elem.requestFullscreen();
   } else if (elem.mozRequestFullScreen) {
@@ -278,9 +277,8 @@ function openFullscreen() {
 
 function closeFullscreen() {
   $("#learn--options--button").css("visibility", "visible");
-  $("#expand--fullscreen--button").children("i").removeClass(
-    "fas fa-compress-alt").addClass("fas fa-expand-alt");
-  $("#expand--fullscreen--button").attr("onclick", "openFullscreen()");
+  $("#expand--fullscreen--button").css("display", "block");
+  $("#close--fullscreen--button").css("display", "none");
   if (document.exitFullscreen) {
     document.exitFullscreen();
   } else if (document.mozCancelFullScreen) {
@@ -399,6 +397,10 @@ function goToPlayMode() {
 /* Calling functions */
 $("#expand--fullscreen--button").click(function() {
     openFullscreen();
+})
+
+$("#close--fullscreen--button").click(function() {
+    closeFullscreen();
 })
 
 $("#learn--next--button").click(function() {

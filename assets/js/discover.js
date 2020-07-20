@@ -24,6 +24,10 @@ $(".discover--answer--select").click(function() {
     $("#discover--answer--number").text(selectedNumber);
     $(this).addClass("discover--answer--selected");
     $(".discover--answer--select").off("click");
+    if (document.fullscreenElement || document.webkitFullscreenElement ||
+        document.mozFullScreenElement) {
+        closeFullscreen();
+      };
     $("#discover--finished--modal").modal({
         backdrop: 'static',
         keyboard: false
@@ -50,9 +54,8 @@ function discoverReset() {
 /* Full screen mode */
 function openFullscreen() {
   let elem = document.getElementById("discover--display");
-  $("#expand--fullscreen--button").children("i").removeClass(
-    "fas fa-expand-alt").addClass("fas fa-compress-alt");
-  $("#expand--fullscreen--button").attr("onclick", "closeFullscreen()");
+  $("#expand--fullscreen--button").css("display", "none");
+  $("#close--fullscreen--button").css("display", "block");
   if (elem.requestFullscreen) {
     elem.requestFullscreen();
   } else if (elem.mozRequestFullScreen) {
@@ -68,9 +71,8 @@ function openFullscreen() {
 }
 
 function closeFullscreen() {
-  $("#expand--fullscreen--button").children("i").removeClass(
-    "fas fa-compress-alt").addClass("fas fa-expand-alt");
-  $("#expand--fullscreen--button").attr("onclick", "openFullscreen()");
+  $("#expand--fullscreen--button").css("display", "block");
+  $("#close--fullscreen--button").css("display", "none");
   if (document.exitFullscreen) {
     document.exitFullscreen();
   } else if (document.mozCancelFullScreen) {
@@ -89,4 +91,8 @@ function closeFullscreen() {
 
 $("#expand--fullscreen--button").click(function() {
     openFullscreen();
+})
+
+$("#close--fullscreen--button").click(function() {
+    closeFullscreen();
 })

@@ -1,6 +1,13 @@
 /* Loading div */
 $(window).on('load', function() {
   $(".se-pre-con").fadeOut("slow");
+  let queryString = location.search.substring(1);
+
+  if (queryString.length >=
+    1) { //Checks whether url has substring assigned by play page
+    let letterToExplore = queryString;
+    displayWords(letterToExplore);
+  };
 });
 
 /* On page load */
@@ -68,16 +75,20 @@ let exploreLetterBee = {
 
 /* Show associated words div */
 $(".explore--letter--circle").click(function() {
-    let exploreSelectedLetterUpper = $(this).text();
-    exploreLetterBee.exploreSelectedLetter = $(this).text().toLowerCase();
+    selectedLetter = $(this).text();
+    displayWords(selectedLetter);
+    
+})
+
+function displayWords(selectedLetter) {
+    exploreLetterBee.exploreSelectedLetter = selectedLetter.toLowerCase();
+    console.log(exploreLetterBee.exploreSelectedLetter);
     $("#explore--answer").css("display", "block");
     $("#explore--words").css("display", "block");
     $("#explore--letters").css("display", "none");
-    $("#explore--prompt").text(`Here are some words that start with the letter ${exploreSelectedLetterUpper}`);
-    generateMatchingWords(exploreLetterBee.exploreSelectedLetter, exploreLetterBee.exploreLetterFrequency[exploreSelectedLetterUpper]);
-})
-
-
+    $("#explore--prompt").text(`Here are some words that start with the letter ${selectedLetter}`);
+    generateMatchingWords(exploreLetterBee.exploreSelectedLetter, exploreLetterBee.exploreLetterFrequency[selectedLetter]);
+}
 
 /* Display word info in modal */
 $(".explore--answer--select").click(function() {

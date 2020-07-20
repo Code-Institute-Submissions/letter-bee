@@ -8,14 +8,17 @@ $(document).ready(function() {
   $("#discover--answer").css("display", "none");
 });
 
+let discoverLetterBee = {
+    discoverSelectedLetter: "A",
+}
 
 /* Select a letter */
 $(".discover--letter--circle").click(function() {
-    let selectedLetter = $(this).text();
-    $("#discover--answer--letter").text(selectedLetter);
+    discoverLetterBee.discoverSelectedLetter = $(this).text();
+    $("#discover--answer--letter").text(discoverLetterBee.discoverSelectedLetter);
     $("#discover--answer").css("display", "block");
     $("#discover--letters").css("display", "none");
-    $("#discover--prompt").html(`How many things can you find that begin with the letter ${selectedLetter}?`);
+    $("#discover--prompt").html(`How many things can you find that begin with the letter ${discoverLetterBee.discoverSelectedLetter}?`);
 })
 
 /* Select an answer */
@@ -44,6 +47,10 @@ function discoverReset() {
     $("#discover--answer--number").text(selectedNumber);
     $(this).addClass("discover--answer--selected");
     $(".discover--answer--select").off("click");
+    if (document.fullscreenElement || document.webkitFullscreenElement ||
+        document.mozFullScreenElement) {
+        closeFullscreen();
+      };
     $("#discover--finished--modal").modal({
         backdrop: 'static',
         keyboard: false
@@ -87,6 +94,10 @@ function closeFullscreen() {
   }
 }
 
+function goToExploreMode() {
+  window.location.href = `explore.html?${discoverLetterBee.discoverSelectedLetter}`;
+}
+
 /* Calling functions */
 
 $("#expand--fullscreen--button").click(function() {
@@ -95,4 +106,8 @@ $("#expand--fullscreen--button").click(function() {
 
 $("#close--fullscreen--button").click(function() {
     closeFullscreen();
+})
+
+$("#nav--explore").click(function() {
+    goToExploreMode();
 })

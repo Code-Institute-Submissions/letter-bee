@@ -54,6 +54,11 @@ function displayWords(letterToExplore) {
   generateMatchingWords(letterToExplore);
 }
 
+function generateMatchingWords(letterToExplore) {
+    let randomWordSelection = randomiseArray(8, masterExploreData[`letter${letterToExplore}`].length, 0);
+    randomWordSelection.forEach(exploreLetterBee.addWordToArray);
+}
+
 /* Display word info in modal */
 $(".explore--answer--select").click(function() {
   let selectedWord = $(this).text().trim();
@@ -69,6 +74,7 @@ function generateWordModal(selectedWord) {
   $("#explore--selected--word").text(selectedWord).css("text-transform",
     "capitalize");
   wordDataToModal(selectedWord);
+  imageToModal(selectedWord);
 }
 
 /* Return to main display */
@@ -95,9 +101,14 @@ $("#explore--word--modal").on('hidden.bs.modal', function() {
 /* Get data for selected word */
 
 function wordDataToModal(searchTerm) {
-  getWordData(searchTerm);  
-  console.log(data);
-  imageToModal(newSearchTerm);
+  getWordData(searchTerm, function(data) {
+    console.log(data);
+    let wordDefinition = data[0].shortdef[0];
+    let wordExampleFull = data[0].def[0].sseq[0][0][1].dt[1][1][0].t;
+    let wordExample = wordExampleFull.replace(/\s?\{[^}]+\}/g, ' '); //removes additional data fields from example
+    $("#explore--definition").text(wordDefinition);
+    $("#explore--example").text(wordExample);
+  });
 }
 
 /* Get word data for selected word */
@@ -118,10 +129,7 @@ function getWordData(searchTerm, cb) {
   };
 }
 
-function generateMatchingWords(letterToExplore) {
-    let randomWordSelection = randomiseArray(8, masterExploreData[`letter${letterToExplore}`].length, 0);
-    randomWordSelection.forEach(exploreLetterBee.addWordToArray);
-}
+
 
 
 /* Get image for selected word */

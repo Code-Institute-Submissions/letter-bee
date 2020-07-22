@@ -74,7 +74,6 @@ function generateWordModal(selectedWord) {
   $("#explore--selected--word").text(selectedWord).css("text-transform",
     "capitalize");
   wordDataToModal(selectedWord);
-  imageToModal(selectedWord);
 }
 
 /* Return to main display */
@@ -103,11 +102,36 @@ $("#explore--word--modal").on('hidden.bs.modal', function() {
 function wordDataToModal(searchTerm) {
   getWordData(searchTerm, function(data) {
     console.log(data);
-    let wordDefinition = data[0].shortdef[0];
-    let wordExampleFull = data[0].def[0].sseq[0][0][1].dt[1][1][0].t;
-    let wordExample = wordExampleFull.replace(/\s?\{[^}]+\}/g, ' '); //removes additional data fields from example
+    let i = 0;
+    let wordDefinitionFull;
+    let wordDefinition;
+    let wordExampleFull;
+    do {
+    if(data[0].def[0].sseq[i][0][1].dt.length >= 2){
+    wordDefinitionFull = data[0].def[0].sseq[i][0][1].dt[0][1];
+    wordExampleFull = data[0].def[0].sseq[i][0][1].dt[1][1][0].t;
+    } else {
+    i++;
+    };
+    }
+    while (i <= data[0].def[0].sseq.length && wordExampleFull === undefined);
+    if(wordExampleFull === undefined) {
+        $("#explore--example").css("visibility", "hidden")
+        wordDefinition = data[0].shortdef[0];
+    } else {
+        $("#explore--example").css("visibility", "visible");
+        wordDefinition = wordDefinitionFull.replace(/\s?\{[^}]+\}/g, " ");
+        let wordExample = wordExampleFull.replace(/\s?\{[^}]+\}/g, " "); //removes additional data fields from example
+        $("#explore--example").text(wordExample);
+    };
+    
     $("#explore--definition").text(wordDefinition);
-    $("#explore--example").text(wordExample);
+    let audioSourceFilename = data[0].hwi.prs[0].sound.audio;
+    let audioSourceSubDir = audioSourceFilename.charAt(0);
+    let audioSource = `https://media.merriam-webster.com/audio/prons/en/us/mp3/${audioSourceSubDir}/${audioSourceFilename}.mp3`;
+    $("#explore--pronunciation").attr("src", audioSource);
+    imageToModal(wordDefinition);
+    
   });
 }
 

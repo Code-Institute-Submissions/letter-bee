@@ -739,7 +739,7 @@ const masterExploreData = {
     "miss", "misspell", "mist", "mistake", "misunderstand", "misuse",
     "moan", "moaned", "mood", "moon", "mop", "mops", "morning", "moss",
     "mother", "mouse", "mouth", "mouthful", "muck", "mud", "muddle", "mug",
-    "mum", "mummy", "murder", "murdered", "murderers", "murmur",
+    "mum", "mummy", "murmur",
     "murmuring", "must", "my"
   ],
   letterN: ["nag", "nail", "nailed", "name", "named", "naming", "nap", "near",

@@ -74,6 +74,7 @@ function generateWordModal(selectedWord) {
   $("#explore--selected--word").text(selectedWord).css("text-transform",
     "capitalize");
   wordDataToModal(selectedWord);
+    imageToModal(selectedWord);
 }
 
 /* Return to main display */
@@ -116,10 +117,10 @@ function wordDataToModal(searchTerm) {
     }
     while (i <= data[0].def[0].sseq.length && wordExampleFull === undefined);
     if(wordExampleFull === undefined) {
-        $("#explore--example").css("visibility", "hidden")
+        $("#explore--example").parent().css("visibility", "hidden")
         wordDefinition = data[0].shortdef[0];
     } else {
-        $("#explore--example").css("visibility", "visible");
+        $("#explore--example").parent().css("visibility", "visible");
         wordDefinition = wordDefinitionFull.replace(/\s?\{[^}]+\}/g, " ");
         let wordExample = wordExampleFull.replace(/\s?\{[^}]+\}/g, " "); //removes additional data fields from example
         $("#explore--example").text(wordExample);
@@ -127,11 +128,14 @@ function wordDataToModal(searchTerm) {
     
     $("#explore--definition").text(wordDefinition);
     let audioSourceFilename = data[0].hwi.prs[0].sound.audio;
+    if(audioSourceFilename !== undefined) {
     let audioSourceSubDir = audioSourceFilename.charAt(0);
     let audioSource = `https://media.merriam-webster.com/audio/prons/en/us/mp3/${audioSourceSubDir}/${audioSourceFilename}.mp3`;
+    $("#explore--pronunciation").parent().css("visibility", "visible");
     $("#explore--pronunciation").attr("src", audioSource);
-    imageToModal(wordDefinition);
-    
+    } else {
+        $("#explore--pronunciation").parent().css("visibility", "hidden");
+    }
   });
 }
 

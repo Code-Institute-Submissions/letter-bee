@@ -19,56 +19,16 @@ $(document).ready(function() {
 let exploreLetterBee = {
   exploreSelectedLetter: "A",
   exploreWordArray: [],
-  exploreWordObject: {},
-  exploreLetterFrequency: {
-    A: 7,
-    B: 4,
-    C: 5,
-    D: 3,
-    E: 2.5,
-    F: 4,
-    G: 1.5,
-    H: 4,
-    I: 7,
-    J: 1.74,
-    K: 1.74,
-    L: 2,
-    M: 3.5,
-    N: 2,
-    O: 7.5,
-    P: 4,
-    Q: 1.74,
-    R: 2.5,
-    S: 6.5,
-    T: 7,
-    U: 1.74,
-    V: 1.74,
-    W: 5,
-    X: 1.74,
-    Y: 1.74,
-    Z: 1.74
-
-
-  },
-  addWordToArray: function(generatedWord) {
-      console.log(this);
-    if (generatedWord !== undefined) {
-      if ($.inArray(generatedWord[0], this.exploreWordArray) == -1) {
-        this.exploreWordArray.push(generatedWord[0]);
-        this.exploreWordObject[generatedWord[0]] = {
-          definition: generatedWord[1],
-          example: generatedWord[2]
-        };
-        this.displayWordArray(generatedWord);
-      }
-    }
-    generateMatchingWords(this.exploreSelectedLetter);
+  addWordToArray: function(randomWordIndex) {
+    let randomWord = masterExploreData[`letter${exploreLetterBee.exploreSelectedLetter}`][randomWordIndex];
+    exploreLetterBee.exploreWordArray.push(randomWord);  
+    console.log(exploreLetterBee.exploreWordArray);
+    exploreLetterBee.displayWordArray(randomWord);
 
   },
   displayWordArray: function(generatedWord) {
     let displayDivID = this.exploreWordArray.length;
-    $(`#explore--answer${displayDivID}--display span`).text(generatedWord[
-      0]).css("text-transform", "capitalize");
+    $(`#explore--answer${displayDivID}--display span`).text(generatedWord).css("text-transform", "capitalize");
 
     $(`#explore--answer${displayDivID}--display`).textfill();
   }
@@ -80,21 +40,18 @@ let exploreLetterBee = {
 
 /* Show associated words div */
 $(".explore--letter--circle").click(function() {
-  selectedLetter = $(this).text();
-  displayWords(selectedLetter);
+  exploreLetterBee.exploreSelectedLetter = $(this).text();
+  displayWords($(this).text());
 
 })
 
-function displayWords(selectedLetter) {
-  exploreLetterBee.exploreSelectedLetter = selectedLetter.toLowerCase();
-  console.log(exploreLetterBee.exploreSelectedLetter);
+function displayWords(letterToExplore) {
   $("#explore--answer").css("display", "block");
   $("#explore--words").css("display", "block");
   $("#explore--letters").css("display", "none");
   $("#explore--prompt").text(
-    `Here are some words that start with the letter ${selectedLetter}`);
-  generateMatchingWords(exploreLetterBee.exploreSelectedLetter, exploreLetterBee
-    .exploreLetterFrequency[selectedLetter]);
+    `Here are some words that start with the letter ${letterToExplore}`);
+  generateMatchingWords(letterToExplore);
 }
 
 /* Display word info in modal */
@@ -135,19 +92,23 @@ $("#explore--word--modal").on('hidden.bs.modal', function() {
 
 });
 
-/* Get words to match selected letter */
+/* Get data for selected word */
 
-const wordApiKey = "00cc2aad74msh9a52d2b17888115p125f78jsn7ee17790cb1d";
-const wordBaseURL = `https://wordsapiv1.p.rapidapi.com/words/`;
+function wordDataToModal(searchTerm) {
+  getWordData(searchTerm);  
+  console.log(data);
+  imageToModal(newSearchTerm);
+}
 
-function getMatchingWords(selectedLetter, selectedLetterFrequency, cb) {
+/* Get word data for selected word */
+
+const wordApiKey = "4f6bca5a-8dab-4be7-9090-7405690143cd";
+const wordBaseURL = "https://www.dictionaryapi.com/api/v3/references/sd2/json/";
+
+function getWordData(searchTerm, cb) {
   let xhr = new XMLHttpRequest();
 
-  xhr.open("GET", wordBaseURL + "?letterPattern=^" + selectedLetter +
-    "&frequencyMin=" + selectedLetterFrequency + "&hasDetails=examples" +
-    "&random=true");
-  xhr.setRequestHeader("x-rapidapi-host", "wordsapiv1.p.rapidapi.com");
-  xhr.setRequestHeader("x-rapidapi-key", wordApiKey);
+  xhr.open("GET", wordBaseURL + searchTerm + "?key=" + wordApiKey);
   xhr.send();
 
   xhr.onreadystatechange = function() {
@@ -157,45 +118,9 @@ function getMatchingWords(selectedLetter, selectedLetterFrequency, cb) {
   };
 }
 
-function generateMatchingWords(selectedLetter, selectedLetterFrequency) {
-  if (exploreLetterBee.exploreWordArray.length <= 7) {
-    getMatchingWords(selectedLetter, selectedLetterFrequency, function(data) {
-      console.log(data);
-      let generatedWord = data.word;
-      let wordDefinitionIndex = randomiseArray(1, data.results.length, 0);
-      let generatedDefinition = data.results[wordDefinitionIndex]
-      .definition;
-      let generatedExample;
-      if (data.results[wordDefinitionIndex].hasOwnProperty("examples")) {
-        generatedExample = data.results[wordDefinitionIndex].examples[0];
-      } else {
-        generatedExample = "null";
-      };
-      exploreLetterBee.addWordToArray([generatedWord, generatedDefinition,
-        generatedExample
-      ]);
-    });
-  } else {
-    return
-  };
-}
-
-/* Get data for selected word */
-
-function wordDataToModal(searchTerm) {
-
-  let wordDefinition = exploreLetterBee.exploreWordObject[searchTerm]
-  .definition;
-  let wordExample = exploreLetterBee.exploreWordObject[searchTerm].example;
-  let newSearchTerm = `${searchTerm} + ${wordDefinition}`;
-  $("#explore--definition").text(wordDefinition);
-  if (wordExample == "null") {
-    $("#explore--example").parent().css("display", "none");
-  } else {
-    $("#explore--example").parent().css("display", "block");
-    $("#explore--example").text(wordExample);
-  };
-  imageToModal(newSearchTerm);
+function generateMatchingWords(letterToExplore) {
+    let randomWordSelection = randomiseArray(8, masterExploreData[`letter${letterToExplore}`].length, 0);
+    randomWordSelection.forEach(exploreLetterBee.addWordToArray);
 }
 
 

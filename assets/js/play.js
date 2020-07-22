@@ -45,6 +45,7 @@ let playLetterBee = {
     this.playIncorrectArray = [];
   },
   checkPlayProgress: function() { //Checks there are still letters left to be played and then either calls next question or calls finished modal
+    console.log(this);
     if (this.playAlphabetSet.length > 0) {
       nextPlay();
     } else {

@@ -54,6 +54,7 @@ body {
 
 .navbar-dark .navbar-nav .nav-link {
   color: #f5f5f5;
+  cursor: pointer;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {

@@ -23,3 +23,29 @@ function navBarActive(inactiveElement, activeElement) {
     $(inactiveElement).children("span").remove();
     $(activeElement).append(` <span class="sr-only">(current)</span>`);
 }
+
+function navBarCollapse() {
+    $(".navbar-collapse").removeClass("show");
+    $(".animated-icon2").removeClass("open");
+}
+
+$("#span--about").click(function() {
+    let currentActiveElement = $(".nav-item.nav-link.active").attr('id');
+    navBarActive($(`#${currentActiveElement}`),$("#span--about"));
+    navBarCollapse();
+})
+$("#span--play").click(function() {
+    let currentActiveElement = $(".nav-item.nav-link.active").attr('id');
+    navBarActive($(`#${currentActiveElement}`),$("#span--play"));
+    navBarCollapse();
+})
+$("#span--learn").click(function() {
+    let currentActiveElement = $(".nav-item.nav-link.active").attr('id');
+    navBarActive($(`#${currentActiveElement}`),$("#span--learn"));
+    navBarCollapse();
+})
+$("#span--discover").click(function() {
+    let currentActiveElement = $(".nav-item.nav-link.active").attr('id');
+    navBarActive($(`#${currentActiveElement}`),$("#span--discover"));
+    navBarCollapse();
+})

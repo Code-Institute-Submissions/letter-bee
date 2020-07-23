@@ -1,5 +1,9 @@
-/* On page load */
-$(document).ready(function() {
-  $("nav").css("display", "none");
-  $("footer").css("display", "none");
-});
+/*
+* Show/hide sections of site
+*/
+$("#btn--to--about").click(function() {
+    $("nav").css("visibility", "visible");
+    $("footer").css("visibility", "visible");
+    $("#home").css("display", "none");
+    $("#about").css("display", "block");
+})

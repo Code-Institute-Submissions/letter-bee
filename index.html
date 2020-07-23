@@ -85,6 +85,113 @@
       <em>Click on a mode to find out more</em>
     </div>
   </section>
+  <!-- Play Page -->
+  <section id="play" class="page">
+    <h1 class="page--title">Play</h1>
+    <div id="page--welcome">
+      <div id="initialise--play" class="section--link">
+        Play game
+      </div>
+      <div class="section--link" data-toggle="modal"
+        data-target="#play--options" data-backdrop="static"
+        data-keyboard="false">
+        Change settings
+      </div>
+    </div>
+    <div id="play--display">
+      <div id="play--display--btn">
+        <span id="expand--fullscreen--button">
+          <i class="fas fa-expand-alt" title="Expand screen"></i>
+        </span>
+        <span id="close--fullscreen--button">
+          <i class="fas fa-compress-alt" title="Close screen"></i>
+        </span>
+        <span id="play--options--button" data-toggle="modal"
+          data-target="#play--options" data-backdrop="static"
+          data-keyboard="false">
+          <i class="fas fa-cogs" title="Play options"></i>
+        </span>
+      </div>
+      <div id="play--letter--upper">
+        A
+      </div>
+      <div id="play--letter--lower">
+        a
+      </div>
+      <div class="text--spaced">
+        is for...
+      </div>
+      <audio id="play--letter--audio">
+        <source src="#" type="audio/mpeg">
+      </audio>
+      <div id="play--answer" class="text--spaced">
+        apple
+      </div>
+      <div class="container-fluid">
+        <audio id="play--correct--audio">
+          <source src="#" type="audio/mpeg">
+        </audio>
+        <audio id="play--confirmation--audio">
+          <source src="#" type="audio/mpeg">
+        </audio>
+        <audio id="play--incorrect--audio">
+          <source src="#" type="audio/mpeg">
+        </audio>
+        <div class="row justify-content-center">
+          <div class="col">
+            <div id="play--image1--display"
+              class="play--image--select float-right">
+
+            </div>
+          </div>
+          <div class="col">
+            <div id="play--image2--display"
+              class="play--image--select float-left">
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col">
+            <div id="play--word1--display" class="play--word float-right">
+              WORD
+            </div>
+          </div>
+          <div class="col">
+            <div id="play--word2--display" class="play--word float-left">
+              WORD
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col">
+            <div id="play--image3--display"
+              class="play--image--select float-right">
+            </div>
+          </div>
+          <div class="col">
+            <div id="play--image4--display"
+              class="play--image--select float-left">
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col">
+            <div id="play--word3--display" class="play--word float-right">
+              WORD
+            </div>
+          </div>
+          <div class="col">
+            <div id="play--word4--display" class="play--word float-left">
+              WORD
+            </div>
+          </div>
+        </div>
+      </div>
+      <strong>Letters still to play:</strong>
+      <div id="play--letters--remaining">
+      </div>
+    </div>
+  </section>
   <footer>
     <div class="container-fluid">
       <div class="row justify-content-center">
@@ -142,8 +249,9 @@
               aria-label="Close">
               Back to <br><strong>About</strong>
             </div>
-            <div class="section--link btn--smaller">
-              <a href="play.html">Go to <br><strong>Play</strong></a>
+            <div id="btn--to--play" class="section--link btn--smaller" data-dismiss="modal"
+              aria-label="Close">
+              Go to <br><strong>Play</strong>
             </div>
           </div>
         </div>

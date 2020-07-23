@@ -7,3 +7,8 @@ $("#btn--to--about").click(function() {
     $("#home").css("display", "none");
     $("#about").css("display", "block");
 })
+
+$("#btn--to--play").click(function() {
+    $("#about").css("display", "none");
+    $("#play").css("display", "block");
+})

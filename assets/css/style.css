@@ -157,9 +157,10 @@ nav, footer {
     visibility: hidden;
 }
 
-#about, #play {
+#about, #play, #play--display, #play--continue, #play--options--alert {
     display: none;
 }
+
 /* Main Layout */
 .page {
   padding-top: 4rem;

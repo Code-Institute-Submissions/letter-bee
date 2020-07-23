@@ -1,3 +1,8 @@
+/* Loading div */
+$(window).on('load', function() {
+  $(".se-pre-con").fadeOut("slow");
+});
+
 /*
 * Show/hide sections of site
 */
@@ -23,7 +28,6 @@ function showHideSections(sectionToHide,sectionToShow) {
 /*
 * Show active link on navbar
 */
-
 $(".nav-link").click(function() {
     let currentActiveElementFull = $(".nav-item.nav-link.active").prop('id');
     let targetActiveElementFull = $(this).prop('id');

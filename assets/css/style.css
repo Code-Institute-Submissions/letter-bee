@@ -38,7 +38,6 @@ body {
 }
 
 /* Navbar */
-/* https://getbootstrap.com/docs/4.0/components/navbar/ */
 .navbar {
   background-color: #0374b8;
   border-bottom: 0.5rem solid #E5CCA5
@@ -73,7 +72,7 @@ button:focus {
   outline: none;
 }
 
-/* https://mdbootstrap.com/docs/jquery/navigation/hamburger-menu/ */
+/* Hamburger menu */
 
 .animated-icon2 {
   width: 30px;
@@ -230,7 +229,7 @@ nav, footer {
   text-align: center;
   margin: 1rem auto;
   max-width: 80%;
-  padding: 0.4rem;
+  padding: 1rem;
   line-height: 1;
   background-color: #c8b9d8;
   border: 2px solid #333;

@@ -19,15 +19,59 @@
   <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
   <title>Letter Bee | Play</title>
 </head>
-
 <body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark red lighten-1 mb-4 fixed-top">
+    <a class="navbar-brand" href="about.html">
+      <img src="assets/images/letter-bee.png" width="40" height="40"
+        class="d-inline-block align-top" alt="Letter Bee logo">
+      Letter Bee
+    </a>
+    <button class="navbar-toggler second-button" type="button"
+      data-toggle="collapse" data-target="#navbarSupportedContent23"
+      aria-controls="navbarSupportedContent23" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <div class="animated-icon2">
+        <span></span><span></span><span></span><span></span></div>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent23">
+      <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link active" href="about.html">About <span
+            class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="play.html">Play</a>
+        <a class="nav-item nav-link" href="learn.html">Learn</a>
+        <a class="nav-item nav-link" href="discover.html">Discover</a>
+        <a class="nav-item nav-link" href="explore.html">Explore</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Home page -->
   <section id="home" class="page">
-    <h1 class="page--title"><span>Welcome to </span><span>Letter Bee!</span>
-    </h1>
-    <img class="page--img" src="assets/images/letter-bee.png"
+    <h1 class="page--title"><span>Welcome to </span><span>Letter Bee!</span></h1>
+    <div class="section--center">
+        <img class="page--img" src="assets/images/letter-bee.png"
       alt="Letter Bee logo" />
     <a class="page--btn" href="about.html">Let's Go!</a>
+    </div>
   </section>
+  <footer>
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col align-middle"><a
+            href="https://jess-bennett.github.io/personal-portfolio/"
+            target="_blank"><i class="fas fa-laptop" title="Website"></i></a>
+        </div>
+        <div class="col"><a href="https://github.com/jess-bennett/"
+            target="_blank"><i class="fab fa-github-square"
+              title="GitHub profile"></i></a></div>
+        <div class="col"><a
+            href="https://www.linkedin.com/in/jess-bennett-33750368/"
+            target="_blank"><i class="fab fa-linkedin"
+              title="LinkedIn profile"></i></a></div>
+      </div>
+      <p class="footer--text">&#169; | 2020 | Jess Bennett</p>
+    </div>
+  </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -36,7 +80,6 @@
   <script src="assets/js/nav.js"></script>
   <!-- Game JS -->
   <script src="assets/js/config.js"></script>
-  <script src="assets/js/play.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
-
 </html>

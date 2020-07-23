@@ -8,7 +8,7 @@ $(document).ready(function() {
   $("#discover--answer").css("display", "none");
 });
 
-let discoverLetterBee = {
+const discoverLetterBee = {
   discoverSelectedLetter: "A",
 }
 

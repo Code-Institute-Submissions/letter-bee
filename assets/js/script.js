@@ -29,7 +29,7 @@ function navBarCollapse() {
     $(".animated-icon2").removeClass("open");
 }
 
-$("#span--about").click(function() {
+/* $("#span--about").click(function() {
     let currentActiveElement = $(".nav-item.nav-link.active").attr('id');
     navBarActive($(`#${currentActiveElement}`),$("#span--about"));
     navBarCollapse();
@@ -47,5 +47,12 @@ $("#span--learn").click(function() {
 $("#span--discover").click(function() {
     let currentActiveElement = $(".nav-item.nav-link.active").attr('id');
     navBarActive($(`#${currentActiveElement}`),$("#span--discover"));
+    navBarCollapse();
+}) */
+
+$(".nav-link").click(function() {
+    let currentActiveElement = $(".nav-item.nav-link.active").attr('id');
+    let targetActiveElement = $(this).attr('id');
+    navBarActive($(`#${currentActiveElement}`),$(`#${targetActiveElement}`));
     navBarCollapse();
 })

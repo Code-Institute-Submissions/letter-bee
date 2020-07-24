@@ -157,7 +157,7 @@ nav, footer {
     visibility: hidden;
 }
 
-#about, #play, #play--display, #play--continue, #play--options--alert {
+#about, #play, #play--display, #play--continue, #user--options--alert {
     display: none;
 }
 
@@ -304,8 +304,7 @@ nav, footer {
 }
 
 /* Audio toggle switch */
-#play--options--audio,
-#learn--options--audio {
+#user--options--audio {
   display: inline-block;
   background-color: #007bff;
   border-radius: 10px;
@@ -314,18 +313,15 @@ nav, footer {
   font-size: 1.5rem;
 }
 
-#play--options--audio:hover,
-#learn--options--audio:hover {
+#user--options--audio:hover {
   background-color: #005dc8;
 }
 
-.play--audio--on,
-.learn--audio--on {
+.options--audio--on {
   color: white;
 }
 
-.play--audio--off,
-.learn--audio--off {
+.options--audio--off {
   color: #007bff;
 }
 

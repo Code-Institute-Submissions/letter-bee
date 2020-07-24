@@ -16,13 +16,14 @@ $(".btn--to").click(function() {
     let targetActiveElementFull = $(this).prop('id');
     let targetActiveElement = targetActiveElementFull.substring(9);
     let currentActiveElement = $(".page--display").not(":hidden").prop("id");
-    showHideSections(`#${currentActiveElement}`,`#${targetActiveElement}`);
+    showHideSections(`#${currentActiveElement}`,`#${targetActiveElement}`, targetActiveElement);
     navBarActive($(`#span--${currentActiveElement}`),$(`#span--${targetActiveElement}`));
 })
 
-function showHideSections(sectionToHide,sectionToShow) {
+function showHideSections(sectionToHide,sectionToShow, selectedGameMode) {
     $(sectionToHide).css("display", "none");
     $(sectionToShow).css("display", "block");
+    setGameMode(selectedGameMode);
 }
 
 /*
@@ -33,7 +34,7 @@ $(".nav-link").click(function() {
     let targetActiveElementFull = $(this).prop('id');
     let currentActiveElement = currentActiveElementFull.substring(6);
     let targetActiveElement = targetActiveElementFull.substring(6);
-    showHideSections(`#${currentActiveElement}`,`#${targetActiveElement}`);
+    showHideSections(`#${currentActiveElement}`,`#${targetActiveElement}`, targetActiveElement);
     navBarActive($(`#${currentActiveElementFull}`),$(`#${targetActiveElementFull}`));
     navBarCollapse();
 })
@@ -50,6 +51,3 @@ function navBarCollapse() {
     $(".animated-icon2").removeClass("open");
 }
 
-/*
-* Change game settings
-*/

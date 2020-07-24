@@ -3,6 +3,10 @@ const masterPlayData = {
   alphabetMaster: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
     "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
   ],
+  alphabetSet: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
+    "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
+  ], 
+  numberOfOptions: 4,
   lettersMaster: {
     letterA: {
       upperLetter: "A",
@@ -606,11 +610,6 @@ const masterPlayData = {
 }
 
 let playLetterBee = {
-  playAlphabetSet: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
-    "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y",
-    "Z"
-  ],
-  playNumberOfOptions: 4,
   letterToDisplay: "A",
   playAlphabetDistractors: ["B", "C", "D"],
   correctAnswer: "Answer",

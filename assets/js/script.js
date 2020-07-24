@@ -58,3 +58,32 @@ function setGameMode(selectedGameMode) {
     masterPlayData.gameMode = selectedGameMode;
 }
 
+$("#letter--all").click(function() { 
+  if ($("#letter--all").prop("checked")) { //Selects the full 26 letter set
+    $(".options--letter--select").prop("checked", true);
+    resetAlphabet();
+  } else { //Empties letter set
+    $(".options--letter--select").prop("checked", false)
+    emptyAlphabet();
+    updateLettersRemaining();
+  };
+})
+
+function resetAlphabet() {//Used to reset the letters left to be played, back to a full 26
+    masterPlayData.alphabetSet = masterPlayData.alphabetMaster.slice();
+    updateLettersRemaining();
+}
+
+function emptyAlphabet() { //Empties the alphabet array
+    masterPlayData.alphabetSet = [];
+}
+
+function updateLettersRemaining() { //Used to update the display with the letters remaining
+    let lettersRemaining = $(`#${masterPlayData.gameMode}--letters--remaining`);
+    if (masterPlayData.alphabetSet.length > 0) {
+      lettersRemaining.text(masterPlayData.alphabetSet.join(', '));
+    } else {
+      lettersRemaining.text("FINISHED");
+
+    };
+}

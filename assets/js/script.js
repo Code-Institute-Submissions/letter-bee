@@ -49,3 +49,7 @@ function navBarCollapse() {
     $(".navbar-collapse").removeClass("show");
     $(".animated-icon2").removeClass("open");
 }
+
+/*
+* Change game settings
+*/

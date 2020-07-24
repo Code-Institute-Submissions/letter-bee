@@ -51,3 +51,10 @@ function navBarCollapse() {
     $(".animated-icon2").removeClass("open");
 }
 
+/*
+* Change game settings
+*/
+function setGameMode(selectedGameMode) {
+    masterPlayData.gameMode = selectedGameMode;
+}
+

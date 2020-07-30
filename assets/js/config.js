@@ -1,4 +1,15 @@
 /*
+* Nav functionality
+*/
+$(document).ready(function() {
+
+  $('.second-button').on('click', function() {
+
+    $('.animated-icon2').toggleClass('open');
+  });
+});
+
+/*
 * Show/hide sections of site
 */
 $("#btn--to--about").click(function() {

@@ -26,7 +26,17 @@ Letter Bee is a children's game that aims to teach and test children on the lett
 \
               [:computer: External sources used](#computer-external-sources-used)\
 \
-              [:bug: Bugs](#bug-bugs)
+              [:bug: Bugs](#bug-bugs)\
+\
+[:test_tube: Testing](#test-tube-testing)\
+\
+[:flight_departure: Deployment](#flight-departure-deployment)\
+\
+[:clapper: Credits](#clapper-credits)\
+\
+              [:movie_camera: Media](#movie-camera-media)\
+\
+              [:trophy: Acknowledgements](#trophy-acknowledgements)\
 
 ## :sparkles: UX
 
@@ -176,7 +186,7 @@ As the 'Discover' page didn't really work as a standalone page, that was sadly r
 ## :construction: Development process
 
 ### :unlock: Technologies used
-
+---
 **Languages**
 * HTML
 * CSS
@@ -236,4 +246,13 @@ $('audio#play--confirmation__audio').on('ended', function() {
 });
 ```
 
-    
+## :test_tube: Testing    
+
+## :flight_departure: Deployment   
+
+## :clapper: Credits
+
+### :movie_camera: Media
+---
+### :trophy: Acknowledgements
+---

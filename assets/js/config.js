@@ -13,8 +13,7 @@ $(document).ready(function() {
 * Show/hide sections of site
 */
 $("#btn--to--about").click(function() {
-    $("nav").css("visibility", "visible");
-    $("footer").css("visibility", "visible");
+    $(".element--hidden").removeClass("element--hidden");
     $("#home").css("display", "none");
     $("#about").css("display", "block");
 })

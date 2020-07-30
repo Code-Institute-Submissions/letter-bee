@@ -153,7 +153,7 @@ button:focus {
 }
 
 /* On page load */
-nav, footer {
+.element--hidden {
     visibility: hidden;
 }
 

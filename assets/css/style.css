@@ -152,6 +152,15 @@ button:focus {
   left: 50%;
 }
 
+/* On page load */
+nav, footer {
+    visibility: hidden;
+}
+
+#about {
+    display: none;
+}
+
 /* Main Layout */
 .page {
   padding-top: 4rem;

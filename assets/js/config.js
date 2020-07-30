@@ -1,4 +1,15 @@
 /*
+* Only show 'Welcome' page on initial load of site
+*/
+$(function() {
+    if (sessionStorage.getItem("isNewSession")) {
+        showAbout();
+    } else {
+        sessionStorage.setItem('isNewSession', 'true');
+    }
+});
+
+/*
 * Nav functionality
 */
 $(document).ready(function() {
@@ -7,16 +18,22 @@ $(document).ready(function() {
 
     $('.animated-icon2').toggleClass('open');
   });
+
 });
 
 /*
 * Show/hide sections of site
 */
+
 $("#btn--to--about").click(function() {
+    showAbout();
+})
+
+function showAbout() {
     $(".element--hidden").removeClass("element--hidden");
     $("#home").css("display", "none");
     $("#about").css("display", "block");
-})
+}
 
 const masterPlayData = {
   alphabetMaster: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",

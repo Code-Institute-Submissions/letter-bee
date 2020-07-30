@@ -201,6 +201,7 @@ nav, footer {
 }
 
 .page--btn {
+  cursor: pointer;
   background-color: #c8b9d8;
   color: inherit;
   font-size: 1.5rem;

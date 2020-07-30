@@ -22,7 +22,7 @@ Letter Bee is a children's game that aims to teach and test children on the lett
 \
 [:construction: Development process](#construction-development-process)\
 \
-              [:closed_lock_with_key: APIs](#closed_lock_with_key-apis)\
+              [:unlock: Technologies Used](#unlock-user-stories)\
 \
               [:computer: External sources used](#computer-external-sources-used)\
 \
@@ -40,15 +40,15 @@ It's also intended as a shameless attempt to lessen the guilt that most parents 
 ### :books: User Stories
 ---
 * :woman: As a parent, I want: 
-    * an educational game that my child can play to learn and practise the letters of the alphabet. 
-    * customisable levels of difficulty. 
+    * an educational game so that my child can play to learn and practise the letters of the alphabet. 
+    * customisable levels of difficulty to allow my child to use the game at each stage of development. 
     * the option to turn any sound off! 
 
 * :woman_teacher: As an educational professional, I want:
-    * a game that gives constructive feedback.
+    * a game that gives constructive feedback so that the child is continually motivated to learn.
 
 * :child: As a small child, I want: 
-    * something fun and interactive that shows me images that I will easily recognise. 
+    * something fun and interactive that shows me images that I will easily recognise so that I can relate the game to my experience of every day life. 
 
 ### :game_die: Strategy Plane
 ---
@@ -175,6 +175,20 @@ As the 'Discover' page didn't really work as a standalone page, that was sadly r
 
 ## :construction: Development process
 
+### :unlock: Technologies used
+
+**Languages**
+* HTML
+* CSS
+* Javascript
+
+**Tools & Libraries**
+* jQuery
+* Bootstrap
+* Font Awesome
+* Gimp (image editing)
+* Audacity (audio editing)
+
 ### :computer: External sources used
 ---
 * Navbar
@@ -198,9 +212,6 @@ As the 'Discover' page didn't really work as a standalone page, that was sadly r
 
 * Full screen 
     * Code for changing to full screen layout taken from [W3schools](https://www.w3schools.com/howto/howto_js_fullscreen.asp)
-
-* Word resizing
-    * As word length on the 'Explore' page is undetermined, it was necessary to find a way to dynamically resize the font according to word length. Solution was taken from [here,](https://jquery-textfill.github.io/) with additional [JS file](assets/js/jquery.textfill.js) used. 
 
 ### :bug: Bugs
 ---

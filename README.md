@@ -22,11 +22,21 @@ Letter Bee is a children's game that aims to teach and test children on the lett
 \
 [:construction: Development process](#construction-development-process)\
 \
-              [:closed_lock_with_key: APIs](#closed_lock_with_key-apis)\
+              [:unlock: Technologies Used](#unlock-user-stories)\
 \
               [:computer: External sources used](#computer-external-sources-used)\
 \
-              [:bug: Bugs](#bug-bugs)
+              [:bug: Bugs](#bug-bugs)\
+\
+[:test_tube: Testing](#test-tube-testing)\
+\
+[:flight_departure: Deployment](#flight-departure-deployment)\
+\
+[:clapper: Credits](#clapper-credits)\
+\
+              [:movie_camera: Media](#movie-camera-media)\
+\
+              [:trophy: Acknowledgements](#trophy-acknowledgements)\
 
 ## :sparkles: UX
 
@@ -37,23 +47,18 @@ Alphabet products for small children tend to be quite traditional: 'A is for app
 It's also intended as a shameless attempt to lessen the guilt that most parents feel about using/relying on screen time. We all have the best of intentions, but sometimes a five-minute break is needed and if you're going to hand the parenting over to an electronic device, at least you can tell yourself you're giving them an educational opportunity!
 
 
-I wanted the site to have a learning aspect as well as a playing aspect and have chosen to use a dictionary API to further extend potential learning for older children.
-
 ### :books: User Stories
 ---
 * :woman: As a parent, I want: 
-    * an educational game that my child can play to learn and practise the letters of the alphabet. 
-    * it to be quick and easy for me to set up. 
-    * the level of difficulty to be customisable for my child. 
+    * an educational game so that my child can play to learn and practise the letters of the alphabet. 
+    * customisable levels of difficulty to allow my child to use the game at each stage of development. 
     * the option to turn any sound off! 
-    * different modes to allow me to play with my child or allow them to play independently. 
 
 * :woman_teacher: As an educational professional, I want:
-    * a game that gives constructive feedback, but doesn't focus too heavily on ‘right or wrong’. I.e. an incorrect answer given should be an opportunity to learn, rather than give a sense of having failed. 
+    * a game that gives constructive feedback so that the child is continually motivated to learn.
 
 * :child: As a small child, I want: 
-    * something fun and interactive that shows me images that I will easily recognise. 
-    * the game-length to be limited in some way so that I don’t get bored and start exploring the internet by myself(!).
+    * something fun and interactive that shows me images that I will easily recognise so that I can relate the game to my experience of every day life. 
 
 ### :game_die: Strategy Plane
 ---
@@ -156,58 +161,43 @@ Therefore, the only real difference in design is the menu which is a horizontal 
 * Moving options box from page to modal
     * I decided to keep all options settings inside a separate modal, rather than having some options displayed on the page (as in the wireframe). I felt this looked a lot cleaner and allowed the majority of the page to be devoted to the game display.
 
-* Removal of options from 'Discover' page
-    * The original wireframe included an options box for each of the html pages. However, with the discover page this isn't actually relevant as there is no audio to switch on/off and no reason to reduce the number of letters/options being displayed.
+* Removal of 'Discover' and 'Explore' modes
+    * Here's the big one... As the last page I worked on, the 'Explore' page went through many, many iterations.\
+    Whilst I was able to get the functionality working how I wanted I was never satisfied with the API I was using (because the perfect one for me just doesn't exist!). During the page's development, I worked with (and discarded) the following APIs:
 
+API | Issue | Attempted solution
+--------------------|------------|----------------------
+[Oxford Dictionary](https://developer.oxforddictionaries.com/) | Not compatible with Javascript/JQuery | Find another API
+[Merriam-Webster](https://dictionaryapi.com/) | The images that are provided as part of the API are not consistently present. Some words have an attached image, many do not. Images that are present are not of great quality | Use of the Unsplash API for images
+[Merriam-Webster](https://dictionaryapi.com/) | No 'random word beginning with...' functionality | Creation of own wordlist on Wordnik API (which has a random search function)
+[Merriam-Webster](https://dictionaryapi.com/) | As an American site, the word spellings and pronunciations were (unsurprisingly!) American. |  Nothing I could do about this but try and accept it or use a different dictionary API (I attempted both of these...)
+[Unsplash](https://unsplash.com/developers) | API was very easy to use and images were of great quality. However, consistency between dictionary definition and image shown was poor. For example, the word 'needle' might show an image of a needle for sewing, and a dictionary definition for a needle on a dial. | I tried searching for the image using the definition rather than the word itself but the connection between image and word was still more bad than good.
+[Wordnik](https://developer.wordnik.com/) | I created extensive word lists for each letter in order to ensure they were words that would have an obvious image attached and a child-friendly definition. However, it turns out the ability to search your own word lists using the API has now been deprecated (although it still features in the documentation). | No solution but big lesson learnt: Try API with a small sample before spending hours creating word lists...
+[WordsAPI](https://rapidapi.com/dpventures/api/wordsapi) | This API has a random word search function but no way of ensuring the words are child-friendly or that they have a definition and an example of usage. There is also no pronunciation option. | No solution except to try another dictionary API...
+
+**Final attempt**\
+My last desperate attempt at getting this page working as I wanted was to use the word lists I had created with the Wordnik API, and save them as a JSON file. I then used these word lists to select a random word beginning with my chosen letter and look it up in the Merriam-Webster dictionary API and match it with an image from the Unsplash API.\
+This solution also 'worked' in terms of functionality but I was (to be perfectly honest) ashamed of it in all its Frankenstein glory. Words were spelt with a British spelling, defined and pronounced with American spellings/pronunciations and paired with an image that sometimes obviously matched, and other times didn't.
+
+Removing the entire page was a bitter pill to swallow, but it pretty clearly failed my original user stories so had to be done. On a personal note, it did give me (if nothing else) a very thorough lesson on working with APIs and has also given me several pointers for what additional research to do in future before I start work on it.
+
+As the 'Discover' page didn't really work as a standalone page, that was sadly removed as well.
 
 ## :construction: Development process
 
-## :closed_lock_with_key: APIs
+### :unlock: Technologies used
+---
+**Languages**
+* HTML
+* CSS
+* Javascript
 
-In the original specification, I had decided to use a dedicated dictionary API to provide an image, definition, example sentence and audio pronunciation for the selected word on the 'Explore' page.
-The API I initially chose was from [Merriam-Webster](https://dictionaryapi.com/). However, as I started to use it, I realised there were some issues with it which made it less suited to my application. 
- 1. **As an American site, the word spellings and pronunciations were (unsurprisingly!) American.**\
-    I felt that as my site is a British site, focussing on learning new words, it would be confusing to a small child to have words spelt and pronounced differently, and perhaps (to them) unrecognisably.
-
-1. **The images that are provided as part of the API are not consistently present. Some words have an attached image, many do not.**\
-    As the site is largely about visual learning, this was a big problem.
-
-1. **When images were provided, the quality wasn't great.**\
-    I spent quite some time collating and editing the images for the 'Play/Learn' pages of the site, and didn't want to have the overall look of the site let down by poor quality images.
-
-
-I looked through several other dictionary APIs to try and find one that fit my new criteria:
-* Must have option for British spelling/pronunciation.
-* Must have associated images for majority of words.
-
-As it turns out, this doesn't exist!
-
-So, I decided to use two separate APIs to fullfil my requirements:
-
-1. [WordsAPI](https://rapidapi.com/dpventures/api/wordsapi) for the words/definition/pronunciation
-2. [Unsplash](https://unsplash.com/developers) for the associated images
-
-**WordsAPI**
-
-Whilst I managed to find an API that fit my criteria, it took a great deal of further trial and error to find one that fit. I spent quite some time creating the functionality needed using the [Wordnik API](https://developer.wordnik.com/). I had almost finalised a working solution when I discovered that many of the endpoints described in the documentation have actually been deprecated. So, it was back to the drawing board and I settled on using WordsAPI.
-
-The key feature in this API is its ability to generate a random word that starts with a given letter. Other parameters that were included in the search function are:
-
-* frequencyMin
-    * This optional parameter allows you to specify a value between 1.74 and 8.03 in order to generate words that are seen less or more frequently, respectively.\
-     Initially I set this to a value of '7' (as I wanted easily recognisable words). However, this quickly caused issues as searching for words beginning with 'X' with this minimum frequency created an infinite loop, as there are no letter X words with such a high frequency!\
-    To solve this, I added additional key/value pairs to specify the minimum frequency for each letter. Values were chosen using the [Wikipedia entry on letter frequency](https://en.wikipedia.org/wiki/Letter_frequency).
-    ![Letter Frequency](/wireframes/letter-frequency.jpg)
-
-*  hasDetails
-    * This optional parameter has several possible values. I chose to only generate words that have an associated definition and example of usage.
-
-**Unsplash API**
-
-The Unsplash API requires an API key which I registered for.\
-Requests are currently limited to 50 per hour whilst in the development stage. This can be increased to 5,000 when in production.
-
-[The API guidelines](https://help.unsplash.com/en/articles/2511245-unsplash-api-guidelines) require photo credit to be displayed under all images. This has been placed at the bottom of the modal on the Explore page.
+**Tools & Libraries**
+* jQuery
+* Bootstrap
+* Font Awesome
+* Gimp (image editing)
+* Audacity (audio editing)
 
 ### :computer: External sources used
 ---
@@ -233,9 +223,6 @@ Requests are currently limited to 50 per hour whilst in the development stage. T
 * Full screen 
     * Code for changing to full screen layout taken from [W3schools](https://www.w3schools.com/howto/howto_js_fullscreen.asp)
 
-* Word resizing
-    * As word length on the 'Explore' page is undetermined, it was necessary to find a way to dynamically resize the font according to word length. Solution was taken from [here,](https://jquery-textfill.github.io/) with additional [JS file](assets/js/jquery.textfill.js) used. 
-
 ### :bug: Bugs
 ---
 The first major bug encountered caused an 'on click' build up. When the function was called to display the next letter, it would first be called once, and then on the next click it would be called twice and then three times...
@@ -259,4 +246,13 @@ $('audio#play--confirmation__audio').on('ended', function() {
 });
 ```
 
-    
+## :test_tube: Testing    
+
+## :flight_departure: Deployment   
+
+## :clapper: Credits
+
+### :movie_camera: Media
+---
+### :trophy: Acknowledgements
+---

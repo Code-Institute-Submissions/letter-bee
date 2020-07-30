@@ -152,6 +152,15 @@ button:focus {
   left: 50%;
 }
 
+/* On page load */
+.element--hidden {
+    visibility: hidden;
+}
+
+#about {
+    display: none;
+}
+
 /* Main Layout */
 .page {
   padding-top: 4rem;
@@ -192,6 +201,7 @@ button:focus {
 }
 
 .page--btn {
+  cursor: pointer;
   background-color: #c8b9d8;
   color: inherit;
   font-size: 1.5rem;

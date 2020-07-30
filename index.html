@@ -4,6 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180"
     href="assets/favicons/apple-touch-icon.png">
@@ -15,15 +19,178 @@
   <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
   <title>Letter Bee</title>
 </head>
-
 <body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark red lighten-1 mb-4 fixed-top element--hidden">
+    <a class="navbar-brand" href="/">
+      <img src="assets/images/letter-bee.png" width="40" height="40"
+        class="d-inline-block align-top" alt="Letter Bee logo">
+      Letter Bee
+    </a>
+    <button class="navbar-toggler second-button" type="button"
+      data-toggle="collapse" data-target="#navbarSupportedContent23"
+      aria-controls="navbarSupportedContent23" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <div class="animated-icon2">
+        <span></span><span></span><span></span><span></span></div>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent23">
+      <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link active" href="/">About <span
+            class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="play.html">Play</a>
+        <a class="nav-item nav-link" href="learn.html">Learn</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Home page -->
   <section id="home" class="page">
-    <h1 class="page--title"><span>Welcome to </span><span>Letter Bee!</span>
-    </h1>
-    <img class="page--img" src="assets/images/letter-bee.png"
+    <h1 class="page--title"><span>Welcome to </span><span>Letter Bee!</span></h1>
+    <div class="section--center">
+        <img class="page--img" src="assets/images/letter-bee.png"
       alt="Letter Bee logo" />
-    <a class="page--btn" href="about.html">Let's Go!</a>
+    <div id="btn--to--about" class="page--btn">Let's Go!</div>
+    </div>
   </section>
+  <!-- About Page -->
+  <section id="about" class="page page--display">
+    <h1 class="page--title">About</h1>
+    <div class="section--center">
+      <p>Letter Bee has two different modes:</p>
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg">
+                <div class="section--link" data-toggle="modal" data-target="#play-modal">
+                    <i class="fas fa-puzzle-piece section--icon"></i><br>
+                    Play
+                </div>
+            </div>
+            <div class="col-lg">
+                <div class="section--link" data-toggle="modal" data-target="#learn-modal">
+                    <i class="fab fa-leanpub section--icon"></i><br>
+                    Learn
+                </div>
+            </div>
+        </div>   
+      </div>
+      <em>Click on a mode to find out more</em>
+    </div>
+  </section>
+  <footer class="element--hidden">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col align-middle"><a
+            href="https://jess-bennett.github.io/personal-portfolio/"
+            target="_blank"><i class="fas fa-laptop" title="Website"></i></a>
+        </div>
+        <div class="col"><a href="https://github.com/jess-bennett/"
+            target="_blank"><i class="fab fa-github-square"
+              title="GitHub profile"></i></a></div>
+        <div class="col"><a
+            href="https://www.linkedin.com/in/jess-bennett-33750368/"
+            target="_blank"><i class="fab fa-linkedin"
+              title="LinkedIn profile"></i></a></div>
+      </div>
+      <p class="footer--text">&#169; | 2020 | Jess Bennett</p>
+    </div>
+  </footer>
+  <!-- About Modals -->
+  <div class="modal fade" id="play-modal" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Play</h4>
+        </div>
+        <div class="modal-body">
+          <p>
+            <strong>Select the picture that matches the letter on the
+              screen.</strong>
+          </p>
+          <em>Options</em>
+          <p>
+            Play mode can be customised by selecting only certain letters to be
+            played (for example, those that you know your child is familiar
+            with, or those that you feel
+            they might want to practise), and by setting the number of options
+            displayed to make it more/less challenging.
+          </p>
+          <p>
+            Audio can also be turned on/off.
+          </p>
+          <p>
+            Select the <i class="fas fa-cogs" title="Game options"></i> icon to
+            access these settings.<br>
+          </p>
+          <p>
+            Select the <i class="fas fa-expand-alt" title="Expand screen"></i>
+            icon to play the game full-screen - this helps to prevent the child
+            from inadvertently navigating away from the page. This will also
+            enable a better display on smaller screens.
+          </p>
+          <div class="section--link--adjacent">
+            <div class="section--link btn--smaller" data-dismiss="modal"
+              aria-label="Close">
+              Back to <br><strong>About</strong>
+            </div>
+            <div class="section--link btn--smaller">
+              <a href="play.html">Go to <br><strong>Play</strong></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="learn-modal" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Learn</h4>
+        </div>
+        <div class="modal-body">
+          <p>
+            <strong>View pictures that match the letter on the screen. Select a
+              picture to see the word and hear the pronunciation.</strong>
+          </p>
+          <em>Options</em>
+          <p>
+            Learn mode can be customised by selecting only certain letters to be
+            viewed (for example, those that you know your child is less familiar
+            with,
+            and by setting the number of pictures displayed.
+          </p>
+          <p>
+            Audio can also be turned on/off.
+          </p>
+          <p>
+            Select the <i class="fas fa-cogs" title="Game options"></i> icon to
+            access these settings.<br>
+          </p>
+          <p>
+            Select the <i class="fas fa-expand-alt" title="Expand screen"></i>
+            icon for full-screen display - this helps to prevent the child from
+            inadvertently navigating away from the page. This will also enable a
+            better display on smaller screens.
+          </p>
+          <div class="section--link--adjacent">
+            <div class="section--link btn--smaller" data-dismiss="modal"
+              aria-label="Close">
+              Back to <br><strong>About</strong>
+            </div>
+            <div class="section--link btn--smaller">
+              <a href="learn.html">Go to <br><strong>Learn</strong></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+  <!-- Game JS -->
+  <script src="assets/js/config.js"></script>
 </body>
-
 </html>

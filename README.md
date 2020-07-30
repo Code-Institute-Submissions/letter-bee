@@ -151,58 +151,29 @@ Therefore, the only real difference in design is the menu which is a horizontal 
 * Moving options box from page to modal
     * I decided to keep all options settings inside a separate modal, rather than having some options displayed on the page (as in the wireframe). I felt this looked a lot cleaner and allowed the majority of the page to be devoted to the game display.
 
-* Removal of options from 'Discover' page
-    * The original wireframe included an options box for each of the html pages. However, with the discover page this isn't actually relevant as there is no audio to switch on/off and no reason to reduce the number of letters/options being displayed.
+* Removal of 'Discover' and 'Explore' modes
+    * Here's the big one... As the last page I worked on, the 'Explore' page went through many, many iterations.\
+    Whilst I was able to get the functionality working how I wanted I was never satisfied with the API I was using (because the perfect one for me just doesn't exist!). During the page's development, I worked with (and discarded) the following APIs:
 
+API | Issue | Attempted solution
+--------------------|------------|----------------------
+[Oxford Dictionary](https://developer.oxforddictionaries.com/) | Not compatible with Javascript/JQuery | Find another API
+[Merriam-Webster](https://dictionaryapi.com/) | The images that are provided as part of the API are not consistently present. Some words have an attached image, many do not. Images that are present are not of great quality | Use of the Unsplash API for images
+[Merriam-Webster](https://dictionaryapi.com/) | No 'random word beginning with...' functionality | Creation of own wordlist on Wordnik API (which has a random search function)
+[Merriam-Webster](https://dictionaryapi.com/) | As an American site, the word spellings and pronunciations were (unsurprisingly!) American. |  Nothing I could do about this but try and accept it or use a different dictionary API (I attempted both of these...)
+[Unsplash](https://unsplash.com/developers) | API was very easy to use and images were of great quality. However, consistency between dictionary definition and image shown was poor. For example, the word 'needle' might show an image of a needle for sewing, and a dictionary definition for a needle on a dial. | I tried searching for the image using the definition rather than the word itself but the connection between image and word was still more bad than good.
+[Wordnik](https://developer.wordnik.com/) | I created extensive word lists for each letter in order to ensure they were words that would have an obvious image attached and a child-friendly definition. However, it turns out the ability to search your own word lists using the API has now been deprecated (although it still features in the documentation). | No solution but big lesson learnt: Try API with a small sample before spending hours creating word lists...
+[WordsAPI](https://rapidapi.com/dpventures/api/wordsapi) | This API has a random word search function but no way of ensuring the words are child-friendly or that they have a definition and an example of usage. There is also no pronunciation option. | No solution except to try another dictionary API...
+
+**Final attempt**\
+My last desperate attempt at getting this page working as I wanted was to use the word lists I had created with the Wordnik API, and save them as a JSON file. I then used these word lists to select a random word beginning with my chosen letter and look it up in the Merriam-Webster dictionary API and match it with an image from the Unsplash API.\
+This solution also 'worked' in terms of functionality but I was (to be perfectly honest) ashamed of it in all its Frankenstein glory. Words were spelt with a British spelling, defined and pronounced with American spellings/pronunciations and paired with an image that sometimes obviously matched, and other times didn't.
+
+Removing the entire page was a bitter pill to swallow, but it pretty clearly failed my original user stories so had to be done. On a personal note, it did give me (if nothing else) a very thorough lesson on working with APIs and has also given me several pointers for what additional research to do in future before I start work on it.
+
+As the 'Discover' page didn't really work as a standalone page, that was sadly removed as well.
 
 ## :construction: Development process
-
-## :closed_lock_with_key: APIs
-
-In the original specification, I had decided to use a dedicated dictionary API to provide an image, definition, example sentence and audio pronunciation for the selected word on the 'Explore' page.
-The API I initially chose was from [Merriam-Webster](https://dictionaryapi.com/). However, as I started to use it, I realised there were some issues with it which made it less suited to my application. 
- 1. **As an American site, the word spellings and pronunciations were (unsurprisingly!) American.**\
-    I felt that as my site is a British site, focussing on learning new words, it would be confusing to a small child to have words spelt and pronounced differently, and perhaps (to them) unrecognisably.
-
-1. **The images that are provided as part of the API are not consistently present. Some words have an attached image, many do not.**\
-    As the site is largely about visual learning, this was a big problem.
-
-1. **When images were provided, the quality wasn't great.**\
-    I spent quite some time collating and editing the images for the 'Play/Learn' pages of the site, and didn't want to have the overall look of the site let down by poor quality images.
-
-
-I looked through several other dictionary APIs to try and find one that fit my new criteria:
-* Must have option for British spelling/pronunciation.
-* Must have associated images for majority of words.
-
-As it turns out, this doesn't exist!
-
-So, I decided to use two separate APIs to fullfil my requirements:
-
-1. [WordsAPI](https://rapidapi.com/dpventures/api/wordsapi) for the words/definition/pronunciation
-2. [Unsplash](https://unsplash.com/developers) for the associated images
-
-**WordsAPI**
-
-Whilst I managed to find an API that fit my criteria, it took a great deal of further trial and error to find one that fit. I spent quite some time creating the functionality needed using the [Wordnik API](https://developer.wordnik.com/). I had almost finalised a working solution when I discovered that many of the endpoints described in the documentation have actually been deprecated. So, it was back to the drawing board and I settled on using WordsAPI.
-
-The key feature in this API is its ability to generate a random word that starts with a given letter. Other parameters that were included in the search function are:
-
-* frequencyMin
-    * This optional parameter allows you to specify a value between 1.74 and 8.03 in order to generate words that are seen less or more frequently, respectively.\
-     Initially I set this to a value of '7' (as I wanted easily recognisable words). However, this quickly caused issues as searching for words beginning with 'X' with this minimum frequency created an infinite loop, as there are no letter X words with such a high frequency!\
-    To solve this, I added additional key/value pairs to specify the minimum frequency for each letter. Values were chosen using the [Wikipedia entry on letter frequency](https://en.wikipedia.org/wiki/Letter_frequency).
-    ![Letter Frequency](/wireframes/letter-frequency.jpg)
-
-*  hasDetails
-    * This optional parameter has several possible values. I chose to only generate words that have an associated definition and example of usage.
-
-**Unsplash API**
-
-The Unsplash API requires an API key which I registered for.\
-Requests are currently limited to 50 per hour whilst in the development stage. This can be increased to 5,000 when in production.
-
-[The API guidelines](https://help.unsplash.com/en/articles/2511245-unsplash-api-guidelines) require photo credit to be displayed under all images. This has been placed at the bottom of the modal on the Explore page.
 
 ### :computer: External sources used
 ---

@@ -248,6 +248,16 @@ $('audio#play--confirmation__audio').on('ended', function() {
 
 ## :test_tube: Testing    
 
+Aside from frequent testing in Google Dev whilst building the site, the first 'live' tests were conducted by the inspiration for the project: my son Eddie.\
+Two-year-olds don't make the best software testers as they lack the necessary logic and they also don't really care whether your project is a success or not. However, I did learn that:
+* the game is appropriate and enjoyable for the target age group
+* my child definitely likes pictures of vehicles above all else
+* wrestling your phone out of a small child's determined grip is easier said than done as they are surprisingly strong
+
+However, as haphazard as this testing was, it was a positive result for my third user story:\
+*As a small child, I want something fun and interactive that shows me images that I will easily recognise so that I can relate the game to my experience of every day life.*
+
+
 ## :flight_departure: Deployment   
 
 ## :clapper: Credits

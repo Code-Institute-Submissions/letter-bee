@@ -248,7 +248,8 @@ $('audio#play--confirmation__audio').on('ended', function() {
 
 2. The second bug appeared during the testing phase. 
 
-The purpose of this function is to pass an array between the play/learn pages (in either direction). I had originally stored the values in the URL (see code below). However, whilst this worked in development mode, it caused a 404 error in the deployed version.
+The purpose of this function is to pass an array between the play/learn pages (in either direction). I had originally stored the values in the URL (see code below). However, whilst this worked in development mode, it caused a 404 error in the deployed version.\
+The solution was to use session storage instead.
 
 **Original code**
 ```javascript

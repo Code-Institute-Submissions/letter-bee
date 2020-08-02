@@ -503,8 +503,8 @@ function correctSelected(selectedImage) {
 
 function goToLearnMode() {
   sessionStorage.setItem('playArray', playLetterBee.playIncorrectArray);
-  console.log(playLetterBee.playIncorrectArray);
-  window.location.href = `learn.html`;
+  console.log(window.location.href);
+  window.location.href = "learn.html";
 }
 
 /* Calling functions */

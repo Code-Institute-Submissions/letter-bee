@@ -503,8 +503,7 @@ function correctSelected(selectedImage) {
 
 function goToLearnMode() {
   sessionStorage.setItem('playArray', playLetterBee.playIncorrectArray);
-  console.log(window.location.href);
-  window.location.href = "learn.html";
+  window.location.href = "letter-bee/learn.html";
 }
 
 /* Calling functions */

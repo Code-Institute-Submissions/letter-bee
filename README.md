@@ -225,7 +225,7 @@ As the 'Discover' page didn't really work as a standalone page, that was sadly r
 
 ### :bug: Bugs
 ---
-The first major bug encountered caused an 'on click' build up. When the function was called to display the next letter, it would first be called once, and then on the next click it would be called twice and then three times...
+1. The first major bug encountered caused an 'on click' build up. When the function was called to display the next letter, it would first be called once, and then on the next click it would be called twice and then three times...
 
 This took quite a while to find a solution but in the end it was a relatively simple case of turning the click handler off:
 
@@ -243,6 +243,29 @@ $('audio#play--confirmation__audio').on('ended', function() {
   $('audio#play--confirmation__audio').off('ended');
   resetDisplay();
   playLetterBee.checkGameProgress();
+});
+```
+
+2. The second bug appeared during the testing phase. 
+
+The purpose of this function is to pass an array between the play/learn pages (in either direction). I had originally stored the values in the URL (see code below). However, whilst this worked in development mode, it caused a 404 error in the deployed version.
+
+**Original code**
+```javascript
+function goToLearnMode() {
+  window.location.href = `learn.html?${playLetterBee.playIncorrectArray}`;
+}
+```
+```javascript
+$(window).on('load', function() {
+  $(".se-pre-con").fadeOut("slow");
+  let queryString = location.search.substring(1);
+
+  if (queryString.length >=
+    1) { //Checks whether url has substring assigned by play page
+    let lettersToLearn = queryString.split(",");
+    initialiseLearn(lettersToLearn);
+  };
 });
 ```
 

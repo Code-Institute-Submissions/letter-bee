@@ -504,7 +504,9 @@ function correctSelected(selectedImage) {
 }
 
 function goToLearnMode() {
-  window.location.href = `learn.html?${playLetterBee.playIncorrectArray}`;
+  sessionStorage.setItem('playArray', playLetterBee.playIncorrectArray);
+  console.log(playLetterBee.playIncorrectArray);
+  window.location.href = `learn.html`;
 }
 
 /* Calling functions */

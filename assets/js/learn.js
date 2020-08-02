@@ -1,12 +1,10 @@
 /* Loading div */
 $(window).on('load', function() {
   $(".se-pre-con").fadeOut("slow");
-  let queryString = location.search.substring(1);
-
-  if (queryString.length >=
-    1) { //Checks whether url has substring assigned by play page
-    let lettersToLearn = queryString.split(",");
-    initialiseLearn(lettersToLearn);
+  if (sessionStorage.getItem("playArray") !== null) {
+  let playArray = sessionStorage.getItem('playArray');
+    initialiseLearn(playArray);
+    sessionStorage.clear();
   };
 });
 
@@ -394,6 +392,7 @@ function imageSelected(selectedImage) {
 }
 
 function goToPlayMode() {
+
   window.location.href = `play.html?${learnLetterBee.learntArray}`;
 }
 

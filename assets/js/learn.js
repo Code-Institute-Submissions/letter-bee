@@ -392,8 +392,8 @@ function imageSelected(selectedImage) {
 }
 
 function goToPlayMode() {
-
-  window.location.href = `play.html?${learnLetterBee.learntArray}`;
+  sessionStorage.setItem('learnArray', learnLetterBee.learntArray);
+  window.location.href = `play.html`;
 }
 
 /* Calling functions */

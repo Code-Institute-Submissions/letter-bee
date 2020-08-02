@@ -269,6 +269,24 @@ $(window).on('load', function() {
 });
 ```
 
+***Modified code***
+```javascript
+function goToLearnMode() {
+  sessionStorage.setItem('playArray', playLetterBee.playIncorrectArray);
+  window.location.href = `learn.html`;
+}
+```
+```javascript
+$(window).on('load', function() {
+  $(".se-pre-con").fadeOut("slow");
+  if (sessionStorage.getItem("playArray") !== null) {
+  let playArray = sessionStorage.getItem('playArray');
+    initialiseLearn(playArray);
+    sessionStorage.clear();
+  };
+});
+```
+
 ## :test_tube: Testing    
 
 Aside from frequent testing in Google Dev whilst building the site, the first 'live' tests were conducted by the inspiration for the project: my son Eddie.\

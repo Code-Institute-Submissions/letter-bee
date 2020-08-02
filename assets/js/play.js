@@ -1,12 +1,10 @@
 /* Loading div */
 $(window).on('load', function() {
   $(".se-pre-con").fadeOut("slow");
-  let queryString = location.search.substring(1);
-
-  if (queryString.length >=
-    1) { //Checks whether url has substring assigned by learn page
-    let lettersToPlay = queryString.split(",");
-    initialisePlay(lettersToPlay);
+  if (sessionStorage.getItem("learnArray") !== null) {
+  let learnArray = sessionStorage.getItem('learnArray');
+    initialisePlay(learnArray);
+    sessionStorage.clear();
   };
 });
 

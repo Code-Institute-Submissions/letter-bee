@@ -503,7 +503,7 @@ function correctSelected(selectedImage) {
 
 function goToLearnMode() {
   sessionStorage.setItem('playArray', playLetterBee.playIncorrectArray);
-  window.location.href = "/learn.html";
+  window.location.replace("letter-bee/learn.html");
 }
 
 /* Calling functions */

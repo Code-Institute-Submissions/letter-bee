@@ -288,6 +288,17 @@ $(window).on('load', function() {
 });
 ```
 
+3. My third tricky bug was as a result of the fix for bug two. It took me a long time (longer than it should) to fix, and resulted in many unnecessary commits (resulting in me understanding - too late - why git branches are a good idea). It was particularly frustrating as it didn't cause any issues in the Gitpod preview, and was only apparent when live.
+
+Anyway, the solution... When I was previously using the URL to pass my arrays, I had an additional line of code further down to then remove the array from the URL.
+
+**Original code**
+```javascript
+window.history.replaceState({}, document.title, "/" + "learn.html");
+```
+This didn't affect my previewed version, but in the live version removed part of the pathname which obviously caused many issues. 
+The modifed code simply doesn't include this line.
+
 ## :test_tube: Testing    
 
 Aside from frequent testing in Google Dev whilst building the site, the first 'live' tests were conducted by the inspiration for the project: my son Eddie.\

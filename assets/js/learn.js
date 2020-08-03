@@ -1,9 +1,8 @@
 /* Loading div */
 $(window).on('load', function() {
   $(".se-pre-con").fadeOut("slow");
-  console.log("NEW");
   if (sessionStorage.getItem("playArray") !== null) {
-  let playArray = sessionStorage.getItem('playArray');
+  let playArray = sessionStorage.getItem("playArray");
     initialiseLearn(playArray);
     sessionStorage.clear();
   };
@@ -216,8 +215,6 @@ function amendLetterInput(
       });
     };
   };
-  /* window.history.replaceState({}, document.title, "/" +
-    "learn.html"); */ //Removes substring from URL
 }
 
 function checkLetterInput() { //Recheck checked letters for 'learn again'
@@ -394,7 +391,7 @@ function imageSelected(selectedImage) {
 
 function goToPlayMode() {
   sessionStorage.setItem('learnArray', learnLetterBee.learntArray);
-  window.location.href = `play.html`;
+  window.location.href = "play.html";
 }
 
 /* Calling functions */

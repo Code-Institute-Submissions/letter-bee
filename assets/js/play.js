@@ -2,7 +2,7 @@
 $(window).on('load', function() {
   $(".se-pre-con").fadeOut("slow");
   if (sessionStorage.getItem("learnArray") !== null) {
-  let learnArray = sessionStorage.getItem('learnArray');
+  let learnArray = sessionStorage.getItem("learnArray");
     initialisePlay(learnArray);
     sessionStorage.clear();
   };
@@ -265,8 +265,6 @@ function amendLetterInput(
       });
     };
   };
-  window.history.replaceState({}, document.title, "/" +
-    "play.html"); //Removes substring from URL
 }
 
 function checkLetterInput() { //Recheck checked letters for 'play again'
@@ -503,9 +501,7 @@ function correctSelected(selectedImage) {
 
 function goToLearnMode() {
   sessionStorage.setItem('playArray', playLetterBee.playIncorrectArray);
-  let currentLocation = window.location.toString();
-  let newLocation = currentLocation.replace("play", "learn");
-  window.location.href = newLocation;
+  window.location.href = "learn.html";
 }
 
 /* Calling functions */

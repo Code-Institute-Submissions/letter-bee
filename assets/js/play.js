@@ -503,8 +503,7 @@ function correctSelected(selectedImage) {
 
 function goToLearnMode() {
   sessionStorage.setItem('playArray', playLetterBee.playIncorrectArray);
-  console.log("Attempt 4");
-  window.location.replace("https://jess-bennett.github.io/letter-bee/learn.html");
+  window.location.replace("/learn.html");
 }
 
 /* Calling functions */

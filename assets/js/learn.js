@@ -1,6 +1,7 @@
 /* Loading div */
 $(window).on('load', function() {
   $(".se-pre-con").fadeOut("slow");
+  console.log("NEW");
   if (sessionStorage.getItem("playArray") !== null) {
   let playArray = sessionStorage.getItem('playArray');
     initialiseLearn(playArray);

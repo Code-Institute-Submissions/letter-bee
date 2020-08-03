@@ -216,8 +216,8 @@ function amendLetterInput(
       });
     };
   };
-  window.history.replaceState({}, document.title, "/" +
-    "learn.html"); //Removes substring from URL
+  /* window.history.replaceState({}, document.title, "/" +
+    "learn.html"); */ //Removes substring from URL
 }
 
 function checkLetterInput() { //Recheck checked letters for 'learn again'

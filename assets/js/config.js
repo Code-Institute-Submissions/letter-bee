@@ -1,17 +1,17 @@
 /*
-* Only show 'Welcome' page on initial load of site
-*/
+ * Only show 'Welcome' page on initial load of site
+ */
 $(function() {
-    if (sessionStorage.getItem("isNewSession")) {
-        showAbout();
-    } else {
-        sessionStorage.setItem('isNewSession', 'true');
-    }
+  if (sessionStorage.getItem("isNewSession")) {
+    showAbout();
+  } else {
+    sessionStorage.setItem('isNewSession', 'true');
+  }
 });
 
 /*
-* Nav functionality
-*/
+ * Nav functionality
+ */
 $(document).ready(function() {
 
   $('.second-button').on('click', function() {
@@ -22,17 +22,17 @@ $(document).ready(function() {
 });
 
 /*
-* Show/hide sections of site
-*/
+ * Show/hide sections of site
+ */
 
 $("#btn--to--about").click(function() {
-    showAbout();
+  showAbout();
 })
 
 function showAbout() {
-    $(".element--hidden").removeClass("element--hidden");
-    $("#home").css("display", "none");
-    $("#about").css("display", "block");
+  $(".element--hidden").removeClass("element--hidden");
+  $("#home").css("display", "none");
+  $("#about").css("display", "block");
 }
 
 const masterPlayData = {

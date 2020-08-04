@@ -2,22 +2,22 @@
 $(window).on('load', function() {
   $(".se-pre-con").fadeOut("slow");
   if (sessionStorage.getItem("learnArray") !== null) {
-  $("#play--continue--modal").modal({
-        backdrop: 'static',
-        keyboard: false
-      });
+    $("#play--continue--modal").modal({
+      backdrop: 'static',
+      keyboard: false
+    });
   };
 });
 
 $(".dismiss--modal").click(function() {
-   $('.modal').modal('hide');
-   if(this.innerText == "Yes!"){
-  let learnArray = sessionStorage.getItem("learnArray");
+  $('.modal').modal('hide');
+  if (this.innerText == "Yes!") {
+    let learnArray = sessionStorage.getItem("learnArray");
     initialisePlay(learnArray);
-   } else {
-       window.location.href = "index.html";
-   }
-    sessionStorage.clear();
+  } else {
+    window.location.href = "index.html";
+  }
+  sessionStorage.clear();
 })
 
 /* On page load */
@@ -104,7 +104,7 @@ let playLetterBee = {
   },
   removeLetterPerm: function(
     letterDisplayed
-    ) { //Removes letter that has been played from the playing set
+  ) { //Removes letter that has been played from the playing set
     let removeLetterPerm = this.playAlphabetSet.indexOf(letterDisplayed);
     this.playAlphabetSet.splice(removeLetterPerm, 1);
 
@@ -112,7 +112,7 @@ let playLetterBee = {
   },
   randomiseArray: function(arrayLength, arrayRange,
     increaserValue
-    ) { //Used in several places to create a randomised array of varying length and range
+  ) { //Used in several places to create a randomised array of varying length and range
     let randomArray = [];
     while (randomArray.length < arrayLength) {
       let r = Math.floor(Math.random() * arrayRange) + increaserValue;
@@ -123,7 +123,7 @@ let playLetterBee = {
 
   createAlphabetDistractors: function(
     letterDisplayed
-    ) { //Randomly chooses the distractor letters for the game
+  ) { //Randomly chooses the distractor letters for the game
     let tempAlphabetSet = masterPlayData.alphabetMaster.slice();
     let removeLetterTemp = tempAlphabetSet.indexOf(letterDisplayed);
     tempAlphabetSet.splice(removeLetterTemp, 1);
@@ -261,7 +261,7 @@ $(".play--letter--select").click(
 
 function amendLetterInput(
   learntArrayFromLearn
-  ) { //Amends letter array using values brought over from play page
+) { //Amends letter array using values brought over from play page
   if (learntArrayFromLearn.length >= 1) {
     if (learntArrayFromLearn.length == 26) {
       $("#play--all").prop("checked", true);

@@ -2,22 +2,22 @@
 $(window).on('load', function() {
   $(".se-pre-con").fadeOut("slow");
   if (sessionStorage.getItem("playArray") !== null) {
-  $("#learn--continue--modal").modal({
-        backdrop: 'static',
-        keyboard: false
-      });
+    $("#learn--continue--modal").modal({
+      backdrop: 'static',
+      keyboard: false
+    });
   };
 });
 
 $(".dismiss--modal").click(function() {
-   $('.modal').modal('hide');
-   if(this.innerText == "Yes!"){
-  let playArray = sessionStorage.getItem("playArray");
+  $('.modal').modal('hide');
+  if (this.innerText == "Yes!") {
+    let playArray = sessionStorage.getItem("playArray");
     initialiseLearn(playArray);
-   } else {
-       window.location.href = "index.html";
-   }
-    sessionStorage.clear();
+  } else {
+    window.location.href = "index.html";
+  }
+  sessionStorage.clear();
 })
 
 /* On page load */
@@ -91,7 +91,7 @@ let learnLetterBee = {
   },
   removeLetterPerm: function(
     letterDisplayed
-    ) { //Removes letter that has been learnt from the learning set
+  ) { //Removes letter that has been learnt from the learning set
     let removeLetterPerm = this.learnAlphabetSet.indexOf(letterDisplayed);
     this.learnAlphabetSet.splice(removeLetterPerm, 1);
 
@@ -99,7 +99,7 @@ let learnLetterBee = {
   },
   randomiseArray: function(arrayLength, arrayRange,
     increaserValue
-    ) { //Used in several places to create a randomised array of varying length and range
+  ) { //Used in several places to create a randomised array of varying length and range
     let randomArray = [];
     while (randomArray.length < arrayLength) {
       let r = Math.floor(Math.random() * arrayRange) + increaserValue;
@@ -211,7 +211,7 @@ $(".learn--letter--select").click(
 
 function amendLetterInput(
   incorrectArrayFromPlay
-  ) { //Amends letter array using values brought over from play page
+) { //Amends letter array using values brought over from play page
   if (incorrectArrayFromPlay.length >= 1) {
     if (incorrectArrayFromPlay.length == 26) {
       $("#learn--all").prop("checked", true);

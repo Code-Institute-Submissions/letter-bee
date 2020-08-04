@@ -154,11 +154,11 @@ button:focus {
 
 /* On page load */
 .element--hidden {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 #about {
-    display: none;
+  display: none;
 }
 
 /* Main Layout */

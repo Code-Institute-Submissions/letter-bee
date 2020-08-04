@@ -10,7 +10,7 @@ $(window).on('load', function() {
 });
 
 $(".dismiss--modal").click(function() {
-   $('#play--continue--modal').modal('hide');
+   $('.modal').modal('hide');
    if(this.innerText == "Yes!"){
   let learnArray = sessionStorage.getItem("learnArray");
     initialisePlay(learnArray);

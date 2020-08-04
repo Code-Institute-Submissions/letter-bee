@@ -2,11 +2,23 @@
 $(window).on('load', function() {
   $(".se-pre-con").fadeOut("slow");
   if (sessionStorage.getItem("playArray") !== null) {
-  let playArray = sessionStorage.getItem("playArray");
-    initialiseLearn(playArray);
-    sessionStorage.clear();
+  $("#learn--continue--modal").modal({
+        backdrop: 'static',
+        keyboard: false
+      });
   };
 });
+
+$(".dismiss--modal").click(function() {
+   $('#learn--continue--modal').modal('hide');
+   if(this.innerText == "Yes!"){
+  let playArray = sessionStorage.getItem("playArray");
+    initialiseLearn(playArray);
+   } else {
+       window.location.href = "index.html";
+   }
+    sessionStorage.clear();
+})
 
 /* On page load */
 $(document).ready(function() {

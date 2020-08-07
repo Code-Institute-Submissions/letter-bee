@@ -210,10 +210,6 @@ As the 'Discover' page didn't really work as a standalone page, that was sadly r
         * [Adding audio](https://medium.com/@ericschwartz7/adding-audio-to-your-app-with-jquery-fa96b99dfa97)
         * [Delaying start of audio](https://www.codespeedy.com/play-audio-with-time-delay-javascript)
 
-* Passing array between pages
-    * Using [this](https://lage.us/Javascript-Pass-Variables-to-Another-Page.html) site, I considered using local/session storage but felt the url suffix was a preferable solution as I only wanted the data held temporarily\
-    
-
 * Honeycomb background
     * The CSS for the background effect was taken from [here.](https://leaverou.github.io/css3patterns/#honeycomb)
 
@@ -314,11 +310,32 @@ However, as haphazard as this testing was, it was a positive result for my third
 *As a small child, I want something fun and interactive that shows me images that I will easily recognise so that I can relate the game to my experience of every day life.*
 
 
+
 ## :flight_departure: Deployment   
 
-## :clapper: Credits
+## :clapper: credits
+
+* Loading gif\
+[Smallenvelop.com](https://smallenvelop.com/display-loading-icon-page-loads-completely)
+
+* Navbar\
+[Bootstrap](https://getbootstrap.com/docs/4.0/components/navbar/)
+
+* Animation for hamburger icon\
+[MDBootstrap](https://mdbootstrap.com/docs/jquery/navigation/hamburger-menu/)
+
+* Honeycomb background\
+[Leaverou.github](https://leaverou.github.io/css3patterns/#honeycomb)
+
 
 ### :movie_camera: Media
 ---
+
+* Photographs\
+[Needpix.com](https://www.needpix.com/)
+
+* Cartoon images\
+[Stickpng.com](https://www.stickpng.com/)
+
 ### :trophy: Acknowledgements
 ---

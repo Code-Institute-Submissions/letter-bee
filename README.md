@@ -298,6 +298,19 @@ The modifed code simply doesn't include this line.
 4. This wasn't exactly a bug, but rather a workaround. During testing, I discovered that Firefox doesn't allow autoplay unless the page has been interacted with first. This meant that when the user navigates from play mode directly to learn mode, the code was stopped by the autoplay blocker.\
 To fix this, I have added an additional modal that appears on page load and then runs the code upon the user's acceptance. 
 
+5. During testing, I found that the navigation between the play and learn pages via button click wasn't working (although there were no issues with the navbar).\
+The solution for this was suggested to me by a peer on Slack.
+
+**Original code**
+```javascript
+window.location.href = "index.html";
+```
+
+**Modified code**
+```javascript
+document.location = "index.html";
+```
+
 ## :test_tube: Testing    
 
 Aside from frequent testing in Google Dev whilst building the site, the first 'live' tests were conducted by the inspiration for the project: my son Eddie.\

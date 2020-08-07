@@ -15,7 +15,7 @@ $(".dismiss--modal").click(function() {
     let learnArray = sessionStorage.getItem("learnArray");
     initialisePlay(learnArray);
   } else {
-    window.location.href = "index.html";
+    location.href = "index.html";
   }
   sessionStorage.clear();
 })
@@ -513,7 +513,7 @@ function correctSelected(selectedImage) {
 
 function goToLearnMode() {
   sessionStorage.setItem('playArray', playLetterBee.playIncorrectArray);
-  window.location.href = "learn.html";
+  location.href = "learn.html";
 }
 
 /* Calling functions */

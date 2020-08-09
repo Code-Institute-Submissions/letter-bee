@@ -278,7 +278,7 @@ $(window).on('load', function() {
 });
 ```
 
-***Modified code***
+**Modified code**
 ```javascript
 function goToLearnMode() {
   sessionStorage.setItem('playArray', playLetterBee.playIncorrectArray);
@@ -460,3 +460,18 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
 ### :trophy: Acknowledgements
 ---
+In no particular order, I would like to thank:
+
+:star: My darling, little Eddie - for inspiring this project.
+
+:star: My wonderful husband, Tom - for general patience and enthusiasm (even when he has no idea what I'm talking about).
+
+:star: My parents, Jane and Chris - for the audio and for following my somewhat anal instructions without complaint.
+
+:star: My mentor, [Simen](https://github.com/Eventyret) - for the incredible level of support and guidance.
+
+:star: [Geomint](https://github.com/Geomint) - for a great demonstration of how to level up your README.
+
+:star: The Slack community - for answering many questions, and reviewing my project.
+
+:star: Code Institute - for getting me to this point.

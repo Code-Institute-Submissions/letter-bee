@@ -400,7 +400,7 @@ Full testing-frame can be found [here](/assets/testing/manual-testing.pdf)
 
 ### :heavy_check_mark: W3C Tests
 ---
-HTML and CSS code was run through the W3C validator tools (/)
+HTML and CSS code was run through the W3C validator tools
 
 The [HTML validator](https://validator.w3.org/) gave one error:
 * element div not allowed as child of element button in this context.

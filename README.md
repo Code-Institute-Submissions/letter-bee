@@ -380,6 +380,26 @@ All tests produced good results with the following exceptions:
 
 ## :flight_departure: Deployment   
 
+Letter Bee was developed on GitPod and is hosted on GitHub
+
+**The site was deployed using the following steps from the GitHub site:**
+1. Navigated to my [Letter Bee repository](https://github.com/jess-bennett/letter-bee)
+1. Selected 'Settings'
+1. Scrolled to 'Github pages'
+1. Selected 'Master Branch' and saved my choice
+
+**To clone Letter Bee from GitHub:**
+1. Navigate to [Letter Bee repository](https://github.com/jess-bennett/letter-bee)
+1. Above the list of files, click the green 'Code' button
+1. Copy the URL under 'Clone with HTTPS' using the clipboard icon
+1. Open Git Bash
+1. Change the current working directory to the location where you want the cloned directory
+1. Type ```git clone```, and then paste the URL you copied earlier.
+```
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+```
+7. Press 'Enter'
+
 ## :clapper: credits
 
 * Loading gif\

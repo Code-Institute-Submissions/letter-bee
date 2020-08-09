@@ -316,7 +316,7 @@ It's frustrating that the font doesn't display on Safari as it was chosen for it
 
 ## :test_tube: Testing    
 
-**Toddler testing**
+:test_tube: **Toddler testing**
 
 Aside from frequent testing in Google Dev whilst building the site, the first 'live' tests were conducted by the inspiration for the project: my son Eddie.\
 Two-year-olds don't make the best software testers as they lack the necessary logic and they also don't really care whether your project is a success or not. However, I did learn that:
@@ -327,7 +327,7 @@ Two-year-olds don't make the best software testers as they lack the necessary lo
 However, as haphazard as this testing was, it was a positive result for my third user story:\
 *As a small child, I want something fun and interactive that shows me images that I will easily recognise so that I can relate the game to my experience of every day life.*
 
-**'Mum-friend' testing**
+:test_tube: **'Mum-friend' testing**
 
 I also recruited some 'mum-friends' to carry out testing alongside their children.
 
@@ -337,7 +337,7 @@ The general feedback was good, with the only suggestions for improvement being:
 
 Whilst this feedback has not resulted in any changes to the code, it has given me some thoughts for future development.
 
-**Peer testing**
+:test_tube: **Peer testing**
 
 I submitted by project to the peer-review process on Code Institute's Slack platform.
 
@@ -348,7 +348,7 @@ This feedback is something which I have come to understand during the process of
 
 My strategy for this site was to create working functions for the 'play' mode, and then replicate this for the 'learn' mode. In hindsight, it would have been more 'DRY' if I had then amended the 'play' functions to work for 'learn' mode.
 
-**Jasmine testing**
+:test_tube: **Jasmine testing**
 
 The main function that I felt unable to test manually, was the function to create the 'distractor' letters in 'play' mode. 
 
@@ -356,7 +356,7 @@ In order to test this, I created a jasmine test which showed no errors:\
 [jasmine.html](/testing/jasmine.html)\
 [playSpec.js](/testing/spec/playSpec.js)
 
-**Manual testing**
+:test_tube: **Manual testing**
 
 Manual testing was carried out on all devices available to me:
 * Google Dev Tools:
@@ -380,6 +380,25 @@ All tests produced good results with the following exceptions:
 * Issues were found with autoplay in Firefox - see [Bug 4](#bug-bugs) for details and solution
 * Navigation between play and learn pages didn't work in Safari - see [Bug 5](#bug-bugs) for details and solution
 * ABeeZee font not displaying in Safari - see [Bug 6](#bug-bugs) for details
+
+:test_tube: **W3C testing**
+
+HTML and CSS code was run through the W3C validator tools (/)
+
+The [HTML validator](https://validator.w3.org/) gave one error:
+* element div not allowed as child of element button in this context.
+
+The piece of code with this error was taken directly from:
+https://mdbootstrap.com/docs/jquery/navigation/hamburger-menu/
+
+An attempt was made to change the div element to a span, in order to satisfy W3C requirements, however the icon then didn't display. I have left this error in place as it doesn't seem to have any detrimental effect on the site.
+
+The [CSS validator](https://jigsaw.w3.org/css-validator/) gave no errors but two categories of warnings:
+* unknown vendor extension/pseudo-class/pseudo-element
+    * No action – advice taken from: https://stackoverflow.com/questions/52490004/what-are-all-of-these-w3c-css-validation-warnings-about
+* same color for background-color and border-top-color
+    * No action - the border colour and background colour are intended to be the same colour
+
 
 ## :flight_departure: Deployment   
 

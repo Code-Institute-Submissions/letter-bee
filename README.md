@@ -48,7 +48,7 @@ Letter Bee is a children's game that aims to teach and test children on the lett
 \
               [:movie_camera: Media](#movie_camera-media)\
 \
-              [:trophy: Acknowledgements](#trophy-acknowledgements)\
+              [:trophy: Acknowledgements](#trophy-acknowledgements)
 
 ## :sparkles: UX
 

@@ -20,21 +20,33 @@ Letter Bee is a children's game that aims to teach and test children on the lett
 \
               [:clipboard: Wireframes](#clipboard-wireframes)\
 \
-[:construction: Development process](#construction-development-process)\
+[:construction: Development Process](#construction-development-process)\
 \
-              [:unlock: Technologies Used](#unlock-user-stories)\
+              [:unlock: Technologies Used](#unlock-technologies-used)\
 \
-              [:computer: External sources used](#computer-external-sources-used)\
+              [:computer: External Sources Used](#computer-external-sources-used)\
 \
               [:bug: Bugs](#bug-bugs)\
 \
-[:test_tube: Testing](#test-tube-testing)\
+[:test_tube: Testing](#test_tube-testing)\
 \
-[:flight_departure: Deployment](#flight-departure-deployment)\
+              [:child: Toddler Tests](#child-toddler-tests)\
+\
+              [:family_woman_girl: 'Mum-friend' Tests](#family_woman_girl-mum-friend-tests)\
+\
+              [:people_holding_hands: Peer Tests](#people_holding_hands-peer-tests)\
+\
+              [:sparkle: Jasmine Tests](#sparkle-jasmine-tests)\
+\
+              [:memo: Manual Tests](#memo-manual-tests)\
+\
+              [:heavy_check_mark: W3C Tests](#heavy_check_mark-w3c-tests)\
+\
+[:flight_departure: Deployment](#flight_departure-deployment)\
 \
 [:clapper: Credits](#clapper-credits)\
 \
-              [:movie_camera: Media](#movie-camera-media)\
+              [:movie_camera: Media](#movie_camera-media)\
 \
               [:trophy: Acknowledgements](#trophy-acknowledgements)\
 
@@ -183,9 +195,9 @@ Removing the entire page was a bitter pill to swallow, but it pretty clearly fai
 
 As the 'Discover' page didn't really work as a standalone page, that was sadly removed as well.
 
-## :construction: Development process
+## :construction: Development Process
 
-### :unlock: Technologies used
+### :unlock: Technologies Used
 ---
 **Languages**
 * HTML
@@ -199,7 +211,7 @@ As the 'Discover' page didn't really work as a standalone page, that was sadly r
 * Gimp (image editing)
 * Audacity (audio editing)
 
-### :computer: External sources used
+### :computer: External Sources Used
 ---
 * Navbar
     * The navbar is taken from [Bootstrap](https://getbootstrap.com/docs/4.0/components/navbar/) and styled in keeping with the website
@@ -316,8 +328,8 @@ It's frustrating that the font doesn't display on Safari as it was chosen for it
 
 ## :test_tube: Testing    
 
-:test_tube: **Toddler testing**
-
+### :child: Toddler Tests
+---
 Aside from frequent testing in Google Dev whilst building the site, the first 'live' tests were conducted by the inspiration for the project: my son Eddie.\
 Two-year-olds don't make the best software testers as they lack the necessary logic and they also don't really care whether your project is a success or not. However, I did learn that:
 * the game is appropriate and enjoyable for the target age group
@@ -327,8 +339,8 @@ Two-year-olds don't make the best software testers as they lack the necessary lo
 However, as haphazard as this testing was, it was a positive result for my third user story:\
 *As a small child, I want something fun and interactive that shows me images that I will easily recognise so that I can relate the game to my experience of every day life.*
 
-:test_tube: **'Mum-friend' testing**
-
+### :family_woman_girl: 'Mum-friend' Tests
+---
 I also recruited some 'mum-friends' to carry out testing alongside their children.
 
 The general feedback was good, with the only suggestions for improvement being:
@@ -337,8 +349,8 @@ The general feedback was good, with the only suggestions for improvement being:
 
 Whilst this feedback has not resulted in any changes to the code, it has given me some thoughts for future development.
 
-:test_tube: **Peer testing**
-
+### :people_holding_hands: Peer Tests
+---
 I submitted by project to the peer-review process on Code Institute's Slack platform.
 
 Again, feedback was good, with the main suggeestion for improvement being:
@@ -348,16 +360,16 @@ This feedback is something which I have come to understand during the process of
 
 My strategy for this site was to create working functions for the 'play' mode, and then replicate this for the 'learn' mode. In hindsight, it would have been more 'DRY' if I had then amended the 'play' functions to work for 'learn' mode.
 
-:test_tube: **Jasmine testing**
-
+### :sparkle: Jasmine Tests
+---
 The main function that I felt unable to test manually, was the function to create the 'distractor' letters in 'play' mode. 
 
 In order to test this, I created a jasmine test which showed no errors:\
 [jasmine.html](/testing/jasmine.html)\
 [playSpec.js](/testing/spec/playSpec.js)
 
-:test_tube: **Manual testing**
-
+### :memo: Manual Tests
+---
 Manual testing was carried out on all devices available to me:
 * Google Dev Tools:
     * Mobile device
@@ -381,8 +393,8 @@ All tests produced good results with the following exceptions:
 * Navigation between play and learn pages didn't work in Safari - see [Bug 5](#bug-bugs) for details and solution
 * ABeeZee font not displaying in Safari - see [Bug 6](#bug-bugs) for details
 
-:test_tube: **W3C testing**
-
+### :heavy_check_mark: W3C Tests
+---
 HTML and CSS code was run through the W3C validator tools (/)
 
 The [HTML validator](https://validator.w3.org/) gave one error:
@@ -422,7 +434,7 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 ```
 7. Press 'Enter'
 
-## :clapper: credits
+## :clapper: Credits
 
 * Loading gif\
 [Smallenvelop.com](https://smallenvelop.com/display-loading-icon-page-loads-completely)

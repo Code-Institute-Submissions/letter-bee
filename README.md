@@ -347,7 +347,8 @@ The general feedback was good, with the only suggestions for improvement being:
 * Not all images were recognisable to their children 
 * One tester did not like the mix of photos and cartoon images (would prefer all to be the same style)
 
-Whilst this feedback has not resulted in any changes to the code, it has given me some thoughts for future development.
+Whilst this feedback has not resulted in any changes to the code, it has given me some thoughts for future development.\
+The feedback also satisfied user stories 1 and 2, with the 'audio off' option being mentioned by several users!
 
 ### :people_holding_hands: Peer Tests
 ---
@@ -365,8 +366,10 @@ My strategy for this site was to create working functions for the 'play' mode, a
 The main function that I felt unable to test manually, was the function to create the 'distractor' letters in 'play' mode. 
 
 In order to test this, I created a jasmine test which showed no errors:\
-[jasmine.html](/testing/jasmine.html)\
-[playSpec.js](/testing/spec/playSpec.js)
+[jasmine.html](/assets/testing/jasmine.html)\
+[playSpec.js](/assets/testing/spec/playSpec.js)
+
+Outcome of test can be viewed [here](https://jess-bennett.github.io/letter-bee/assets/testing/jasmine.html)
 
 ### :memo: Manual Tests
 ---
@@ -393,6 +396,8 @@ All tests produced good results with the following exceptions:
 * Navigation between play and learn pages didn't work in Safari - see [Bug 5](#bug-bugs) for details and solution
 * ABeeZee font not displaying in Safari - see [Bug 6](#bug-bugs) for details
 
+Full testing-frame can be found [here](/assets/testing/manual-testing.pdf)
+
 ### :heavy_check_mark: W3C Tests
 ---
 HTML and CSS code was run through the W3C validator tools (/)
@@ -411,6 +416,7 @@ The [CSS validator](https://jigsaw.w3.org/css-validator/) gave no errors but two
 * same color for background-color and border-top-color
     * No action - the border colour and background colour are intended to be the same colour
 
+Full testing-frame can be found [here](/assets/testing/html-css-testing.pdf)
 
 ## :flight_departure: Deployment   
 

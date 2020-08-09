@@ -311,6 +311,9 @@ window.location.href = "index.html";
 document.location = "index.html";
 ```
 
+6. I also discovered that the ABeeZee font doesn't display on Safari. I tried to fix this using [Google webfonts helper](https://google-webfonts-helper.herokuapp.com/fonts/montserrat-alternates?subsets=latin) and uploading the fonts to be stored in my assets folder. However, this made no difference in Safari and I felt it was an unnecessary use of storage so reverted to the original google import.\
+It's frustrating that the font doesn't display on Safari as it was chosen for its suitability for a letter-learning game for children. However, it is a minor issue in the overall game.
+
 ## :test_tube: Testing    
 
 **Toddler testing**
@@ -376,7 +379,7 @@ Manual testing was carried out on all devices available to me:
 All tests produced good results with the following exceptions:
 * Issues were found with autoplay in Firefox - see [Bug 4](#bug-bugs) for details and solution
 * Navigation between play and learn pages didn't work in Safari - see [Bug 5](#bug-bugs) for details and solution
-* ABeeZee font not displaying in Safari
+* ABeeZee font not displaying in Safari - see [Bug 6](#bug-bugs) for details
 
 ## :flight_departure: Deployment   
 

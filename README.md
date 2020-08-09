@@ -298,7 +298,7 @@ The modifed code simply doesn't include this line.
 4. This wasn't exactly a bug, but rather a workaround. During testing, I discovered that Firefox doesn't allow autoplay unless the page has been interacted with first. This meant that when the user navigates from play mode directly to learn mode, the code was stopped by the autoplay blocker.\
 To fix this, I have added an additional modal that appears on page load and then runs the code upon the user's acceptance. 
 
-5. During testing, I found that the navigation between the play and learn pages via button click wasn't working (although there were no issues with the navbar).\
+5. During testing, I found that the navigation between the play and learn pages via button click wasn't working in Safari (although there were no issues with the navbar).\
 The solution for this was suggested to me by a peer on Slack.
 
 **Original code**
@@ -313,6 +313,8 @@ document.location = "index.html";
 
 ## :test_tube: Testing    
 
+**Toddler testing**
+
 Aside from frequent testing in Google Dev whilst building the site, the first 'live' tests were conducted by the inspiration for the project: my son Eddie.\
 Two-year-olds don't make the best software testers as they lack the necessary logic and they also don't really care whether your project is a success or not. However, I did learn that:
 * the game is appropriate and enjoyable for the target age group
@@ -322,7 +324,59 @@ Two-year-olds don't make the best software testers as they lack the necessary lo
 However, as haphazard as this testing was, it was a positive result for my third user story:\
 *As a small child, I want something fun and interactive that shows me images that I will easily recognise so that I can relate the game to my experience of every day life.*
 
+**'Mum-friend' testing**
 
+I also recruited some 'mum-friends' to carry out testing alongside their children.
+
+The general feedback was good, with the only suggestions for improvement being:
+* Not all images were recognisable to their children 
+* One tester did not like the mix of photos and cartoon images (would prefer all to be the same style)
+
+Whilst this feedback has not resulted in any changes to the code, it has given me some thoughts for future development.
+
+**Peer testing**
+
+I submitted by project to the peer-review process on Code Institute's Slack platform.
+
+Again, feedback was good, with the main suggeestion for improvement being:
+* <em>"Because your project is so well executed I will pass on something that I did not really grasp until much later in the course which is that duplicating code should be avoided in an ideal world."</em>
+
+This feedback is something which I have come to understand during the process of creating this project and will be much more mindful in future projects. 
+
+My strategy for this site was to create working functions for the 'play' mode, and then replicate this for the 'learn' mode. In hindsight, it would have been more 'DRY' if I had then amended the 'play' functions to work for 'learn' mode.
+
+**Jasmine testing**
+
+The main function that I felt unable to test manually, was the function to create the 'distractor' letters in 'play' mode. 
+
+In order to test this, I created a jasmine test which showed no errors:\
+[jasmine.html](/testing/jasmine.html)\
+[playSpec.js](/testing/spec/playSpec.js)
+
+**Manual testing**
+
+Manual testing was carried out on all devices available to me:
+* Google Dev Tools:
+    * Mobile device
+    * iPad vertical
+    * iPad horizontal
+    * desktop
+
+* Published site:
+    * Samsung Galaxy S8
+    * desktop
+
+* Browser
+    * Chrome
+    * Edge
+    * Firefox
+    * Safari (Using [Lambdatest](https://www.lambdatest.com/))
+    * Opera 
+
+All tests produced good results with the following exceptions:
+* Issues were found with autoplay in Firefox - see [Bug 4](#bug-bugs) for details and solution
+* Navigation between play and learn pages didn't work in Safari - see [Bug 5](#bug-bugs) for details and solution
+* ABeeZee font not displaying in Safari
 
 ## :flight_departure: Deployment   
 

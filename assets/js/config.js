@@ -1,7 +1,7 @@
 /*
  * Only show 'Welcome' page on initial load of site
  */
-$(function() {
+$(function () {
   if (sessionStorage.getItem("isNewSession")) {
     showAbout();
   } else {

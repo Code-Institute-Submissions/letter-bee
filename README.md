@@ -398,9 +398,9 @@ All tests produced good results with the following exceptions:
 
 Full testing-frame can be found [here](/assets/testing/manual-testing.pdf)
 
-### :heavy_check_mark: W3C Tests
+### :heavy_check_mark: Online Validators
 ---
-HTML and CSS code was run through the W3C validator tools
+HTML and CSS code was run through the W3C validator tools and JS was run through JSHint
 
 The [HTML validator](https://validator.w3.org/) gave one error:
 * element div not allowed as child of element button in this context.
@@ -417,6 +417,8 @@ The [CSS validator](https://jigsaw.w3.org/css-validator/) gave no errors but two
     * No action - the border colour and background colour are intended to be the same colour
 
 Full testing-frame can be found [here](/assets/testing/html-css-testing.pdf)
+
+[JSHint](https://jshint.com/) gave no errors, just some warnings about unnecessary/missing semicolons which was rectified.
 
 ## :flight_departure: Deployment   
 

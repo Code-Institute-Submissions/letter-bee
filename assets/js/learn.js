@@ -6,7 +6,7 @@ $(window).on('load', function() {
       backdrop: 'static',
       keyboard: false
     });
-  };
+  }
 });
 
 $(".dismiss--modal").click(function() {
@@ -18,7 +18,7 @@ $(".dismiss--modal").click(function() {
     document.location = "index.html";
   }
   sessionStorage.clear();
-})
+});
 
 /* On page load */
 $(document).ready(function() {
@@ -57,12 +57,12 @@ let learnLetterBee = {
       if (document.fullscreenElement || document.webkitFullscreenElement ||
         document.mozFullScreenElement) {
         closeFullscreen();
-      };
+      }
       if (this.learntArray.length == 0) {
         $("#message--learnt").css("display", "none");
       } else {
         $("#message--learnt").css("display", "block");
-      };
+      }
       $("#array--learnt").text(this.learntArray.join(', '));
       $("#learn--finished--modal").modal({
         backdrop: 'static',
@@ -78,8 +78,7 @@ let learnLetterBee = {
       learnLettersRemaining.text(this.learnAlphabetSet.join(', '));
     } else {
       learnLettersRemaining.text("FINISHED");
-
-    };
+    }
     return this;
   },
   selectKeyLetter: function() { //Chooses which letter to be displayed for the game
@@ -104,7 +103,7 @@ let learnLetterBee = {
     while (randomArray.length < arrayLength) {
       let r = Math.floor(Math.random() * arrayRange) + increaserValue;
       if (randomArray.indexOf(r) === -1) randomArray.push(r);
-    };
+    }
     return randomArray;
   },
   learnImagesValues: function(
@@ -162,16 +161,16 @@ let learnLetterBee = {
     } else {
       $("#learn--image4--display").hide();
       $("#learn--word4--display").hide();
-    };
+    }
     if (this.learnNumberOfOptions >= 3) {
       $("#learn--image3--display").show();
       $("#learn--word3--display").show();
     } else {
       $("#learn--image3--display").hide();
       $("#learn--word3--display").hide();
-    };
+    }
   }
-}
+};
 
 /* Settings input */
 $("#learn--all").click(function() { //Selects the full 26 letter set
@@ -179,11 +178,11 @@ $("#learn--all").click(function() { //Selects the full 26 letter set
     $(".learn--letter--select").prop("checked", true);
     learnLetterBee.resetLearnAlphaBetSet();
   } else {
-    $(".learn--letter--select").prop("checked", false)
+    $(".learn--letter--select").prop("checked", false);
     learnLetterBee.learnAlphabetSet = [];
     learnLetterBee.updateLettersRemaining();
-  };
-})
+  }
+});
 
 $(".learn--letter--select").click(
   function() { //Removes unwanted letters from the learn set
@@ -193,7 +192,7 @@ $(".learn--letter--select").click(
       $("#learn--all").prop("checked", true);
     } else {
       $("#learn--all").prop("checked", false);
-    };
+    }
     if ($.inArray(checkedLetter, learnLetterBee.learnAlphabetSet) > -1) {
       let removeLetterPerm = learnLetterBee.learnAlphabetSet.indexOf(
         checkedLetter);
@@ -205,8 +204,8 @@ $(".learn--letter--select").click(
       learnLetterBee.learnAlphabetSet.sort();
       learnLetterBee.updateLettersRemaining();
       $(this).prop("checked", true);
-    };
-  })
+    }
+  });
 
 
 function amendLetterInput(
@@ -223,10 +222,10 @@ function amendLetterInput(
           $(this).prop("checked", true);
         } else {
           $(this).prop("checked", false);
-        };
+        }
       });
-    };
-  };
+    }
+  }
 }
 
 function checkLetterInput() { //Recheck checked letters for 'learn again'
@@ -238,13 +237,13 @@ function checkLetterInput() { //Recheck checked letters for 'learn again'
         learnLetterBee.learnAlphabetSet.push($(this).val());
         learnLetterBee.learnAlphabetSet.sort();
         learnLetterBee.updateLettersRemaining();
-      };
+      }
     });
   }
   if ($(".learn--letter--select:checked").length == 0) {
     $("#learn--options--alert").show();
     return "EXIT FUNCTION";
-  };
+  }
 
 }
 
@@ -252,9 +251,9 @@ $(".learn--options--select").click(
   function() { //Updates the number of options to be shown
     learnLetterBee.learnNumberOfOptions = parseInt($(this).val());
     learnLetterBee.learnImagesValues(learnLetterBee.letterToDisplay);
-  })
+  });
 
-$('audio').prop("muted", false)
+$('audio').prop("muted", false);
 
 $("#learn--options--audio").click(function() {
   $(".learn--audio").toggleClass("learn--audio--on");
@@ -263,8 +262,8 @@ $("#learn--options--audio").click(function() {
     $('audio').prop("muted", false);
   } else {
     $('audio').prop("muted", true);
-  };
-})
+  }
+});
 
 /* Full screen mode */
 function openFullscreen() {
@@ -314,9 +313,7 @@ function learnLettersAudio() {
 
   setTimeout(function() {
     $('audio#learn--letter--audio')[0].play();
-
-  }, 1500)
-
+  }, 1500);
 }
 
 function learnWordAudio(selectedWord) {
@@ -345,7 +342,7 @@ function resetDisplay() {
 function initialiseLearn(incorrectArrayFromPlay) {
   if (typeof incorrectArrayFromPlay !== 'undefined') {
     amendLetterInput(incorrectArrayFromPlay);
-  };
+  }
   if (checkLetterInput() == "EXIT FUNCTION") {
     return;
   } else {
@@ -358,7 +355,7 @@ function initialiseLearn(incorrectArrayFromPlay) {
     $("#learn--continue").css("display", "block");
     $("#learn--restart").text("Restart");
     nextLearn();
-  };
+  }
 }
 
 function learnAgain() {
@@ -384,9 +381,8 @@ $(".learn--image--select").click(function() {
   $(this).addClass("learn--image--current");
   $(`#learn--word${imageID}--display`).css("visibility", "visible");
   $(`#learn--answer`).css("visibility", "visible");
-  let imageValue = $(this).children("img").attr("alt").toUpperCase();
   imageSelected(this);
-})
+});
 
 function imageSelected(selectedImage) {
   let wordToDisplay = $(selectedImage).children("img").attr("alt");
@@ -397,8 +393,7 @@ function imageSelected(selectedImage) {
     1) {
     learnLetterBee.learntArray.push(learnLetterBee.letterToDisplay);
     learnLetterBee.learntArray.sort();
-  };
-
+  }
 }
 
 function goToPlayMode() {
@@ -409,28 +404,28 @@ function goToPlayMode() {
 /* Calling functions */
 $("#expand--fullscreen--button").click(function() {
   openFullscreen();
-})
+});
 
 $("#close--fullscreen--button").click(function() {
   closeFullscreen();
-})
+});
 
 $("#learn--next--button").click(function() {
   learnLetterBee.checkLearnProgress();
-})
+});
 
 $("#nav--play").click(function() {
   goToPlayMode();
-})
+});
 
 $("#learn--again").click(function() {
   learnAgain();
-})
+});
 
 $("#learn--restart").click(function() {
   initialiseLearn();
-})
+});
 
 $("#initialise--learn").click(function() {
   initialiseLearn();
-})
+});

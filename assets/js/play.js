@@ -6,7 +6,7 @@ $(window).on('load', function() {
       backdrop: 'static',
       keyboard: false
     });
-  };
+  }
 });
 
 $(".dismiss--modal").click(function() {
@@ -18,7 +18,7 @@ $(".dismiss--modal").click(function() {
     document.location = "index.html";
   }
   sessionStorage.clear();
-})
+});
 
 /* On page load */
 $(document).ready(function() {
@@ -47,7 +47,6 @@ let playLetterBee = {
   resetPlayAlphaBetSet: function() { //Used to reset the letters left to be played, back to a full 26
     this.playAlphabetSet = masterPlayData.alphabetMaster.slice();
     this.updateLettersRemaining();
-
     return this;
   },
   resetPlayArrays: function() { //Used to reset the letters answered correctly/incorrectly back to 0
@@ -61,13 +60,13 @@ let playLetterBee = {
       if (document.fullscreenElement || document.webkitFullscreenElement ||
         document.mozFullScreenElement) {
         closeFullscreen();
-      };
+      }
       if (this.playCorrectArray.length == 0) {
         $("#message--correct").css("display", "none");
       } else {
         $("#message--correct").css("display", "block");
         $("#array--correct").text(this.playCorrectArray.join(', '));
-      };
+      }
       if (this.playIncorrectArray.length == 0) {
         $("#message--incorrect").css("display", "none");
         $("#message--correct--all").css("display", "block");
@@ -75,23 +74,20 @@ let playLetterBee = {
         $("#message--incorrect").css("display", "block");
         $("#array--incorrect").text(this.playIncorrectArray.join(', '));
         $("#message--correct--all").css("display", "none");
-      };
+      }
       $("#play--finished--modal").modal({
         backdrop: 'static',
         keyboard: false
       });
-
     }
   },
   updateLettersRemaining: function() { //Used to update the play display with the letters remaining
-
     let playLettersRemaining = $("#play--letters--remaining");
     if (this.playAlphabetSet.length > 0) {
       playLettersRemaining.text(this.playAlphabetSet.join(', '));
     } else {
       playLettersRemaining.text("FINISHED");
-
-    };
+    }
     return this;
   },
   randomiseKeyLetter: function() { //Chooses which letter to be displayed for the game
@@ -99,7 +95,6 @@ let playLetterBee = {
       this.playAlphabetSet.length)];
     let playLettersDisplay = $("#play--letter--upper");
     playLettersDisplay.text(this.letterToDisplay);
-
     return this.letterToDisplay;
   },
   removeLetterPerm: function(
@@ -107,7 +102,6 @@ let playLetterBee = {
   ) { //Removes letter that has been played from the playing set
     let removeLetterPerm = this.playAlphabetSet.indexOf(letterDisplayed);
     this.playAlphabetSet.splice(removeLetterPerm, 1);
-
     return this;
   },
   randomiseArray: function(arrayLength, arrayRange,
@@ -117,7 +111,7 @@ let playLetterBee = {
     while (randomArray.length < arrayLength) {
       let r = Math.floor(Math.random() * arrayRange) + increaserValue;
       if (randomArray.indexOf(r) === -1) randomArray.push(r);
-    };
+    }
     return randomArray;
   },
 
@@ -134,10 +128,7 @@ let playLetterBee = {
     this.playAlphabetDistractors = [distractorOne, distractorTwo,
       distractorThree
     ];
-
     return this;
-
-
   },
   wordIndex1: 1,
   wordIndex2: 2,
@@ -148,12 +139,10 @@ let playLetterBee = {
     this.wordIndex2 = this.randomiseArray(1, 4, 1);
     this.wordIndex3 = this.randomiseArray(1, 4, 1);
     this.wordIndex4 = this.randomiseArray(1, 4, 1);
-
     return this;
   },
   playImagesValues: function(keyLetter,
     distractorLetters) { //Sets the values for each image to be displayed - 
-
     let letterVar1 = `letter${keyLetter}`;
     let lowerLetter = masterPlayData.lettersMaster[letterVar1].lowerLetter;
     this.wordVar1 = `word${this.wordIndex1}`;
@@ -179,7 +168,6 @@ let playLetterBee = {
       wordVar4].wordValue;
     let image4 = masterPlayData.lettersMaster[letterVar4].matchingWords[
       wordVar4].wordSyntax;
-
     let divArray = this.randomiseArray(this.playNumberOfOptions, this
       .playNumberOfOptions, 1);
     this.displayImages(lowerLetter, divArray, word2, word3, word4, image1,
@@ -206,23 +194,22 @@ let playLetterBee = {
     $(`#play--image${divArray[3]}--display`).html(
       `<img class="play--image" src="assets/images/letters/${image4}" alt="${word4}"/>`
     );
-
     if (this.playNumberOfOptions == 4) {
       $("#play--image4--display").show();
       $("#play--word4--display").show();
     } else {
       $("#play--image4--display").hide();
       $("#play--word4--display").hide();
-    };
+    }
     if (this.playNumberOfOptions >= 3) {
       $("#play--image3--display").show();
       $("#play--word3--display").show();
     } else {
       $("#play--image3--display").hide();
       $("#play--word3--display").hide();
-    };
+    }
   }
-}
+};
 
 /* Settings input */
 $("#play--all").click(function() { //Selects the full 26 letter set
@@ -230,11 +217,11 @@ $("#play--all").click(function() { //Selects the full 26 letter set
     $(".play--letter--select").prop("checked", true);
     playLetterBee.resetPlayAlphaBetSet();
   } else {
-    $(".play--letter--select").prop("checked", false)
+    $(".play--letter--select").prop("checked", false);
     playLetterBee.playAlphabetSet = [];
     playLetterBee.updateLettersRemaining();
-  };
-})
+  }
+});
 
 $(".play--letter--select").click(
   function() { //Removes unwanted letters from the play set
@@ -244,7 +231,7 @@ $(".play--letter--select").click(
       $("#play--all").prop("checked", true);
     } else {
       $("#play--all").prop("checked", false);
-    };
+    }
     if ($.inArray(checkedLetter, playLetterBee.playAlphabetSet) > -1) {
       let removeLetterPerm = playLetterBee.playAlphabetSet.indexOf(
         checkedLetter);
@@ -256,8 +243,8 @@ $(".play--letter--select").click(
       playLetterBee.playAlphabetSet.sort();
       playLetterBee.updateLettersRemaining();
       $(this).prop("checked", true);
-    };
-  })
+    }
+  });
 
 function amendLetterInput(
   learntArrayFromLearn
@@ -273,10 +260,10 @@ function amendLetterInput(
           $(this).prop("checked", true);
         } else {
           $(this).prop("checked", false);
-        };
+        }
       });
-    };
-  };
+    }
+  }
 }
 
 function checkLetterInput() { //Recheck checked letters for 'play again'
@@ -288,14 +275,13 @@ function checkLetterInput() { //Recheck checked letters for 'play again'
         playLetterBee.playAlphabetSet.push($(this).val());
         playLetterBee.playAlphabetSet.sort();
         playLetterBee.updateLettersRemaining();
-      };
+      }
     });
   }
   if ($(".play--letter--select:checked").length == 0) {
     $("#play--options--alert").show();
     return "EXIT FUNCTION";
-  };
-
+  }
 }
 
 $(".play--options--select").click(
@@ -303,10 +289,8 @@ $(".play--options--select").click(
     playLetterBee.playNumberOfOptions = parseInt($(this).val());
     playLetterBee.playImagesValues(playLetterBee.letterToDisplay,
       playLetterBee.playAlphabetDistractors);
-  })
-
-$('audio').prop("muted", false)
-
+  });
+$('audio').prop("muted", false);
 $("#play--options--audio").click(function() {
   $(".play--audio").toggleClass("play--audio--on");
   $(".play--audio").toggleClass("play--audio--off");
@@ -314,8 +298,8 @@ $("#play--options--audio").click(function() {
     $('audio').prop("muted", false);
   } else {
     $('audio').prop("muted", true);
-  };
-})
+  }
+});
 
 /* Full screen mode */
 function openFullscreen() {
@@ -358,17 +342,13 @@ function closeFullscreen() {
 /* Audio function */
 
 function playLettersAudio() {
-
   let audioFile = masterPlayData.lettersMaster[
     `letter${playLetterBee.letterToDisplay}`].audioFile;
   let audioSource = `assets/audio/${audioFile}`;
   $("#play--letter--audio").attr("src", audioSource);
-
   setTimeout(function() {
     $('audio#play--letter--audio')[0].play();
-
-  }, 1500)
-
+  }, 1500);
 }
 
 function playIncorrectAudio() {
@@ -377,7 +357,6 @@ function playIncorrectAudio() {
   let audioVoice = audioMain.substr(9, 1);
   let audioSource = `assets/audio/have-another-go-${audioVoice}.mp3`;
   $("#play--incorrect--audio").attr("src", audioSource);
-
   $('audio#play--incorrect--audio')[0].play();
 }
 
@@ -392,12 +371,9 @@ function playCorrectAudio() {
   let amendedWordSyntax = wordSyntax.substr(0, wordSyntax.indexOf('.'));
   let audioSourceConfirmation =
     `assets/audio/${amendedWordSyntax}-long-${audioVoice}.mp3`;
-
   $("#play--correct--audio").attr("src", audioSourceCorrect);
   $("#play--confirmation--audio").attr("src", audioSourceConfirmation);
-
   $('audio#play--correct--audio')[0].play();
-
   $('audio#play--correct--audio').on('ended', function() {
     $('audio#play--confirmation--audio')[0].play();
   });
@@ -416,8 +392,8 @@ function playCorrectAudio() {
           correctSelected(this);
         } else {
           incorrectSelected(this);
-        };
-      })
+        }
+      });
   });
 }
 
@@ -434,7 +410,7 @@ function resetDisplay() {
 function initialisePlay(learntArrayFromLearn) {
   if (typeof learntArrayFromLearn !== 'undefined') {
     amendLetterInput(learntArrayFromLearn);
-  };
+  }
   if (checkLetterInput() == "EXIT FUNCTION") {
     return;
   } else {
@@ -447,7 +423,7 @@ function initialisePlay(learntArrayFromLearn) {
     $("#play--continue").css("display", "block");
     $("#play--restart").text("Restart game");
     nextPlay();
-  };
+  }
 }
 
 function playAgain() {
@@ -477,21 +453,19 @@ $(".play--image--select").click(function() {
     correctSelected(this);
   } else {
     incorrectSelected(this);
-  };
-})
-
-
+  }
+});
 
 function incorrectSelected(selectedImage) {
   $(selectedImage).addClass("play--image--incorrect");
-  $("#play--answer").text("Have another go!")
+  $("#play--answer").text("Have another go!");
   $("#play--answer").addClass("play--image--incorrect");
   playIncorrectAudio();
   if ($.inArray(playLetterBee.letterToDisplay, playLetterBee
       .playIncorrectArray) == -1) {
     playLetterBee.playIncorrectArray.push(playLetterBee.letterToDisplay);
     playLetterBee.playIncorrectArray.sort();
-  };
+  }
 }
 
 function correctSelected(selectedImage) {
@@ -507,8 +481,7 @@ function correctSelected(selectedImage) {
       .playIncorrectArray) == -1) {
     playLetterBee.playCorrectArray.push(playLetterBee.letterToDisplay);
     playLetterBee.playCorrectArray.sort();
-  };
-
+  }
 }
 
 function goToLearnMode() {
@@ -519,24 +492,24 @@ function goToLearnMode() {
 /* Calling functions */
 $("#initialise--play").click(function() {
   initialisePlay();
-})
+});
 
 $("#expand--fullscreen--button").click(function() {
   openFullscreen();
-})
+});
 
 $("#close--fullscreen--button").click(function() {
   closeFullscreen();
-})
+});
 
 $("#nav--learn").click(function() {
   goToLearnMode();
-})
+});
 
 $("#play--again").click(function() {
   playAgain();
-})
+});
 
 $("#play--restart").click(function() {
   initialisePlay();
-})
+});

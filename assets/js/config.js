@@ -1,7 +1,7 @@
 /*
  * Only show 'Welcome' page on initial load of site
  */
-$(function () {
+$(function() {
   if (sessionStorage.getItem("isNewSession")) {
     showAbout();
   } else {
@@ -27,7 +27,7 @@ $(document).ready(function() {
 
 $("#btn--to--about").click(function() {
   showAbout();
-})
+});
 
 function showAbout() {
   $(".element--hidden").removeClass("element--hidden");
@@ -639,4 +639,4 @@ const masterPlayData = {
       }
     }
   }
-}
+};

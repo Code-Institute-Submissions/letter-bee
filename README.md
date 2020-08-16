@@ -16,7 +16,7 @@ Letter Bee is a children's game that aims to teach and test children on the lett
 \
               [:earth_africa: Scope Plane](#earth_africa-scope-plane)\
 \
-              [:rainbow: Surface Plane](#rainbow-surface-plane-design-choices)\
+              [:rainbow: Surface Plane/Design Choices](#rainbow-surface-planedesign-choices)\
 \
               [:clipboard: Wireframes](#clipboard-wireframes)\
 \

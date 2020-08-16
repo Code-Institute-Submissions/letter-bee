@@ -490,13 +490,11 @@ button:focus {
   padding: 5px;
 }
 
-#play--options label,
-#learn--options label {
+.display--options label {
   margin: .5rem 0 .5rem .5rem;
 }
 
-#play--options h6,
-#learn--options h6 {
+.display--options h6 {
   margin: 1rem 0 0.5rem;
 }
 

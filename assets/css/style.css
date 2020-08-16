@@ -335,8 +335,7 @@ button:focus {
   font-family: inherit;
 }
 
-#play--display--btn,
-#learn--display--btn {
+#page--display--btn {
   position: relative;
   margin-bottom: 1.5rem;
 }

@@ -399,7 +399,7 @@ All tests produced good results with the following exceptions:
 * Navigation between play and learn pages didn't work in Safari - see [Bug 5](#bug-bugs) for details and solution
 * ABeeZee font not displaying in Safari - see [Bug 6](#bug-bugs) for details
 
-Full testing-frame can be found [here](/assets/testing/manual-testing.pdf)
+Full testing-frame can be found [here](/testing/manual-testing.pdf)
 
 ### :heavy_check_mark: Online Validators
 ---
@@ -419,7 +419,7 @@ The [CSS validator](https://jigsaw.w3.org/css-validator/) gave no errors but two
 * same color for background-color and border-top-color
     * No action - the border colour and background colour are intended to be the same colour
 
-Full testing-frame can be found [here](/assets/testing/html-css-testing.pdf)
+Full testing-frame can be found [here](/testing/html-css-testing.pdf)
 
 [JSHint](https://jshint.com/) gave no errors, just some warnings about unnecessary/missing semicolons which was rectified.
 

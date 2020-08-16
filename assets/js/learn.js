@@ -255,7 +255,7 @@ $(".learn--options--select").click(
 
 $('audio').prop("muted", false);
 
-$("#learn--options--audio").click(function() {
+$("#options--audio").click(function() {
   $(".learn--audio").toggleClass("learn--audio--on");
   $(".learn--audio").toggleClass("learn--audio--off");
   if ($('audio').prop("muted")) {

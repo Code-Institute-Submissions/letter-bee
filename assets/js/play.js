@@ -291,7 +291,7 @@ $(".play--options--select").click(
       playLetterBee.playAlphabetDistractors);
   });
 $('audio').prop("muted", false);
-$("#play--options--audio").click(function() {
+$("#options--audio").click(function() {
   $(".play--audio").toggleClass("play--audio--on");
   $(".play--audio").toggleClass("play--audio--off");
   if ($('audio').prop("muted")) {

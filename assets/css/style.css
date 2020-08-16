@@ -286,8 +286,7 @@ button:focus {
 }
 
 /* Audio toggle switch */
-#play--options--audio,
-#learn--options--audio {
+#options--audio {
   display: inline-block;
   background-color: #007bff;
   border-radius: 10px;
@@ -296,8 +295,7 @@ button:focus {
   font-size: 1.5rem;
 }
 
-#play--options--audio:hover,
-#learn--options--audio:hover {
+#options--audio:hover {
   background-color: #005dc8;
 }
 

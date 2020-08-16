@@ -340,27 +340,19 @@ button:focus {
   margin-bottom: 1.5rem;
 }
 
-#expand--fullscreen--button,
-#close--fullscreen--button,
-#options--button {
+.page--icons--style {
+  line-height: 0;
+  color: #0374b8;
+  font-size: 2rem;
+  width: 30%;
+}
+
+.page--icons--position {
+    position: absolute;
+}
+
+.page--icons--left {
   text-align: left;
-  line-height: 0;
-  color: #0374b8;
-  font-size: 2rem;
-  width: 30%;
-  position: absolute;
-}
-
-
-#help--button {
-  line-height: 0;
-  color: #0374b8;
-  font-size: 2rem;
-  width: 30%;
-}
-
-#expand--fullscreen--button,
-#close--fullscreen--button {
   left: 0.5rem;
 }
 
@@ -368,8 +360,7 @@ button:focus {
   display: none;
 }
 
-#options--button,
-#help--button{
+.page--icons--right {
   text-align: right;
   right: 0.5rem;
 }

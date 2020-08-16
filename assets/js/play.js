@@ -405,7 +405,7 @@ function resetDisplay() {
     "play--image--correct play--image--incorrect");
   $("#play--answer").css("visibility", "hidden").removeClass(
     "play--image--incorrect");
-  $(".play--word").css("visibility", "hidden");
+  $(".display--word").css("visibility", "hidden");
 }
 
 /* Initialise game */

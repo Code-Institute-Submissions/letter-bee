@@ -337,7 +337,7 @@ function resetDisplay() {
   $(".image--select").removeClass("learn--image--current");
   $("#learn--answer").css("visibility", "hidden").removeClass(
     "image--select");
-  $(".learn--word").css("visibility", "hidden");
+  $(".display--word").css("visibility", "hidden");
 }
 
 /* Initialise game */

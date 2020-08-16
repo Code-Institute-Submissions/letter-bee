@@ -432,8 +432,7 @@ button:focus {
   height: 14rem;
 }
 
-.play--word,
-.learn--word {
+.display--word {
   width: 14rem;
 }
 
@@ -477,8 +476,7 @@ button:focus {
     height: 6.8rem;
   }
 
-  .play--word,
-  .learn--word {
+  .display--word {
     width: 6.8rem;
   }
 }

@@ -116,7 +116,7 @@ Full screen mode to avoid child going onto menu | 3 | 2
 :pencil2: **Font families**
 
 Fonts have been selected based on how well they align to the handwriting style that is taught to children in England. In particular, this means a loopy-style ‘k’ and a single-story ‘a’.
-For general website content (i.e. headings, navigation etc):
+For general website content (i.e. headings, navigation etc.):
 
 [Montserrat Alternates](https://fonts.google.com/specimen/Montserrat+Alternates?category=Sans+Serif&preview.text_type=custom&query=montserr)
 ![Montserrat Alternates Font](/wireframes/montserrat-alternates.jpg)
@@ -186,7 +186,7 @@ API | Issue | Attempted solution
 [Oxford Dictionary](https://developer.oxforddictionaries.com/) | Not compatible with Javascript/JQuery | Find another API
 [Merriam-Webster](https://dictionaryapi.com/) | The images that are provided as part of the API are not consistently present. Some words have an attached image, many do not. Images that are present are not of great quality | Use of the Unsplash API for images
 [Merriam-Webster](https://dictionaryapi.com/) | No 'random word beginning with...' functionality | Creation of own wordlist on Wordnik API (which has a random search function)
-[Merriam-Webster](https://dictionaryapi.com/) | As an American site, the word spellings and pronunciations were (unsurprisingly!) American. |  Nothing I could do about this but try and accept it or use a different dictionary API (I attempted both of these...)
+[Merriam-Webster](https://dictionaryapi.com/) | As an American site, the word spellings and pronunciations were (unsurprisingly!) American. | Nothing I could do about this but try and accept it or use a different dictionary API (I attempted both of these...)
 [Unsplash](https://unsplash.com/developers) | API was very easy to use and images were of great quality. However, consistency between dictionary definition and image shown was poor. For example, the word 'needle' might show an image of a needle for sewing, and a dictionary definition for a needle on a dial. | I tried searching for the image using the definition rather than the word itself but the connection between image and word was still more bad than good.
 [Wordnik](https://developer.wordnik.com/) | I created extensive word lists for each letter in order to ensure they were words that would have an obvious image attached and a child-friendly definition. However, it turns out the ability to search your own word lists using the API has now been deprecated (although it still features in the documentation). | No solution but big lesson learnt: Try API with a small sample before spending hours creating word lists...
 [WordsAPI](https://rapidapi.com/dpventures/api/wordsapi) | This API has a random word search function but no way of ensuring the words are child-friendly or that they have a definition and an example of usage. There is also no pronunciation option. | No solution except to try another dictionary API...
@@ -197,7 +197,7 @@ This solution also 'worked' in terms of functionality but I was (to be perfectly
 
 Removing the entire page was a bitter pill to swallow, but it pretty clearly failed my original user stories so had to be done. On a personal note, it did give me (if nothing else) a very thorough lesson on working with APIs and has also given me several pointers for what additional research to do in future before I start work on it.
 
-As the 'Discover' page didn't really work as a standalone page, that was sadly removed as well.
+As the 'Discover' page didn't really work as a standalone page, it was sadly removed as well.
 
 ## :construction: Development Process
 
@@ -314,7 +314,7 @@ Anyway, the solution... When I was previously using the URL to pass my arrays, I
 window.history.replaceState({}, document.title, "/" + "learn.html");
 ```
 This didn't affect my previewed version, but in the live version removed part of the pathname which obviously caused many issues. 
-The modifed code simply doesn't include this line.
+The modified code simply doesn't include this line.
 
 4. This wasn't exactly a bug, but rather a workaround. During testing, I discovered that Firefox doesn't allow autoplay unless the page has been interacted with first. This meant that when the user navigates from play mode directly to learn mode, the code was stopped by the autoplay blocker.\
 To fix this, I have added an additional modal that appears on page load and then runs the code upon the user's acceptance. 
@@ -346,7 +346,7 @@ By cleaning these up and replacing many of the ID selectors with a single class,
 
 * **JavaScript files**\
 As discussed in [Peer Tests](#people_holding_hands-peer-tests), my approach to creating my JavaScript files was slightly naïve. Once the play functionality was working, I simply copied it over to the learn.js file and amended.\
-Once I realised my mistake, I did try to clean up some of the duplication and moved some common functionality into the config.js file. Further attempts to clean this up can be seen in the features-one-page branch. However, my use of methods within a main object made this particularly tricky to untangle without completely starting from scratch. And so, this one is having to go in the 'lessons-learnt' file!
+Once I realised my mistake, I did try to clean up some of the duplication and moved some common functionality into the config.js file. Further attempts to clean this up can be seen in the features-one-page branch. However, my use of methods within a main object made this particularly tricky to untangle without completely starting from scratch (hence my revert-to-old branch). And so, this one is having to go in the 'lessons-learnt' file!
 
 * **REM font-sizes**\
 I have consistently used rem for font-sizes throughout (a lesson-learnt from my MS1!). However, it was only towards the very end of my project that I learnt about using an HTML font-size of 62.5% (further explained in this [Engage interactive article](https://engageinteractive.co.uk/blog/em-vs-rem-vs-px)) to keep the 1.6rem = 16px relationship.\
@@ -354,7 +354,12 @@ I did experiment with making this amendement in the css/rem branch. However, a f
 
 ### :deciduous_tree: Branches
 ---
+Another late lesson was using git branches. In the early stages of my project, I had quite a few instances of renaming HTML files as 'example-old.html' in order to create, and work on, a copy called 'example.html', without destroying my working code. 
 
+I now realise how much easier, and cleaner it would have been to use branches! 
+
+For later, large-scale changes, I have begun to use branches (although my branch naming-conventions clearly need some work!). In some instances my branches were merged into my master branch. In other cases they were abandoned. (See [Clean-Up](#broom-clean-up) for explanation of branches used.)\
+In either case, all branches (with the obvious exception of 'Master') are now dead. I have currently kept them in place for assessment purposes but they are to be deleted once assessment is complete.
 
 ## :test_tube: Testing    
 
@@ -406,11 +411,11 @@ Manual testing was carried out on all devices available to me:
     * Mobile device
     * iPad vertical
     * iPad horizontal
-    * desktop
+    * Desktop
 
 * Published site:
     * Samsung Galaxy S8
-    * desktop
+    * Desktop
 
 * Browser
     * Chrome

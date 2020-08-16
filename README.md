@@ -200,16 +200,21 @@ As the 'Discover' page didn't really work as a standalone page, that was sadly r
 ### :unlock: Technologies Used
 ---
 **Languages**
-* HTML
-* CSS
-* Javascript
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+* [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-**Tools & Libraries**
-* jQuery
-* Bootstrap
-* Font Awesome
-* Gimp (image editing)
-* Audacity (audio editing)
+**Libraries & Frameworks**
+* [Bootstrap](https://getbootstrap.com/)
+* [Font Awesome](https://fontawesome.com/)
+* [Google Fonts](https://fonts.google.com/)
+* [jQuery](https://jquery.com/)
+* [Popper](https://popper.js.org/)
+
+**Tools**
+* [Audacity (audio editing)](https://www.audacityteam.org/)
+* [Gimp (image editing)](https://www.gimp.org/)
+
 
 ### :computer: External Sources Used
 ---

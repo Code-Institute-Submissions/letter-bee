@@ -30,6 +30,8 @@ Letter Bee is a children's game that aims to teach and test children on the lett
 \
               [:broom: Clean-Up](#broom-clean-up)\
 \
+              [:deciduous_tree: Branches](#deciduous_tree-branches)\
+\
 [:test_tube: Testing](#test_tube-testing)\
 \
               [:child: Toddler Tests](#child-toddler-tests)\
@@ -349,6 +351,10 @@ Once I realised my mistake, I did try to clean up some of the duplication and mo
 * **REM font-sizes**\
 I have consistently used rem for font-sizes throughout (a lesson-learnt from my MS1!). However, it was only towards the very end of my project that I learnt about using an HTML font-size of 62.5% (further explained in this [Engage interactive article](https://engageinteractive.co.uk/blog/em-vs-rem-vs-px)) to keep the 1.6rem = 16px relationship.\
 I did experiment with making this amendement in the css/rem branch. However, a full transition to this would have meant adding further classes to take Bootstrap CSS into account - and so I decided to abandon this change, but also mark it in my 'lessons-learnt' file for future consideration.
+
+### :deciduous_tree: Branches
+---
+
 
 ## :test_tube: Testing    
 

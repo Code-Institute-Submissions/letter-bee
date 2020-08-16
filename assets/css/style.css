@@ -361,7 +361,8 @@ button:focus {
 }
 
 
-#play--help--button {
+#play--help--button,
+#learn--help--button {
   line-height: 0;
   color: #0374b8;
   font-size: 2rem;
@@ -380,7 +381,8 @@ button:focus {
 
 #play--options--button,
 #play--help--button,
-#learn--options--button {
+#learn--options--button,
+#learn--help--button {
   text-align: right;
   right: 0.5rem;
 }
@@ -395,6 +397,7 @@ button:focus {
 #play--help--button i:hover,
 #learn--next--button:hover,
 #learn--options--button i:hover,
+#learn--help--button i:hover,
 #expand--fullscreen--button i:hover,
 #close--fullscreen--button i:hover {
   color: #f5f5f5;
@@ -437,6 +440,7 @@ button:focus {
   #play--options--button,
   #play--help--button,
   #learn--options--button,
+  #learn--help--button,
   #expand--fullscreen--button,
   #close--fullscreen--button i:hover {
     font-size: 1.2rem;

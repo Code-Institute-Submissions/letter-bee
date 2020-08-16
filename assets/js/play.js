@@ -292,7 +292,7 @@ $(".play--options--select").click(
   });
 $('audio').prop("muted", false);
 $("#options--audio").click(function() {
-  $(".play--audio").toggleClass("play--audio--on");
+  $(".play--audio").toggleClass("audio--on");
   $(".play--audio").toggleClass("play--audio--off");
   if ($('audio').prop("muted")) {
     $('audio').prop("muted", false);

@@ -299,8 +299,7 @@ button:focus {
   background-color: #005dc8;
 }
 
-.play--audio--on,
-.learn--audio--on {
+.audio--on {
   color: white;
 }
 

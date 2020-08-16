@@ -61,16 +61,16 @@ It's also intended as a shameless attempt to lessen the guilt that most parents 
 
 ### :books: User Stories
 ---
-* :woman: As a parent, I want: 
-    * an educational game so that my child can play to learn and practise the letters of the alphabet. 
-    * customisable levels of difficulty to allow my child to use the game at each stage of development. 
-    * the option to turn any sound off! 
+* :woman: **Parent** 
+    * As a user I want an educational game so that my child can play to learn and practise the letters of the alphabet. 
+    * As a user I want customisable levels of difficulty to allow my child to use the game at each stage of development. 
+    * As a user I want the option to turn any sound off! 
 
-* :woman_teacher: As an educational professional, I want:
-    * a game that gives constructive feedback so that the child is continually motivated to learn.
+* :woman_teacher: **Educational Professional**
+    * As a user I want a game that gives constructive feedback so that the child is continually motivated to learn.
 
-* :child: As a small child, I want: 
-    * something fun and interactive that shows me images that I will easily recognise so that I can relate the game to my experience of every day life. 
+* :child: **Small Child** 
+    * As a user I want something fun and interactive that shows me images that I will easily recognise so that I can relate the game to my experience of every day life. 
 
 ### :game_die: Strategy Plane
 ---

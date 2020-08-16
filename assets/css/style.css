@@ -29,8 +29,8 @@ body {
 
 .se-pre-con {
   position: fixed;
-  left:0;
-  top:0;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
   z-index: 9999;
@@ -79,7 +79,7 @@ button:focus {
   width: 30px;
   height: 20px;
   position: relative;
-  margin:0;
+  margin: 0;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -114,7 +114,7 @@ button:focus {
 }
 
 .animated-icon2 span:nth-child(1) {
-  top:0;
+  top: 0;
 }
 
 .animated-icon2 span:nth-child(2),
@@ -182,7 +182,7 @@ button:focus {
 }
 
 .page--title--span {
-    display: block;
+  display: block;
 }
 
 .page--img {
@@ -342,7 +342,7 @@ button:focus {
 }
 
 .page--icons--position {
-    position: absolute;
+  position: absolute;
 }
 
 .page--icons--left {
@@ -511,7 +511,7 @@ footer a:hover {
 
 @media screen and (min-width: 550px) {
   .page--title {
-      font-size: 3rem;
+    font-size: 3rem;
   }
 }
 
@@ -527,12 +527,12 @@ footer a:hover {
   }
 }
 
-  @media screen and (min-width: 795px) {
+@media screen and (min-width: 795px) {
   .page--title--span {
-      display: inline;
+    display: inline;
   }
-  }
-  
+}
+
 @media screen and (min-width: 992px) {
 
   #page--display,

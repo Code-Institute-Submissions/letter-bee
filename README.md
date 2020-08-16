@@ -28,6 +28,8 @@ Letter Bee is a children's game that aims to teach and test children on the lett
 \
               [:bug: Bugs](#bug-bugs)\
 \
+              [:broom: Clean-Up](#broom-clean-up)\
+\
 [:test_tube: Testing](#test_tube-testing)\
 \
               [:child: Toddler Tests](#child-toddler-tests)\
@@ -330,6 +332,9 @@ document.location = "index.html";
 
 6. I also discovered that the ABeeZee font doesn't display on Safari. I tried to fix this using [Google webfonts helper](https://google-webfonts-helper.herokuapp.com/fonts/montserrat-alternates?subsets=latin) and uploading the fonts to be stored in my assets folder. However, this made no difference in Safari and I felt it was an unnecessary use of storage so reverted to the original google import.\
 It's frustrating that the font doesn't display on Safari as it was chosen for its suitability for a letter-learning game for children. However, it is a minor issue in the overall game.
+
+### :broom: Clean-Up
+---
 
 ## :test_tube: Testing    
 

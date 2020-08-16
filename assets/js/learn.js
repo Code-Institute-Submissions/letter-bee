@@ -268,7 +268,7 @@ $("#options--audio").click(function() {
 /* Full screen mode */
 function openFullscreen() {
   let elem = document.getElementById("page--display");
-  $("#learn--options--button").css("visibility", "hidden");
+  $("#options--button").css("visibility", "hidden");
   $("#expand--fullscreen--button").css("display", "none");
   $("#close--fullscreen--button").css("display", "block");
   if (elem.requestFullscreen) {
@@ -286,7 +286,7 @@ function openFullscreen() {
 }
 
 function closeFullscreen() {
-  $("#learn--options--button").css("visibility", "visible");
+  $("#options--button").css("visibility", "visible");
   $("#expand--fullscreen--button").css("display", "block");
   $("#close--fullscreen--button").css("display", "none");
   if (document.exitFullscreen) {

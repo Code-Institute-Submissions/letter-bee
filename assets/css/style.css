@@ -342,15 +342,13 @@ button:focus {
 
 #expand--fullscreen--button,
 #close--fullscreen--button,
-#play--options--button,
-#learn--options--button {
+#options--button {
   text-align: left;
   line-height: 0;
   color: #0374b8;
   font-size: 2rem;
   width: 30%;
   position: absolute;
-
 }
 
 
@@ -360,7 +358,6 @@ button:focus {
   color: #0374b8;
   font-size: 2rem;
   width: 30%;
-
 }
 
 #expand--fullscreen--button,
@@ -372,9 +369,8 @@ button:focus {
   display: none;
 }
 
-#play--options--button,
+#options--button,
 #play--help--button,
-#learn--options--button,
 #learn--help--button {
   text-align: right;
   right: 0.5rem;
@@ -386,10 +382,9 @@ button:focus {
   font-size: 2rem;
 }
 
-#play--options--button i:hover,
+#options--button i:hover,
 #play--help--button i:hover,
 #learn--next--button:hover,
-#learn--options--button i:hover,
 #learn--help--button i:hover,
 #expand--fullscreen--button i:hover,
 #close--fullscreen--button i:hover {
@@ -429,9 +424,8 @@ button:focus {
     width: 90vw;
   }
 
-  #play--options--button,
+  #options--button,
   #play--help--button,
-  #learn--options--button,
   #learn--help--button,
   #expand--fullscreen--button,
   #close--fullscreen--button i:hover {

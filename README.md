@@ -365,11 +365,9 @@ My strategy for this site was to create working functions for the 'play' mode, a
 ---
 The main function that I felt unable to test manually, was the function to create the 'distractor' letters in 'play' mode. 
 
-In order to test this, I created a jasmine test which showed no errors:\
-[jasmine.html](/assets/testing/jasmine.html)\
-[playSpec.js](/assets/testing/spec/playSpec.js)
+In order to test this, I created a jasmine test which showed no errors.
 
-Outcome of test can be viewed [here](https://jess-bennett.github.io/letter-bee/assets/testing/jasmine.html)
+Outcome of test can be viewed [here](https://jess-bennett.github.io/letter-bee/testing/jasmine.html)
 
 ### :memo: Manual Tests
 ---

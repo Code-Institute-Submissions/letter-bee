@@ -335,6 +335,20 @@ It's frustrating that the font doesn't display on Safari as it was chosen for it
 
 ### :broom: Clean-Up
 ---
+Throughout my project, and particularly towards the end, I ended up doing a lot of cleaning of my code (which probably could have been avoided had I got things right first time!).\
+Much of the code has been improved this way, but there are areas that I have had to leave as they are, but will take forward as 'lessons-learnt' for next time.
+
+* **CSS selectors**\
+There was a great deal of repetition in my CSS - particularly where I was using IDs as selectors, resulting in 4 or 5 different selectors for one piece of styling. Whilst the separate IDs were necessary for my JavaScript, they were unneccessarily bulking up my CSS file.\
+By cleaning these up and replacing many of the ID selectors with a single class, I was able to remove approx. 30 lines of code! 
+
+* **JavaScript files**\
+As discussed in [Peer Tests](#people_holding_hands-peer-tests), my approach to creating my JavaScript files was slightly naïve. Once the play functionality was working, I simply copied it over to the learn.js file and amended.\
+Once I realised my mistake, I did try to clean up some of the duplication and moved some common functionality into the config.js file. Further attempts to clean this up can be seen in the features-one-page branch. However, my use of methods within a main object made this particularly tricky to untangle without completely starting from scratch. And so, this one is having to go in the 'lessons-learnt' file!
+
+* **REM font-sizes**\
+I have consistently used rem for font-sizes throughout (a lesson-learnt from my MS1!). However, it was only towards the very end of my project that I learnt about using an HTML font-size of 62.5% (further explained in this [Engage interactive article](https://engageinteractive.co.uk/blog/em-vs-rem-vs-px)) to keep the 1.6rem = 16px relationship.\
+I did experiment with making this amendement in the css/rem branch. However, a full transition to this would have meant adding further classes to take Bootstrap CSS into account - and so I decided to abandon this change, but also mark it in my 'lessons-learnt' file for future consideration.
 
 ## :test_tube: Testing    
 

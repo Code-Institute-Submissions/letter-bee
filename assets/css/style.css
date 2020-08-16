@@ -303,8 +303,7 @@ button:focus {
   color: white;
 }
 
-.play--audio--off,
-.learn--audio--off {
+.audio--off {
   color: #007bff;
 }
 

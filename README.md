@@ -16,7 +16,7 @@ Letter Bee is a children's game that aims to teach and test children on the lett
 \
               [:earth_africa: Scope Plane](#earth_africa-scope-plane)\
 \
-              [:rainbow: Surface Plane](#rainbow-surface-plane)\
+              [:rainbow: Surface Plane](#rainbow-surface-plane-design-choices)\
 \
               [:clipboard: Wireframes](#clipboard-wireframes)\
 \
@@ -107,7 +107,7 @@ Full screen mode to avoid child going onto menu | 3 | 2
 * :telescope: **Explore mode**
     * This will display data from the dictionary API for each letter selected
 
-### :rainbow: Surface Plane
+### :rainbow: Surface Plane/Design Choices
 ---
 :pencil2: **Font families**
 
@@ -449,9 +449,6 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
 * Loading gif\
 [Smallenvelop.com](https://smallenvelop.com/display-loading-icon-page-loads-completely)
-
-* Navbar\
-[Bootstrap](https://getbootstrap.com/docs/4.0/components/navbar/)
 
 * Animation for hamburger icon\
 [MDBootstrap](https://mdbootstrap.com/docs/jquery/navigation/hamburger-menu/)

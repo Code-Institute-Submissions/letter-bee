@@ -22,7 +22,7 @@ $(".dismiss--modal").click(function() {
 
 /* On page load */
 $(document).ready(function() {
-  $("#play--display").css("display", "none");
+  $("#page--display").css("display", "none");
   $("#play--continue").css("display", "none");
   $("#play--options--alert").hide();
   $("#play--all").prop("checked", true);
@@ -303,7 +303,7 @@ $("#options--audio").click(function() {
 
 /* Full screen mode */
 function openFullscreen() {
-  let elem = document.getElementById("play--display");
+  let elem = document.getElementById("page--display");
   $("#play--options--button").css("visibility", "hidden");
   $("#play--help--button").css("visibility", "hidden");
   $("#expand--fullscreen--button").css("display", "none");
@@ -421,7 +421,7 @@ function initialisePlay(learntArrayFromLearn) {
     playLetterBee.resetPlayArrays();
     resetDisplay();
     $("#page--welcome").css("display", "none");
-    $("#play--display").css("display", "block");
+    $("#page--display").css("display", "block");
     $("#play--continue").css("display", "block");
     $("#play--restart").text("Restart game");
     nextPlay();

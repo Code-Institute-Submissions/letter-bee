@@ -23,7 +23,7 @@ $(".dismiss--modal").click(function() {
 /* On page load */
 $(document).ready(function() {
 
-  $("#learn--display").css("display", "none");
+  $("#page--display").css("display", "none");
   $("#learn--continue").css("display", "none");
   $("#learn--options--alert").hide();
   $("#learn--all").prop("checked", true);
@@ -267,7 +267,7 @@ $("#options--audio").click(function() {
 
 /* Full screen mode */
 function openFullscreen() {
-  let elem = document.getElementById("learn--display");
+  let elem = document.getElementById("page--display");
   $("#learn--options--button").css("visibility", "hidden");
   $("#expand--fullscreen--button").css("display", "none");
   $("#close--fullscreen--button").css("display", "block");
@@ -351,7 +351,7 @@ function initialiseLearn(incorrectArrayFromPlay) {
     learnLetterBee.resetLearntArray();
     resetDisplay();
     $("#page--welcome").css("display", "none");
-    $("#learn--display").css("display", "block");
+    $("#page--display").css("display", "block");
     $("#learn--continue").css("display", "block");
     $("#learn--restart").text("Restart");
     nextLearn();

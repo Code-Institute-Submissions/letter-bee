@@ -315,8 +315,7 @@ button:focus {
 
 /* Play/Learn displays */
 
-#play--display,
-#learn--display,
+#page--display,
 #page--welcome {
   background-color: #f3c100;
   width: 992px;
@@ -328,8 +327,7 @@ button:focus {
   box-shadow: -1px 0 #c8b9d8, 0 1px #c8b9d8, 1px 0 #c8b9d8, 0 -1px #c8b9d8;
 }
 
-#play--display,
-#learn--display {
+#page--display {
   display: none;
 }
 
@@ -427,8 +425,7 @@ button:focus {
 
 @media screen and (max-width: 992px) {
 
-  #play--display,
-  #learn--display,
+  #page--display,
   #page--welcome {
     width: 90vw;
   }

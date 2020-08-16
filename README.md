@@ -203,7 +203,19 @@ As the 'Discover' page didn't really work as a standalone page, it was sadly rem
 
 ### :crystal_ball: Future Developments
 ---
+Whilst I am pleased with what I have created so far, there are some things that I would wish to change with time in the future:
 
+* **Addition of further words/images**\
+There is an issue with duplication in some cases (2 x 'Xuli' for the letter X, 2 x 'Zebra' for the letter Z) because I simply couldn't think of any more suitable words for those letters! In future, I would like to either add more words and images or change the page layout so that only 3 images show for the less common letters.
+
+* **Addition of word categories**\
+I would like to create different categories of words (such as 'transport', 'nature', 'food') so that the game can be further personalised for a child's particular interests.
+
+* **Return of Discover and Explore!**\
+Abandoning these two pages was a real shame - I am hopeful that one day the perfect dictionary API will be released, allowing me to bring these two pages back. And if not, perhaps I can create my own!
+
+* **Further condensing of code**\
+It would be a great improvement to the back-end of my site if the different pages were condensed into one page, as it would avoid a great deal of duplication and make future updates easier to manage.
 
 ## :construction: Development Process
 

@@ -408,14 +408,13 @@ HTML and CSS code was run through the W3C validator tools and JS was run through
 The [HTML validator](https://validator.w3.org/) gave one error:
 * element div not allowed as child of element button in this context.
 
-The piece of code with this error was taken directly from:
-https://mdbootstrap.com/docs/jquery/navigation/hamburger-menu/
+The piece of code with this error was taken directly from [MDBootstrap](https://mdbootstrap.com/docs/jquery/navigation/hamburger-menu/)
 
 An attempt was made to change the div element to a span, in order to satisfy W3C requirements, however the icon then didn't display. I have left this error in place as it doesn't seem to have any detrimental effect on the site.
 
 The [CSS validator](https://jigsaw.w3.org/css-validator/) gave no errors but two categories of warnings:
 * unknown vendor extension/pseudo-class/pseudo-element
-    * No action – advice taken from: https://stackoverflow.com/questions/52490004/what-are-all-of-these-w3c-css-validation-warnings-about
+    * No action – advice taken from [Stack Overflow](https://stackoverflow.com/questions/52490004/what-are-all-of-these-w3c-css-validation-warnings-about)
 * same color for background-color and border-top-color
     * No action - the border colour and background colour are intended to be the same colour
 

@@ -406,10 +406,7 @@ button:focus {
     width: 90vw;
   }
 
-  #options--button,
-  #help--button,
-  #expand--fullscreen--button,
-  #close--fullscreen--button i:hover {
+  .page--icons--style {
     font-size: 1.2rem;
   }
 
@@ -427,8 +424,7 @@ button:focus {
   }
 }
 
-.play--image--select,
-.learn--image--select {
+.image--select {
   border: 2px solid #c8b9d8;
   border-radius: 10px;
   background-color: #c8b9d8;
@@ -441,27 +437,26 @@ button:focus {
   width: 14rem;
 }
 
-.play--image--select:hover,
-.learn--image--select:hover {
+.image--select:hover {
   cursor: pointer;
   border-color: #f5f5f5;
   color: #f5f5f5;
 }
 
-.learn--image--select.learn--image--selected {
+.image--select.learn--image--selected {
   border: 0.5rem solid #c8b9d8;
 }
 
-.play--image--select.play--image--correct,
+.image--select.play--image--correct,
 #play--answer.play--image--correct,
-.learn--image--select.learn--image--current,
+.image--select.learn--image--current,
 #learn--answer {
   border: 0.5rem solid #BEBF13;
   background-color: #BEBF13;
   border-radius: 10px;
 }
 
-.play--image--select.play--image--incorrect,
+.image--select.play--image--incorrect,
 #play--answer.play--image--incorrect {
   border: 0.5rem solid #F99A0C;
   background-color: #F99A0C;
@@ -478,8 +473,7 @@ button:focus {
 
 @media screen and (max-width: 574px) {
 
-  .play--image--select,
-  .learn--image--select {
+  .image--select {
     width: 6.8rem;
     height: 6.8rem;
   }

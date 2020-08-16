@@ -383,7 +383,7 @@ function playCorrectAudio() {
     $('audio#play--confirmation--audio').off('ended');
     resetDisplay();
     playLetterBee.checkPlayProgress();
-    $(".play--image--select").click(
+    $(".image--select").click(
       function() { // To turn click event back on
         let imageID = this.id.match(/\d+/)[0];
         $(`#play--word${imageID}--display`).css("visibility", "visible");
@@ -401,7 +401,7 @@ function playCorrectAudio() {
 
 /* Reset function */
 function resetDisplay() {
-  $(".play--image--select").removeClass(
+  $(".image--select").removeClass(
     "play--image--correct play--image--incorrect");
   $("#play--answer").css("visibility", "hidden").removeClass(
     "play--image--incorrect");
@@ -446,7 +446,7 @@ function nextPlay() {
 }
 
 /* Select answer */
-$(".play--image--select").click(function() {
+$(".image--select").click(function() {
   let imageID = this.id.match(/\d+/)[0];
   $(`#play--word${imageID}--display`).css("visibility", "visible");
   $(`#play--answer`).css("visibility", "visible");
@@ -477,7 +477,7 @@ function correctSelected(selectedImage) {
   );
   $("#play--answer").removeClass("play--image--incorrect");
   $("#play--answer").addClass("play--image--correct");
-  $(".play--image--select").off("click");
+  $(".image--select").off("click");
   playCorrectAudio();
   if ($.inArray(playLetterBee.letterToDisplay, playLetterBee
       .playIncorrectArray) == -1) {

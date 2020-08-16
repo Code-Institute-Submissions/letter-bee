@@ -333,10 +333,10 @@ function learnWordAudio(selectedWord) {
 
 /* Misc functions */
 function resetDisplay() {
-  $(".learn--image--select").removeClass("learn--image--selected");
-  $(".learn--image--select").removeClass("learn--image--current");
+  $(".image--select").removeClass("learn--image--selected");
+  $(".image--select").removeClass("learn--image--current");
   $("#learn--answer").css("visibility", "hidden").removeClass(
-    "learn--image--select");
+    "image--select");
   $(".learn--word").css("visibility", "hidden");
 }
 
@@ -376,10 +376,10 @@ function nextLearn() {
 }
 
 /* Select correct/incorrect answer */
-$(".learn--image--select").click(function() {
+$(".image--select").click(function() {
   let imageID = this.id.match(/\d+/)[0];
   $(this).addClass("learn--image--selected");
-  $(".learn--image--select").removeClass("learn--image--current");
+  $(".image--select").removeClass("learn--image--current");
   $(this).addClass("learn--image--current");
   $(`#learn--word${imageID}--display`).css("visibility", "visible");
   $(`#learn--answer`).css("visibility", "visible");

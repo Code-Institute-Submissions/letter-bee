@@ -20,6 +20,8 @@ Letter Bee is a children's game that aims to teach and test children on the lett
 \
               [:clipboard: Wireframes](#clipboard-wireframes)\
 \
+              [:crystal_ball: Future Developments](#crystal_ball-future-developments)\
+\
 [:construction: Development Process](#construction-development-process)\
 \
               [:unlock: Technologies Used](#unlock-technologies-used)\
@@ -198,6 +200,10 @@ This solution also 'worked' in terms of functionality but I was (to be perfectly
 Removing the entire page was a bitter pill to swallow, but it pretty clearly failed my original user stories so had to be done. On a personal note, it did give me (if nothing else) a very thorough lesson on working with APIs and has also given me several pointers for what additional research to do in future before I start work on it.
 
 As the 'Discover' page didn't really work as a standalone page, it was sadly removed as well.
+
+### :crystal_ball: Future Developments
+---
+
 
 ## :construction: Development Process
 

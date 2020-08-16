@@ -143,16 +143,16 @@ let learnLetterBee = {
     $(`#learn--word${divArray[2]}--display`).html(word3);
     $(`#learn--word${divArray[3]}--display`).html(word4);
     $(`#learn--image${divArray[0]}--display`).html(
-      `<img class="learn--image" src="assets/images/letters/${image1}" alt="${word1}" data="${image1}"/>`
+      `<img class="display--image" src="assets/images/letters/${image1}" alt="${word1}" data="${image1}"/>`
     );
     $(`#learn--image${divArray[1]}--display`).html(
-      `<img class="learn--image" src="assets/images/letters/${image2}" alt="${word2}" data="${image2}"/>`
+      `<img class="display--image" src="assets/images/letters/${image2}" alt="${word2}" data="${image2}"/>`
     );
     $(`#learn--image${divArray[2]}--display`).html(
-      `<img class="learn--image" src="assets/images/letters/${image3}" alt="${word3}" data="${image3}"/>`
+      `<img class="display--image" src="assets/images/letters/${image3}" alt="${word3}" data="${image3}"/>`
     );
     $(`#learn--image${divArray[3]}--display`).html(
-      `<img class="learn--image" src="assets/images/letters/${image4}" alt="${word4}" data="${image4}"/>`
+      `<img class="display--image" src="assets/images/letters/${image4}" alt="${word4}" data="${image4}"/>`
     );
 
     if (this.learnNumberOfOptions == 4) {

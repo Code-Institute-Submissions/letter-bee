@@ -183,16 +183,16 @@ let playLetterBee = {
     $(`#play--word${divArray[2]}--display`).html(word3);
     $(`#play--word${divArray[3]}--display`).html(word4);
     $(`#play--image${divArray[0]}--display`).html(
-      `<img class="play--image" src="assets/images/letters/${image1}" alt="${this.correctAnswer}"/>`
+      `<img class="display--image" src="assets/images/letters/${image1}" alt="${this.correctAnswer}"/>`
     );
     $(`#play--image${divArray[1]}--display`).html(
-      `<img class="play--image" src="assets/images/letters/${image2}" alt="${word2}"/>`
+      `<img class="display--image" src="assets/images/letters/${image2}" alt="${word2}"/>`
     );
     $(`#play--image${divArray[2]}--display`).html(
-      `<img class="play--image" src="assets/images/letters/${image3}" alt="${word3}"/>`
+      `<img class="display--image" src="assets/images/letters/${image3}" alt="${word3}"/>`
     );
     $(`#play--image${divArray[3]}--display`).html(
-      `<img class="play--image" src="assets/images/letters/${image4}" alt="${word4}"/>`
+      `<img class="display--image" src="assets/images/letters/${image4}" alt="${word4}"/>`
     );
     if (this.playNumberOfOptions == 4) {
       $("#play--image4--display").show();

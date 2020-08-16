@@ -305,6 +305,7 @@ $("#play--options--audio").click(function() {
 function openFullscreen() {
   let elem = document.getElementById("play--display");
   $("#play--options--button").css("visibility", "hidden");
+  $("#play--help--button").css("visibility", "hidden");
   $("#expand--fullscreen--button").css("display", "none");
   $("#close--fullscreen--button").css("display", "block");
   if (elem.requestFullscreen) {
@@ -323,6 +324,7 @@ function openFullscreen() {
 
 function closeFullscreen() {
   $("#play--options--button").css("visibility", "visible");
+  $("#play--help--button").css("visibility", "visible");
   $("#expand--fullscreen--button").css("display", "block");
   $("#close--fullscreen--button").css("display", "none");
   if (document.exitFullscreen) {

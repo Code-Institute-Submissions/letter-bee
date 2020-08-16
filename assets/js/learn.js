@@ -265,45 +265,6 @@ $("#options--audio").click(function() {
   }
 });
 
-/* Full screen mode */
-function openFullscreen() {
-  let elem = document.getElementById("page--display");
-  $("#options--button").css("visibility", "hidden");
-  $("#help--button").css("visibility", "hidden");
-  $("#expand--fullscreen--button").css("display", "none");
-  $("#close--fullscreen--button").css("display", "block");
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.mozRequestFullScreen) {
-    /* Firefox */
-    elem.mozRequestFullScreen();
-  } else if (elem.webkitRequestFullscreen) {
-    /* Chrome, Safari and Opera */
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) {
-    /* IE/Edge */
-    elem.msRequestFullscreen();
-  }
-}
-
-function closeFullscreen() {
-  $("#options--button").css("visibility", "visible");
-  $("#help--button").css("visibility", "visible");
-  $("#expand--fullscreen--button").css("display", "block");
-  $("#close--fullscreen--button").css("display", "none");
-  if (document.exitFullscreen) {
-    document.exitFullscreen();
-  } else if (document.mozCancelFullScreen) {
-    /* Firefox */
-    document.mozCancelFullScreen();
-  } else if (document.webkitExitFullscreen) {
-    /* Chrome, Safari and Opera */
-    document.webkitExitFullscreen();
-  } else if (document.msExitFullscreen) {
-    /* IE/Edge */
-    document.msExitFullscreen();
-  }
-}
 /* Function to play audio */
 
 function learnLettersAudio() {

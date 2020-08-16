@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@1&family=Montserrat+Alternates:ital,wght@0,200;0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
 
+html {
+    font-size: 62.5%
+}
+
 body {
   background-color: #f3c100;
   font-family: 'Montserrat Alternates', sans-serif;
@@ -12,7 +16,8 @@ body {
     linear-gradient(30deg, #f3c100 24%, #E5CCA5 0, #E5CCA5 26%, rgba(240, 166, 17, 0) 0, rgba(240, 166, 17, 0) 74%, #E5CCA5 0, #E5CCA5 76%, #f3c100 0)0 0,
     linear-gradient(90deg, #E5CCA5 2%, #f3c100 0, #f3c100 98%, #E5CCA5 0%)0 0 #f3c100;
   background-size: 40px 60px;
-  margin-bottom: 5rem;
+  margin-bottom: 8rem;
+  font-size: 16px;
 }
 
 /* Loader gif */
@@ -41,7 +46,7 @@ body {
 /* https://getbootstrap.com/docs/4.0/components/navbar/ */
 .navbar {
   background-color: #0374b8;
-  border-bottom: 0.5rem solid #E5CCA5
+  border-bottom: 0.8rem solid #E5CCA5
 }
 
 .navbar-dark .navbar-brand {
@@ -163,21 +168,21 @@ button:focus {
 
 /* Main Layout */
 .page {
-  padding-top: 4rem;
+  padding-top: 6.4rem;
   align-items: center;
   text-align: center;
 }
 
 #home {
-  padding-top: 1rem;
+  padding-top: 1.6rem;
 }
 
 .page--title {
   text-align: center;
-  padding: 1rem;
-  font-size: 2rem;
+  padding: 1.6rem;
+  font-size: 3.2rem;
   font-weight: 800;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.8rem;
   text-shadow: -1px 0 #c8b9d8, 0 1px #c8b9d8, 1px 0 #c8b9d8, 0 -1px #c8b9d8;
 }
 
@@ -198,13 +203,13 @@ button:focus {
   cursor: pointer;
   background-color: #c8b9d8;
   color: inherit;
-  font-size: 1.5rem;
+  font-size: 2.4rem;
   font-weight: 600;
   border-radius: 10px;
   border: solid 2px #333;
   display: block;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1.6rem;
   width: 60%;
   text-decoration: none;
 }
@@ -219,17 +224,17 @@ button:focus {
 
 .section--center {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.92rem;
   font-weight: 500;
   margin: 0 auto;
 }
 
 .section--link {
-  font-size: 2rem;
+  font-size: 3.2rem;
   text-align: center;
-  margin: 1rem auto;
+  margin: 1.6rem auto;
   max-width: 80%;
-  padding: 0.4rem;
+  padding: 0.64rem;
   line-height: 1;
   background-color: #c8b9d8;
   border: 2px solid #333;
@@ -249,7 +254,7 @@ button:focus {
 .btn--smaller {
   display: inline-block;
   width: 49%;
-  font-size: 1.5rem;
+  font-size: 2.4rem;
 }
 
 .section--link:hover {
@@ -266,12 +271,12 @@ button:focus {
 }
 
 .modal-body>strong {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.4rem;
 }
 
 .close {
   color: #333;
-  font-size: 2.5rem;
+  font-size: 4rem;
 }
 
 .close:not(:disabled):not(.disabled):focus,
@@ -284,9 +289,9 @@ button:focus {
   display: inline-block;
   background-color: #007bff;
   border-radius: 10px;
-  padding: 0.1rem 0.4rem;
-  letter-spacing: 0.5rem;
-  font-size: 1.5rem;
+  padding: 0.16rem 0.64rem;
+  letter-spacing: 0.8rem;
+  font-size: 2.4rem;
 }
 
 #options--audio:hover {
@@ -315,7 +320,7 @@ button:focus {
   width: 90vw;
   border: 2px solid #333;
   border-radius: 10px;
-  padding: 1rem;
+  padding: 1.6rem;
   margin: 0 auto;
   font-family: "ABeeZee", sans-serif;
   box-shadow: -1px 0 #c8b9d8, 0 1px #c8b9d8, 1px 0 #c8b9d8, 0 -1px #c8b9d8;
@@ -331,13 +336,13 @@ button:focus {
 
 #page--display--btn {
   position: relative;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.4rem;
 }
 
 .page--icons--style {
   line-height: 0;
   color: #0374b8;
-  font-size: 1.2rem;
+  font-size: 1.92rem;
   width: 30%;
 }
 
@@ -347,7 +352,7 @@ button:focus {
 
 .page--icons--left {
   text-align: left;
-  left: 0.5rem;
+  left: 0.8rem;
 }
 
 #close--fullscreen--button {
@@ -356,13 +361,13 @@ button:focus {
 
 .page--icons--right {
   text-align: right;
-  right: 0.5rem;
+  right: 0.8rem;
 }
 
 #learn--next--button {
   text-align: center;
   color: #0374b8;
-  font-size: 2rem;
+  font-size: 3.2rem;
 }
 
 .page--icons--style i:hover,
@@ -373,23 +378,23 @@ button:focus {
 
 
 .display--letter {
-  font-size: 2rem;
+  font-size: 3.2rem;
   font-weight: 600;
   line-height: 1;
   display: inline-block;
 }
 
 .text--spaced {
-  margin-bottom: 1rem;
-  font-size: 1rem;
+  margin-bottom: 1.6rem;
+  font-size: 1.6rem;
 }
 
 .text--spaced--small {
-  font-size: 1rem;
+  font-size: 1.6rem;
 }
 
 .text--spaced--large {
-  font-size: 1.5rem;
+  font-size: 2.4rem;
   font-weight: 600;
 }
 
@@ -397,12 +402,12 @@ button:focus {
   border: 2px solid #c8b9d8;
   border-radius: 10px;
   background-color: #c8b9d8;
-  width: 6.8rem;
-  height: 6.8rem;
+  width: 10.9rem;
+  height: 10.9rem;
 }
 
 .display--word {
-  width: 6.8rem;
+  width: 10.9rem;
 }
 
 .image--select:hover {
@@ -412,21 +417,21 @@ button:focus {
 }
 
 .image--select.learn--image--selected {
-  border: 0.5rem solid #c8b9d8;
+  border: 0.8rem solid #c8b9d8;
 }
 
 .image--select.play--image--correct,
 #play--answer.play--image--correct,
 .image--select.learn--image--current,
 #learn--answer {
-  border: 0.5rem solid #BEBF13;
+  border: 0.8rem solid #BEBF13;
   background-color: #BEBF13;
   border-radius: 10px;
 }
 
 .image--select.play--image--incorrect,
 #play--answer.play--image--incorrect {
-  border: 0.5rem solid #F99A0C;
+  border: 0.8rem solid #F99A0C;
   background-color: #F99A0C;
   border-radius: 10px;
 }
@@ -439,8 +444,8 @@ button:focus {
 }
 
 .col {
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
+  padding-right: 0.8rem;
+  padding-left: 0.8rem;
 }
 
 .col-3 {
@@ -448,11 +453,11 @@ button:focus {
 }
 
 .display--options label {
-  margin: .5rem 0 .5rem .5rem;
+  margin: 0.8rem 0 0.8rem 0.8rem;
 }
 
 .display--options--subheading {
-  margin: 1rem 0 0.5rem;
+  margin: 1.6rem 0 0.8rem;
 }
 
 /* Fullscreen */
@@ -482,15 +487,15 @@ button:focus {
 
 footer {
   background-color: #a094ac;
-  font-size: 1.8rem;
+  font-size: 2.9rem;
   font-weight: 800;
   text-align: center;
   width: 100%;
   position: fixed;
   bottom: 0;
   left: 0;
-  margin-top: 3rem;
-  border-top: 0.5rem solid #E5CCA5
+  margin-top: 4.8rem;
+  border-top: 0.8rem solid #E5CCA5;
 }
 
 footer a {
@@ -503,7 +508,7 @@ footer a:hover {
 }
 
 .footer--text {
-  font-size: 1rem;
+  font-size: 1.6rem;
   margin: 0;
 }
 
@@ -511,19 +516,19 @@ footer a:hover {
 
 @media screen and (min-width: 550px) {
   .page--title {
-      font-size: 3rem;
+      font-size: 4.8rem;
   }
 }
 
 @media screen and (min-width: 530px) {
 
   .image--select {
-    width: 14rem;
-    height: 14rem;
+    width: 22.4rem;
+    height: 22.4rem;
   }
 
   .display--word {
-    width: 14rem;
+    width: 22.4rem;
   }
 }
 
@@ -541,19 +546,19 @@ footer a:hover {
   }
 
   .page--icons--style {
-    font-size: 2rem;
+    font-size: 3.2rem;
   }
 
   .display--letter {
-    font-size: 3rem;
+    font-size: 4.8rem;
     line-height: 1.2;
   }
 
   .text--spaced {
-    font-size: 1.5rem;
+    font-size: 2.4rem;
   }
 
   .text--spaced--large {
-    font-size: 2rem;
+    font-size: 3.2rem;
   }
 }

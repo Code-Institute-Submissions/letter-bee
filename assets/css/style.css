@@ -175,20 +175,14 @@ button:focus {
 .page--title {
   text-align: center;
   padding: 1rem;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 800;
   letter-spacing: 0.5rem;
   text-shadow: -1px 0 #c8b9d8, 0 1px #c8b9d8, 1px 0 #c8b9d8, 0 -1px #c8b9d8;
 }
 
-@media screen and (max-width: 520px) {
-  .page>span {
+.page--title--span {
     display: block;
-  }
-
-  .page--title {
-    font-size: 2rem;
-  }
 }
 
 .page--img {
@@ -318,7 +312,7 @@ button:focus {
 #page--display,
 #page--welcome {
   background-color: #f3c100;
-  width: 992px;
+  width: 90vw;
   border: 2px solid #333;
   border-radius: 10px;
   padding: 1rem;
@@ -343,7 +337,7 @@ button:focus {
 .page--icons--style {
   line-height: 0;
   color: #0374b8;
-  font-size: 2rem;
+  font-size: 1.2rem;
   width: 30%;
 }
 
@@ -379,15 +373,15 @@ button:focus {
 
 
 .display--letter {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1;
   display: inline-block;
 }
 
 .text--spaced {
   margin-bottom: 1rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .text--spaced--small {
@@ -395,45 +389,20 @@ button:focus {
 }
 
 .text--spaced--large {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
-}
-
-@media screen and (max-width: 992px) {
-
-  #page--display,
-  #page--welcome {
-    width: 90vw;
-  }
-
-  .page--icons--style {
-    font-size: 1.2rem;
-  }
-
-  .display--letter {
-    font-size: 2rem;
-    line-height: 1;
-  }
-
-  .text--spaced {
-    font-size: 1rem;
-  }
-
-  .text--spaced--large {
-    font-size: 1.5rem;
-  }
 }
 
 .image--select {
   border: 2px solid #c8b9d8;
   border-radius: 10px;
   background-color: #c8b9d8;
-  width: 14rem;
-  height: 14rem;
+  width: 6.8rem;
+  height: 6.8rem;
 }
 
 .display--word {
-  width: 14rem;
+  width: 6.8rem;
 }
 
 .image--select:hover {
@@ -467,18 +436,6 @@ button:focus {
   height: 100%;
   border-radius: 10px;
   display: block;
-}
-
-@media screen and (max-width: 574px) {
-
-  .image--select {
-    width: 6.8rem;
-    height: 6.8rem;
-  }
-
-  .display--word {
-    width: 6.8rem;
-  }
 }
 
 .col {
@@ -548,4 +505,55 @@ footer a:hover {
 .footer--text {
   font-size: 1rem;
   margin: 0;
+}
+
+
+
+@media screen and (min-width: 550px) {
+  .page--title {
+      font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 530px) {
+
+  .image--select {
+    width: 14rem;
+    height: 14rem;
+  }
+
+  .display--word {
+    width: 14rem;
+  }
+}
+
+  @media screen and (min-width: 795px) {
+  .page--title--span {
+      display: inline;
+  }
+  }
+  
+@media screen and (min-width: 992px) {
+
+  #page--display,
+  #page--welcome {
+    width: 992px;
+  }
+
+  .page--icons--style {
+    font-size: 2rem;
+  }
+
+  .display--letter {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+
+  .text--spaced {
+    font-size: 1.5rem;
+  }
+
+  .text--spaced--large {
+    font-size: 2rem;
+  }
 }

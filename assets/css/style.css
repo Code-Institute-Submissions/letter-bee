@@ -360,6 +360,15 @@ button:focus {
 
 }
 
+
+#play--help--button {
+  line-height: 0;
+  color: #0374b8;
+  font-size: 2rem;
+  width: 30%;
+
+}
+
 #expand--fullscreen--button,
 #close--fullscreen--button {
   left: 0.5rem;
@@ -370,6 +379,7 @@ button:focus {
 }
 
 #play--options--button,
+#play--help--button,
 #learn--options--button {
   text-align: right;
   right: 0.5rem;
@@ -382,6 +392,7 @@ button:focus {
 }
 
 #play--options--button i:hover,
+#play--help--button i:hover,
 #learn--next--button:hover,
 #learn--options--button i:hover,
 #expand--fullscreen--button i:hover,
@@ -424,6 +435,7 @@ button:focus {
   }
 
   #play--options--button,
+  #play--help--button,
   #learn--options--button,
   #expand--fullscreen--button,
   #close--fullscreen--button i:hover {
